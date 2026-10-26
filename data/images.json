@@ -1,0 +1,286 @@
+{
+ "gayo-wine-natural": [
+  "label-gayo-wine-natural",
+  "photo-cherries",
+  "photo-pour"
+ ],
+ "gayo-washed": [
+  "label-gayo-washed",
+  "photo-beans",
+  "photo-pour"
+ ],
+ "gayo-wet-hulled": [
+  "label-gayo-wet-hulled",
+  "photo-beans-hands",
+  "photo-latte-2"
+ ],
+ "kerinci-honey": [
+  "label-kerinci-honey",
+  "photo-cherry-hand",
+  "photo-pour"
+ ],
+ "kerinci-washed": [
+  "label-kerinci-washed",
+  "photo-beans",
+  "photo-pour"
+ ],
+ "mandailing-classic": [
+  "label-mandailing-classic",
+  "photo-beans-hands",
+  "photo-latte-2"
+ ],
+ "lintong-natural": [
+  "label-lintong-natural",
+  "photo-cherries",
+  "photo-pour"
+ ],
+ "sidikalang-washed": [
+  "label-sidikalang-washed",
+  "photo-beans",
+  "photo-pour"
+ ],
+ "solok-radjo-natural": [
+  "label-solok-radjo-natural",
+  "photo-cherries",
+  "photo-pour"
+ ],
+ "java-malabar-washed": [
+  "label-java-malabar-washed",
+  "photo-beans",
+  "photo-pour"
+ ],
+ "java-puntang-honey": [
+  "label-java-puntang-honey",
+  "photo-cherry-hand",
+  "photo-pour"
+ ],
+ "java-halu-natural": [
+  "label-java-halu-natural",
+  "photo-cherries",
+  "photo-pour"
+ ],
+ "java-papandayan-washed": [
+  "label-java-papandayan-washed",
+  "photo-beans",
+  "photo-pour"
+ ],
+ "java-cikuray-semi-washed": [
+  "label-java-cikuray-semi-washed",
+  "photo-beans-hands",
+  "photo-pour"
+ ],
+ "java-sindoro-natural": [
+  "label-java-sindoro-natural",
+  "photo-cherries",
+  "photo-pour"
+ ],
+ "java-ijen-washed": [
+  "label-java-ijen-washed",
+  "photo-beans",
+  "photo-pour"
+ ],
+ "java-argopuro-honey": [
+  "label-java-argopuro-honey",
+  "photo-cherry-hand",
+  "photo-pour"
+ ],
+ "bali-kintamani-washed": [
+  "label-bali-kintamani-washed",
+  "photo-beans",
+  "photo-pour"
+ ],
+ "bali-kintamani-natural": [
+  "label-bali-kintamani-natural",
+  "photo-cherries",
+  "photo-pour"
+ ],
+ "flores-bajawa-washed": [
+  "label-flores-bajawa-washed",
+  "photo-beans",
+  "photo-pour"
+ ],
+ "flores-manggarai-natural": [
+  "label-flores-manggarai-natural",
+  "photo-cherries",
+  "photo-pour"
+ ],
+ "toraja-sapan-washed": [
+  "label-toraja-sapan-washed",
+  "photo-beans",
+  "photo-pour"
+ ],
+ "toraja-kalosi-wet-hulled": [
+  "label-toraja-kalosi-wet-hulled",
+  "photo-beans-hands",
+  "photo-latte-2"
+ ],
+ "mamasa-natural": [
+  "label-mamasa-natural",
+  "photo-cherries",
+  "photo-pour"
+ ],
+ "papua-wamena-washed": [
+  "label-papua-wamena-washed",
+  "photo-beans",
+  "photo-pour"
+ ],
+ "papua-moanemani-washed": [
+  "label-papua-moanemani-washed",
+  "photo-beans",
+  "photo-pour"
+ ],
+ "lampung-robusta-fine": [
+  "label-lampung-robusta-fine",
+  "photo-cherries",
+  "photo-latte-2"
+ ],
+ "temanggung-robusta-natural": [
+  "label-temanggung-robusta-natural",
+  "photo-cherries",
+  "photo-roaster"
+ ],
+ "liberika-jambi": [
+  "label-liberika-jambi",
+  "photo-cherries",
+  "photo-pour"
+ ],
+ "lereng-house-espresso": [
+  "label-lereng-house-espresso",
+  "photo-latte",
+  "photo-latte-2"
+ ],
+ "pagi-filter-blend": [
+  "label-pagi-filter-blend",
+  "photo-latte",
+  "photo-pour"
+ ],
+ "kopi-susu-blend": [
+  "label-kopi-susu-blend",
+  "photo-latte",
+  "photo-latte-2"
+ ],
+ "malam-decaf": [
+  "label-malam-decaf",
+  "photo-latte",
+  "photo-pour"
+ ],
+ "tubruk-blend": [
+  "label-tubruk-blend",
+  "photo-latte",
+  "photo-roaster"
+ ],
+ "gayo-anaerobic-natural-lot-07": [
+  "label-gayo-anaerobic-natural-lot-07",
+  "photo-cherries",
+  "photo-pour"
+ ],
+ "kerinci-carbonic-lot-02": [
+  "label-kerinci-carbonic-lot-02",
+  "photo-cherries",
+  "photo-pour"
+ ],
+ "java-puntang-gesha": [
+  "label-java-puntang-gesha",
+  "photo-beans",
+  "photo-pour"
+ ],
+ "bali-kintamani-double-ferment": [
+  "label-bali-kintamani-double-ferment",
+  "photo-cherries",
+  "photo-pour"
+ ],
+ "drip-bag-gayo": [
+  "tile-drip-bag-gayo",
+  "photo-pour"
+ ],
+ "drip-bag-kintamani": [
+  "tile-drip-bag-kintamani",
+  "photo-pour"
+ ],
+ "drip-bag-house": [
+  "tile-drip-bag-house",
+  "photo-pour"
+ ],
+ "cold-brew-concentrate-500": [
+  "tile-cold-brew-concentrate-500",
+  "photo-iced"
+ ],
+ "cold-brew-concentrate-1l": [
+  "tile-cold-brew-concentrate-1l",
+  "photo-iced"
+ ],
+ "ceramic-dripper-02": [
+  "eq-ceramic-dripper"
+ ],
+ "flat-bottom-dripper": [
+  "eq-flat-dripper"
+ ],
+ "glass-pour-over-carafe": [
+  "eq-carafe"
+ ],
+ "immersion-brewer": [
+  "eq-immersion"
+ ],
+ "french-press-600": [
+  "tile-french-press-600"
+ ],
+ "moka-pot-3": [
+  "eq-moka"
+ ],
+ "hand-grinder-c3": [
+  "eq-hand-grinder"
+ ],
+ "electric-grinder-flat": [
+  "eq-electric-grinder"
+ ],
+ "gooseneck-kettle": [
+  "eq-gooseneck"
+ ],
+ "electric-kettle-temp": [
+  "eq-electric-kettle"
+ ],
+ "brew-scale": [
+  "eq-scale"
+ ],
+ "paper-filters-02": [
+  "eq-ceramic-dripper"
+ ],
+ "paper-filters-flat": [
+  "eq-flat-dripper"
+ ],
+ "glass-server-600": [
+  "eq-server"
+ ],
+ "enamel-mug": [
+  "merch-mug"
+ ],
+ "canvas-tote": [
+  "merch-tote"
+ ],
+ "lereng-tee": [
+  "tile-lereng-tee"
+ ],
+ "bucket-hat": [
+  "tile-bucket-hat"
+ ],
+ "lereng-gift-card": [
+  "tile-lereng-gift-card"
+ ],
+ "discovery-box": [
+  "tile-discovery-box",
+  "promo-discovery"
+ ],
+ "brew-starter-kit": [
+  "promo-brew-kit",
+  "eq-ceramic-dripper",
+  "eq-server"
+ ],
+ "office-pack": [
+  "tile-office-pack",
+  "eq-espresso"
+ ],
+ "roasters-choice-subscription": [
+  "tile-roasters-choice",
+  "photo-roaster"
+ ]
+}

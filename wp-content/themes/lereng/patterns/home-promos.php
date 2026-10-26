@@ -5,9 +5,9 @@
  * Categories: lereng
  */
 $tiles = [
-    ['discovery-box.jpg', __('Discovery Box', 'lereng'), __('Pick three single origins in 100 g bags and save 15%.', 'lereng'), '/product/discovery-box/'],
-    ['brew-kit.jpg', __('Brew Starter Kit', 'lereng'), __('Dripper, filters, server and 200 g of coffee. Everything for your first pour over.', 'lereng'), '/product/brew-starter-kit/'],
-    ['wholesale.jpg', __('For cafés and offices', 'lereng'), __('Wholesale prices from 5 kg a month, a dedicated roast day and barista training.', 'lereng'), '/wholesale/'],
+    ['promo-discovery.jpg', __('Discovery Box', 'lereng'), __('Pick three single origins in 100 g bags and save 15%.', 'lereng'), '/product/discovery-box/'],
+    ['promo-brew-kit.jpg', __('Brew Starter Kit', 'lereng'), __('Dripper, filters, server and 200 g of coffee. Everything for your first pour over.', 'lereng'), '/product/brew-starter-kit/'],
+    ['promo-wholesale.jpg', __('For cafés and offices', 'lereng'), __('Wholesale prices from 5 kg a month, a dedicated roast day and barista training.', 'lereng'), '/wholesale/'],
 ];
 ?>
 <!-- wp:group {"align":"wide","className":"section promos","layout":{"type":"grid","minimumColumnWidth":"18rem"}} -->

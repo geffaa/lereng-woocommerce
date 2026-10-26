@@ -13,7 +13,7 @@ use WC_Product_Variation;
  */
 final class Seeder
 {
-    public const STEPS = ['settings', 'taxonomies', 'products', 'shipping', 'payments', 'extras', 'coupons', 'pages'];
+    public const STEPS = ['settings', 'taxonomies', 'products', 'shipping', 'payments', 'extras', 'coupons', 'pages', 'images'];
 
     /** Global attributes: [slug => [label, used for variations?, filterable?]] */
     public const ATTRIBUTES = [
@@ -47,6 +47,7 @@ final class Seeder
             'extras' => $this->extras(),
             'coupons' => $this->coupons(),
             'pages' => $this->pages(),
+            'images' => $this->images(),
             default => throw new \InvalidArgumentException("Unknown seed step: $step"),
         };
     }
@@ -382,6 +383,59 @@ final class Seeder
         }
         flush_rewrite_rules();
         $this->say(count($pages) . ' content pages');
+    }
+
+    /** Imports data/images into the media library and sets each product's image and gallery. */
+    private function images(): void
+    {
+        require_once ABSPATH . 'wp-admin/includes/image.php';
+        require_once ABSPATH . 'wp-admin/includes/file.php';
+        require_once ABSPATH . 'wp-admin/includes/media.php';
+        // Product images are 1200x1500; three sizes are plenty and keep the demo export small.
+        foreach (['medium_large', '1536x1536', '2048x2048'] as $size) {
+            remove_image_size($size);
+        }
+        update_option('woocommerce_thumbnail_cropping', 'custom');
+        update_option('woocommerce_thumbnail_cropping_custom_width', '4');
+        update_option('woocommerce_thumbnail_cropping_custom_height', '5');
+        update_option('woocommerce_thumbnail_image_width', '480');
+        update_option('woocommerce_single_image_width', '900');
+
+        $map = json_decode(file_get_contents(WP_CONTENT_DIR . '/lereng-data/images.json'), true);
+        $dir = WP_CONTENT_DIR . '/lereng-data/images/';
+        $ids = [];
+        $attach = function (string $name, string $alt) use (&$ids, $dir): int {
+            if (isset($ids[$name])) {
+                return $ids[$name];
+            }
+            $existing = get_posts(['post_type' => 'attachment', 'name' => $name, 'posts_per_page' => 1, 'fields' => 'ids', 'post_status' => 'inherit']);
+            if ($existing) {
+                return $ids[$name] = (int) $existing[0];
+            }
+            $upload = wp_upload_bits("$name.jpg", null, file_get_contents($dir . "$name.jpg"));
+            $id = wp_insert_attachment(['post_mime_type' => 'image/jpeg', 'post_title' => $alt, 'post_name' => $name, 'post_status' => 'inherit'], $upload['file']);
+            wp_update_attachment_metadata($id, wp_generate_attachment_metadata($id, $upload['file']));
+            update_post_meta($id, '_wp_attachment_image_alt', $alt);
+            return $ids[$name] = $id;
+        };
+        $count = 0;
+        foreach ($map as $slug => $names) {
+            $pid = $this->findBySlug($slug);
+            if (!$pid) {
+                continue;
+            }
+            $product = wc_get_product($pid);
+            $title = $product->get_name();
+            $images = [];
+            foreach ($names as $i => $name) {
+                $images[] = $attach($name, $i === 0 ? $title : $title . ' · ' . str_replace(['photo-', 'eq-', 'merch-', 'promo-', '-'], ['', '', '', '', ' '], $name));
+            }
+            $product->set_image_id($images[0]);
+            $product->set_gallery_image_ids(array_slice($images, 1));
+            $product->save();
+            $count++;
+        }
+        $this->say(sprintf('%d images, %d products illustrated', count($ids), $count));
     }
 
     private function findBySlug(string $slug): ?int
