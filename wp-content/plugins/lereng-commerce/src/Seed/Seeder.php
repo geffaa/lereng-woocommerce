@@ -334,8 +334,42 @@ final class Seeder
             }
             update_post_meta($id, '_lereng_bundle_discount', $b['discount']);
         }
+        // Roaster's Choice: subscription only. Shelf price set so the subscription price is a round 125k / 285k.
+        $r = $by['roasters-choice-subscription'];
+        $id = $this->findBySlug($r['slug']);
+        $product = $id ? new WC_Product_Variable($id) : new WC_Product_Variable();
+        $product->set_name($r['name']);
+        $product->set_slug($r['slug']);
+        $product->set_status('publish');
+        $product->set_description(wpautop($r['description']));
+        $product->set_short_description($r['description']);
+        $product->set_category_ids([$this->catId('subscriptions'), $this->catId('coffee')]);
+        $grinds = ['Whole bean', 'Espresso', 'Pour over', 'French press', 'Moka pot'];
+        $product->set_attributes([$this->attribute('size', ['200g', '500g'], true, 0), $this->attribute('grind', $grinds, true, 1)]);
+        $product->set_default_attributes(['pa_size' => '200g', 'pa_grind' => 'whole-bean']);
+        $id = $product->save();
+        update_post_meta($id, '_lereng_subscribable', 'only');
+        update_post_meta($id, '_lereng_notes', "Roaster's pick, Tasting card, Brew recipe");
+        $existing = [];
+        foreach ($product->get_children() as $c) {
+            $existing[get_post_meta($c, '_sku', true)] = $c;
+        }
+        foreach (['200g' => [139000, 240], '500g' => [317000, 540]] as $size => [$price, $grams]) {
+            foreach ($grinds as $gi => $grind) {
+                $sku = 'LR-RC-' . strtoupper($size) . '-' . strtoupper(substr($grind, 0, 2));
+                $v = new WC_Product_Variation($existing[$sku] ?? 0);
+                $v->set_parent_id($id);
+                $v->set_attributes(['pa_size' => sanitize_title($size), 'pa_grind' => sanitize_title($grind)]);
+                $v->set_sku($sku);
+                $v->set_regular_price((string) $price);
+                $v->set_weight((string) $grams);
+                $v->set_menu_order($gi);
+                $v->save();
+            }
+        }
+        WC_Product_Variable::sync($id);
         wc_delete_product_transients();
-        $this->say('gift card (4 amounts), Discovery Box, Brew Starter Kit, Office Pack');
+        $this->say("gift card (4 amounts), Discovery Box, Brew Starter Kit, Office Pack, Roaster's Choice");
     }
 
     private function coupons(): void

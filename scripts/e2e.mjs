@@ -223,6 +223,63 @@ await check('bundle: Discovery Box prices three 100 g bags less 15%', async (pag
   assert(line.item_data.some((d) => (d.name || d.key) === 'Coffees'), `picks missing from cart: ${JSON.stringify(line.item_data)}`);
 });
 
+await check('subscription: subscribe, pay, skip, change, pause, renew and pay, cancel', async (page) => {
+  await page.goto(`${BASE}/product/gayo-washed/?purchase=subscribe`, { waitUntil: 'networkidle0' });
+  assert(await page.$eval('input[value="subscribe"]', (i) => i.checked), 'subscribe not preselected from the link');
+  assert(rupiah(await text(page, '[data-sub]')) === 113000, `sub price ${await text(page, '[data-sub]')}`);
+  await page.select('[name=lereng_interval]', '2');
+  await Promise.all([page.waitForNavigation({ waitUntil: 'networkidle0' }), page.click('.single_add_to_cart_button')]);
+  const cart = await api(page, '/wc/store/v1/cart');
+  const line = cart.body.items[0];
+  assert(Number(line.prices.price) === 113000, `cart price ${line.prices.price}`);
+  assert(line.item_data.some((d) => /every 2 weeks/.test(d.value)), JSON.stringify(line.item_data));
+  const email = `sub${Date.now()}@example.com`;
+  await checkout(page, { method: 'lereng_va', bank: 'BCA', email });
+  await pay(page);
+  // Paying created the account and signed the customer in.
+  await page.goto(`${BASE}/my-account/subscriptions/`, { waitUntil: 'networkidle0' });
+  assert(/Gayo Washed/.test(await text(page, '.subs-table')), 'subscription missing from My account');
+  await Promise.all([page.waitForNavigation({ waitUntil: 'networkidle0' }), page.click('.subs-table a.button')]);
+  const next1 = await text(page, '.sub-view__next b');
+
+  await Promise.all([page.waitForNavigation({ waitUntil: 'networkidle0' }), page.click('form.sub-form input[value="skip"] ~ button, form.sub-form:has(input[value="skip"]) button')]);
+  const next2 = await text(page, '.sub-view__next b');
+  assert(next1 !== next2, `skip did not move the date (${next1})`);
+
+  await page.select('.sub-change select[name=interval]', '4');
+  await page.select('.sub-change select[name=size]', '500g');
+  await Promise.all([page.waitForNavigation({ waitUntil: 'networkidle0' }), page.click('.sub-change button')]);
+  assert(/every 4 weeks/.test(await text(page, '.sub-view__head')), await text(page, '.sub-view__head'));
+  assert(/500g/.test(await text(page, '.sub-view__head')), 'size change');
+
+  const until = new Date(Date.now() + 20 * 864e5).toISOString().slice(0, 10);
+  await page.$eval('form.sub-form input[name=until]', (i, v) => (i.value = v), until);
+  await Promise.all([page.waitForNavigation({ waitUntil: 'networkidle0' }), page.click('form.sub-form.is-inline button')]);
+  assert(/Paused until/.test(await text(page, '.sub-view__head')), await text(page, '.sub-view__head'));
+  await Promise.all([page.waitForNavigation({ waitUntil: 'networkidle0' }), page.click('form.sub-form:has(input[value="resume"]) button')]);
+  assert(/Active/.test(await text(page, '.sub-view__head')), 'resume');
+
+  await Promise.all([page.waitForNavigation({ waitUntil: 'networkidle0' }), page.click('form.sub-form:has(input[value="renew_now"]) button')]);
+  const payLink = await page.$$eval('.sub-timeline a', (as) => as.find((a) => a.textContent === 'pay')?.href);
+  assert(payLink, 'renewal order with a pay link');
+  await page.goto(payLink, { waitUntil: 'networkidle0' });
+  // The renewal reuses the bank chosen at the first checkout (BCA).
+  assert(/^12345\d{11}$/.test((await text(page, '[data-va]')).replace(/\s/g, '')), `renewal VA ${await text(page, '[data-va]')}`);
+  await pay(page);
+  await page.goto(`${BASE}/my-account/subscriptions/`, { waitUntil: 'networkidle0' });
+  await Promise.all([page.waitForNavigation({ waitUntil: 'networkidle0' }), page.click('.subs-table a.button')]);
+  const timeline = await text(page, '.sub-timeline');
+  for (const ev of ['Started', 'Skipped', 'Changed', 'Paused', 'Resumed', 'Renewal ordered', 'Renewal paid']) assert(timeline.includes(ev), `timeline lacks ${ev}`);
+
+  await page.click('.sub-cancel summary');
+  await page.select('.sub-cancel select[name=reason]', 'too_much');
+  await Promise.all([page.waitForNavigation({ waitUntil: 'networkidle0' }), page.click('.sub-cancel button')]);
+  assert(/Cancelled/.test(await text(page, '.sub-view__head')), 'cancel');
+  await page.goto(`${BASE}/demo-inbox/`, { waitUntil: 'networkidle0' });
+  const subjects = await page.$$eval('td a', (as) => as.map((a) => a.textContent));
+  assert(subjects.some((s) => /subscription is on/.test(s)) && subjects.some((s) => /next Lereng delivery/.test(s)), 'subscription emails');
+});
+
 await browser.close();
 const passed = results.filter(Boolean).length;
 console.log(`\n${passed}/${results.length} passed`);

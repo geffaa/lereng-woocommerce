@@ -39,6 +39,7 @@ final class Plugin
             Bundles\Bundles::class,
             Promotions\Coupons::class,
             Checkout\CheckoutFields::class,
+            Subscriptions\Subscriptions::class,
         ]);
     }
 

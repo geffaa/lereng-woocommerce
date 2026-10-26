@@ -46,6 +46,19 @@ abstract class SandboxGateway extends WC_Payment_Gateway
     public function process_payment($order_id): array
     {
         $order = wc_get_order($order_id);
+        $this->startPayment($order);
+        if (WC()->cart) {
+            WC()->cart->empty_cart();
+        }
+        return ['result' => 'success', 'redirect' => Payments::payUrl($order)];
+    }
+
+    /**
+     * Opens a payment for an order: transaction details, expiry, and the job that cancels it if
+     * unpaid. Used at checkout and for subscription renewals (with a longer window).
+     */
+    public function startPayment(\WC_Order $order, ?int $expiresAt = null): array
+    {
         $minutes = max(5, (int) $this->get_option('expiry', (string) $this->defaultExpiryMinutes()));
         $txn = [
             'order_id' => Payments::txnOrderId($order),
@@ -53,18 +66,17 @@ abstract class SandboxGateway extends WC_Payment_Gateway
             'method' => $this->id,
             'amount' => (int) round((float) $order->get_total()),
             'created' => time(),
-            'expires' => time() + $minutes * 60,
+            'expires' => $expiresAt ?? time() + $minutes * 60,
         ] + $this->details($order);
         $order->update_meta_data('_lereng_payment', $txn);
+        $order->set_payment_method($this);
         $order->set_transaction_id($txn['transaction_id']);
         $order->set_status('pending');
         $order->add_order_note(sprintf(__('Waiting for %1$s payment (expires %2$s).', 'lereng'), $this->method_title, wp_date('j M H:i', $txn['expires'])));
         $order->save();
+        as_unschedule_all_actions('lereng_payment_expire', ['order_id' => $order->get_id()], 'lereng');
         as_schedule_single_action($txn['expires'] + 30, 'lereng_payment_expire', ['order_id' => $order->get_id()], 'lereng');
-        if (WC()->cart) {
-            WC()->cart->empty_cart();
-        }
-        return ['result' => 'success', 'redirect' => Payments::payUrl($order)];
+        return $txn;
     }
 
     public function process_refund($order_id, $amount = null, $reason = ''): bool
