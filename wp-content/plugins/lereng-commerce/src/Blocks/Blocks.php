@@ -144,7 +144,10 @@ final class Blocks
         $pre = get_post_meta($p->get_id(), '_lereng_preorder', true);
         $lines = $pre
             ? [esc_html($pre['note'] ?? '')]
-            : [esc_html__('Roasted to order on Monday and Thursday, shipped the same day', 'lereng'), esc_html__('Free delivery in Bali over Rp 300.000 · JNE, SiCepat and GoSend', 'lereng')];
+            : [
+                esc_html(sprintf(__('Order now and we roast it on %s, then ship the same day', 'lereng'), wp_date('l j F', \Lereng\Catalog\RoastSchedule::nextRoast(new \DateTimeImmutable())->getTimestamp() + 43200))),
+                esc_html__('Free delivery in Bali over Rp 300.000 · JNE, SiCepat and GoSend', 'lereng'),
+            ];
         return '<ul class="promise">' . implode('', array_map(static fn($l) => "<li>$l</li>", $lines)) . '</ul>';
     }
 }

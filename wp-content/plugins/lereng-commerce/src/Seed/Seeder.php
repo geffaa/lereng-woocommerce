@@ -13,7 +13,7 @@ use WC_Product_Variation;
  */
 final class Seeder
 {
-    public const STEPS = ['settings', 'taxonomies', 'products'];
+    public const STEPS = ['settings', 'taxonomies', 'products', 'shipping', 'payments', 'extras', 'coupons', 'pages'];
 
     /** Global attributes: [slug => [label, used for variations?, filterable?]] */
     public const ATTRIBUTES = [
@@ -42,6 +42,11 @@ final class Seeder
             'settings' => $this->settings(),
             'taxonomies' => $this->taxonomies(),
             'products' => $this->products(),
+            'shipping' => $this->shipping(),
+            'payments' => $this->payments(),
+            'extras' => $this->extras(),
+            'coupons' => $this->coupons(),
+            'pages' => $this->pages(),
             default => throw new \InvalidArgumentException("Unknown seed step: $step"),
         };
     }
@@ -87,6 +92,9 @@ final class Seeder
             'woocommerce_manage_stock' => 'yes',
             'woocommerce_notify_low_stock_amount' => '5',
             'woocommerce_enable_guest_checkout' => 'yes',
+            'woocommerce_checkout_phone_field' => 'required', // couriers call before delivering
+            'woocommerce_checkout_company_field' => 'optional',
+            'woocommerce_checkout_address_2_field' => 'optional',
             'woocommerce_enable_checkout_login_reminder' => 'yes',
             'woocommerce_enable_signup_and_login_from_checkout' => 'yes',
             'woocommerce_enable_myaccount_registration' => 'yes',
@@ -167,6 +175,213 @@ final class Seeder
         }
         wc_delete_product_transients();
         $this->say(sprintf('%d coffees, %d simple products, %d merch', $made['coffee'], $made['simple'], $made['variable-merch']));
+    }
+
+    private function shipping(): void
+    {
+        // One zone for Indonesia with the courier method; prices come from RateTable.
+        $zoneId = null;
+        foreach (\WC_Shipping_Zones::get_zones() as $z) {
+            if ($z['zone_name'] === 'Indonesia') {
+                $zoneId = $z['id'];
+            }
+        }
+        $zone = new \WC_Shipping_Zone($zoneId);
+        $zone->set_zone_name('Indonesia');
+        $zone->set_zone_order(1);
+        $zone->set_locations([['code' => 'ID', 'type' => 'country']]);
+        $zone->save();
+        $has = array_filter($zone->get_shipping_methods(), static fn($m) => $m->id === 'lereng_courier');
+        if (!$has) {
+            $zone->add_shipping_method('lereng_courier');
+        }
+
+        // Pickup at the roastery (WooCommerce Local Pickup, shown as a choice in the block checkout).
+        update_option('woocommerce_pickup_location_settings', ['enabled' => 'yes', 'title' => 'Pick up at the roastery', 'tax_status' => 'taxable', 'cost' => '']);
+        update_option('pickup_location_pickup_locations', [[
+            'name' => 'Lereng Roastery, Kerobokan',
+            'address' => ['address_1' => 'Jl. Raya Kerobokan No. 88', 'city' => 'Badung', 'state' => 'BA', 'postcode' => '80361', 'country' => 'ID'],
+            'details' => 'Tuesday to Sunday, 8:00–17:00. Ready two hours after you order (coffee on the next roast day).',
+            'enabled' => true,
+        ]]);
+
+        // Cold brew must stay cold: a shipping class the courier method recognises.
+        $term = term_exists('chilled-bali-only', 'product_shipping_class') ?: wp_insert_term('Chilled (Bali only)', 'product_shipping_class', ['slug' => 'chilled-bali-only', 'description' => 'Same-day delivery in south Bali or pickup only']);
+        foreach ($this->catalog['products'] as $p) {
+            if (($p['shipping_class'] ?? '') === 'chilled-bali-only' && ($id = $this->findBySlug($p['slug']))) {
+                $prod = wc_get_product($id);
+                $prod->set_shipping_class_id((int) $term['term_id']);
+                $prod->save();
+            }
+        }
+        // WooCommerce shows shipping costs only once an address is entered.
+        update_option('woocommerce_shipping_cost_requires_address', 'yes');
+        update_option('woocommerce_enable_shipping_calc', 'yes');
+        $this->say('Indonesia zone with couriers, roastery pickup, chilled class for cold brew');
+    }
+
+    private function payments(): void
+    {
+        update_option('woocommerce_lereng_qris_settings', ['enabled' => 'yes', 'expiry' => '15']);
+        update_option('woocommerce_lereng_va_settings', ['enabled' => 'yes', 'expiry' => '1440']);
+        // Bank transfer by invoice stays available for wholesale accounts (see Wholesale module).
+        update_option('woocommerce_bacs_settings', ['enabled' => 'no']);
+        update_option('woocommerce_cod_settings', ['enabled' => 'no']);
+        update_option('woocommerce_gateway_order', ['lereng_qris' => 0, 'lereng_va' => 1, 'bacs' => 2]);
+        update_option('lereng_payments_sandbox', 'yes');
+        \Lereng\Payments\Payments::serverKey();
+        flush_rewrite_rules();
+        $this->say('QRIS and virtual account (sandbox) enabled; payment page at /pay/<order key>/');
+    }
+
+    /** The gift card and the bundles: products that need the modules' extra data. */
+    private function extras(): void
+    {
+        $by = [];
+        foreach ($this->catalog['products'] as $p) {
+            $by[$p['slug']] = $p;
+        }
+
+        // Gift card: variable product, one variation per amount, virtual and outside PPN.
+        $g = $by['lereng-gift-card'];
+        $id = $this->findBySlug($g['slug']);
+        $product = $id ? new WC_Product_Variable($id) : new WC_Product_Variable();
+        $product->set_name($g['name']);
+        $product->set_slug($g['slug']);
+        $product->set_status('publish');
+        $product->set_description(wpautop($g['description']));
+        $product->set_short_description($g['description']);
+        $product->set_category_ids([$this->catId('gift-cards')]);
+        $product->set_tax_status('none');
+        $amounts = array_map(static fn($a) => 'Rp ' . number_format($a, 0, ',', '.'), $g['amounts']);
+        $attr = new WC_Product_Attribute();
+        $attr->set_name('Amount');
+        $attr->set_options($amounts);
+        $attr->set_variation(true);
+        $attr->set_visible(true);
+        $product->set_attributes([$attr]);
+        $id = $product->save();
+        update_post_meta($id, '_lereng_gift_card', 'yes');
+        $existing = [];
+        foreach ($product->get_children() as $c) {
+            $existing[get_post_meta($c, '_sku', true)] = $c;
+        }
+        foreach ($g['amounts'] as $i => $a) {
+            $sku = 'LR-GIFT-' . ($a / 1000) . 'K';
+            $v = new WC_Product_Variation($existing[$sku] ?? 0);
+            $v->set_parent_id($id);
+            $v->set_attributes(['amount' => $amounts[$i]]);
+            $v->set_sku($sku);
+            $v->set_regular_price((string) $a);
+            $v->set_virtual(true);
+            $v->set_tax_status('none');
+            $v->set_menu_order($i);
+            $v->save();
+        }
+        WC_Product_Variable::sync($id);
+
+        // Bundles.
+        $varId = function (string $slug, string $size, string $grind): int {
+            $pid = $this->findBySlug($slug);
+            foreach (wc_get_product($pid)->get_children() as $c) {
+                $v = wc_get_product($c);
+                if ($v->get_attribute('pa_size') === $size && $v->get_attribute('pa_grind') === $grind) {
+                    return $c;
+                }
+            }
+            return $pid;
+        };
+        foreach (['discovery-box', 'brew-starter-kit', 'office-pack'] as $slug) {
+            $b = $by[$slug];
+            $id = $this->findBySlug($slug);
+            $product = new WC_Product_Simple($id ?? 0);
+            $product->set_name($b['name']);
+            $product->set_slug($slug);
+            $product->set_status('publish');
+            $product->set_description(wpautop($b['description']));
+            $product->set_short_description($b['description']);
+            $product->set_category_ids([$this->catId('bundles')]);
+            $product->set_sku('LR-BUNDLE-' . strtoupper($slug));
+            if ($b['type'] === 'bundle-pick') {
+                $prices = array_column(\Lereng\Bundles\Bundles::pickable(), 'price200');
+                sort($prices);
+                $product->set_regular_price((string) \Lereng\Bundles\Pricing::pick(array_slice($prices, 0, $b['pick']), $b['discount']));
+                $product->set_weight((string) ($b['pick'] * 130));
+                $id = $product->save();
+                update_post_meta($id, '_lereng_bundle', 'pick');
+                update_post_meta($id, '_lereng_pick_count', $b['pick']);
+            } else {
+                $items = [];
+                $priced = [];
+                $weight = 0;
+                foreach ($b['items'] as [$compSlug, $qty]) {
+                    $cid = isset($b['variation']) ? $varId($compSlug, $b['variation']['size'], $b['variation']['grind']) : $this->findBySlug($compSlug);
+                    $comp = wc_get_product($cid);
+                    if ($comp->is_type('variable')) {
+                        $cid = $varId($compSlug, '200g', 'Whole bean');
+                        $comp = wc_get_product($cid);
+                    }
+                    $items[] = [$cid, $qty];
+                    $priced[] = [(int) $comp->get_price(), $qty];
+                    $weight += (float) $comp->get_weight() * $qty;
+                }
+                $product->set_regular_price((string) \Lereng\Bundles\Pricing::fixed($priced, $b['discount']));
+                $product->set_weight((string) $weight);
+                $id = $product->save();
+                update_post_meta($id, '_lereng_bundle', 'fixed');
+                update_post_meta($id, '_lereng_bundle_items', $items);
+            }
+            update_post_meta($id, '_lereng_bundle_discount', $b['discount']);
+        }
+        wc_delete_product_transients();
+        $this->say('gift card (4 amounts), Discovery Box, Brew Starter Kit, Office Pack');
+    }
+
+    private function coupons(): void
+    {
+        $defs = [
+            ['WELCOME10', 'percent', 10, ['first' => true, 'individual' => true, 'desc' => '10% off a first order']],
+            ['BALI50', 'fixed_cart', 50000, ['min' => 400000, 'per_user' => 1, 'desc' => 'Rp 50.000 off orders over Rp 400.000']],
+            ['FREEONGKIR', 'fixed_cart', 0, ['free_shipping' => true, 'min' => 250000, 'desc' => 'Free delivery over Rp 250.000']],
+            ['GAYO20', 'percent', 20, ['products' => ['gayo-wine-natural', 'gayo-washed', 'gayo-wet-hulled'], 'expires' => '+30 days', 'desc' => '20% off Gayo coffees this month']],
+            ['KOPIPAGI', 'percent', 15, ['expires' => '-3 days', 'desc' => 'Expired launch code (kept to show the message)']],
+        ];
+        foreach ($defs as [$code, $type, $amount, $o]) {
+            $id = wc_get_coupon_id_by_code($code);
+            $c = new \WC_Coupon($id ?: 0);
+            $c->set_code($code);
+            $c->set_discount_type($type);
+            $c->set_amount($amount);
+            $c->set_description($o['desc']);
+            $c->set_individual_use(!empty($o['individual']));
+            $c->set_free_shipping(!empty($o['free_shipping']));
+            $c->set_minimum_amount($o['min'] ?? '');
+            $c->set_usage_limit_per_user($o['per_user'] ?? 0);
+            if (!empty($o['products'])) {
+                $c->set_product_ids(array_filter(array_map(fn($s) => $this->findBySlug($s), $o['products'])));
+            }
+            $c->set_date_expires(isset($o['expires']) ? strtotime($o['expires']) : null);
+            if (!empty($o['first'])) {
+                $c->update_meta_data('_lereng_first_order', 'yes');
+            }
+            $c->save();
+        }
+        $this->say(count($defs) . ' coupons: WELCOME10, BALI50, FREEONGKIR, GAYO20, KOPIPAGI (expired)');
+    }
+
+    private function pages(): void
+    {
+        $pages = json_decode(file_get_contents(WP_CONTENT_DIR . '/lereng-data/pages.json'), true);
+        foreach ($pages as $slug => $page) {
+            $existing = get_page_by_path($slug);
+            $args = ['post_type' => 'page', 'post_status' => 'publish', 'post_name' => $slug, 'post_title' => $page['title'], 'post_content' => $page['content'], 'page_template' => $page['template'] ?? ''];
+            $id = $existing ? wp_update_post(['ID' => $existing->ID] + $args) : wp_insert_post($args);
+            if (!empty($page['option'])) {
+                update_option($page['option'], $id);
+            }
+        }
+        flush_rewrite_rules();
+        $this->say(count($pages) . ' content pages');
     }
 
     private function findBySlug(string $slug): ?int

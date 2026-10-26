@@ -3,7 +3,8 @@
  * no PHP, MySQL or Docker setup, and the same runtime the live demo uses.
  *
  *   node scripts/wp.mjs setup          install WordPress + pinned WooCommerce into .wp/site (once)
- *   node scripts/wp.mjs serve          http://127.0.0.1:9400 with the theme, plugin and data mounted
+ *   node scripts/wp.mjs serve [--login] http://127.0.0.1:9400 with the theme, plugin and data mounted
+ *                                      (--login signs every visitor in as admin; leave it off to shop as a guest)
  *   node scripts/wp.mjs php <file>     run a PHP file inside the site (output is printed)
  *   node scripts/wp.mjs seed [step]    run the catalog / customer / order seeders
  *
@@ -71,7 +72,7 @@ if (cmd === 'setup') {
   await playground('run-blueprint', [`--blueprint=${bp}`, '--blueprint-may-read-adjacent-files']);
   console.log('Site ready in .wp/site');
 } else if (cmd === 'serve') {
-  await playground('server', ['--port=9400', '--login', ...rest]);
+  await playground('server', ['--port=9400', ...rest]);
 } else if (cmd === 'php') {
   await runPhp(`/wordpress/wp-content/${rest[0].replace(/^wp-content\//, '')}`, rest.slice(1));
 } else if (cmd === 'seed') {

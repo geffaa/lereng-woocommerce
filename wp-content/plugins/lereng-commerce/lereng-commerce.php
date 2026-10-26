@@ -42,6 +42,7 @@ add_action('plugins_loaded', static function (): void {
         return;
     }
     load_plugin_textdomain('lereng', false, dirname(plugin_basename(__FILE__)) . '/languages');
+    Lereng\Install::maybeUpgrade();
     Lereng\Plugin::instance()->boot();
 });
 

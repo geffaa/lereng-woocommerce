@@ -32,6 +32,13 @@ final class Plugin
         return apply_filters('lereng_modules', [
             Catalog\CoffeeData::class,
             Blocks\Blocks::class,
+            Shipping\Shipping::class,
+            Payments\Payments::class,
+            Mail\Outbox::class,
+            GiftCards\GiftCards::class,
+            Bundles\Bundles::class,
+            Promotions\Coupons::class,
+            Checkout\CheckoutFields::class,
         ]);
     }
 
