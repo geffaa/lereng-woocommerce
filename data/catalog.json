@@ -1,0 +1,5523 @@
+{
+ "brand": "Lereng Coffee Roasters",
+ "currency": "IDR",
+ "categories": [
+  {
+   "slug": "coffee",
+   "name": "Coffee",
+   "name_id": "Kopi",
+   "parent": null
+  },
+  {
+   "slug": "single-origin",
+   "name": "Single origin",
+   "name_id": "Single origin",
+   "parent": "coffee"
+  },
+  {
+   "slug": "blends",
+   "name": "Blends",
+   "name_id": "Blend",
+   "parent": "coffee"
+  },
+  {
+   "slug": "micro-lots",
+   "name": "Micro-lots",
+   "name_id": "Micro-lot",
+   "parent": "coffee"
+  },
+  {
+   "slug": "drip-bags",
+   "name": "Drip bags",
+   "name_id": "Drip bag",
+   "parent": "coffee"
+  },
+  {
+   "slug": "cold-brew",
+   "name": "Cold brew",
+   "name_id": "Cold brew",
+   "parent": "coffee"
+  },
+  {
+   "slug": "equipment",
+   "name": "Equipment",
+   "name_id": "Peralatan",
+   "parent": null
+  },
+  {
+   "slug": "brewers",
+   "name": "Brewers",
+   "name_id": "Alat seduh",
+   "parent": "equipment"
+  },
+  {
+   "slug": "grinders",
+   "name": "Grinders",
+   "name_id": "Grinder",
+   "parent": "equipment"
+  },
+  {
+   "slug": "kettles-scales",
+   "name": "Kettles & scales",
+   "name_id": "Ketel & timbangan",
+   "parent": "equipment"
+  },
+  {
+   "slug": "filters",
+   "name": "Filters",
+   "name_id": "Filter",
+   "parent": "equipment"
+  },
+  {
+   "slug": "merch",
+   "name": "Merch",
+   "name_id": "Merchandise",
+   "parent": null
+  },
+  {
+   "slug": "gift-cards",
+   "name": "Gift cards",
+   "name_id": "Kartu hadiah",
+   "parent": null
+  },
+  {
+   "slug": "bundles",
+   "name": "Bundles",
+   "name_id": "Paket",
+   "parent": null
+  },
+  {
+   "slug": "subscriptions",
+   "name": "Subscriptions",
+   "name_id": "Langganan",
+   "parent": null
+  }
+ ],
+ "products": [
+  {
+   "slug": "gayo-wine-natural",
+   "name": "Gayo Wine Natural",
+   "type": "coffee",
+   "kind": "single-origin",
+   "island": "Sumatra",
+   "province": "Aceh",
+   "region": "Gayo Highlands, Bener Meriah",
+   "producer": "Koperasi Tani Ketiara Atas",
+   "process": "Natural",
+   "roast": "light",
+   "altitude": "1,450–1,600 m",
+   "varietals": "Ateng, Tim Tim, Bourbon",
+   "notes": [
+    "Red wine",
+    "Dark cherry",
+    "Cacao nib"
+   ],
+   "taste": [
+    "fruity",
+    "winey"
+   ],
+   "score": 86.5,
+   "price": 155000,
+   "story": "Cherries dried whole on raised beds for 28 days until the skins turn the colour of plum.",
+   "species": "Arabica",
+   "harvest": "2026",
+   "recipe": "Pour over · 15 g coffee to 250 g water at 93 °C · 2:45 total",
+   "subscribable": true,
+   "category": "single-origin",
+   "variations": [
+    {
+     "size": "200g",
+     "grind": "Whole bean",
+     "price": 155000,
+     "weight_g": 240,
+     "sku": "LR-GAYO-WINE-NATURAL-200-WH"
+    },
+    {
+     "size": "200g",
+     "grind": "Espresso",
+     "price": 155000,
+     "weight_g": 240,
+     "sku": "LR-GAYO-WINE-NATURAL-200-ES"
+    },
+    {
+     "size": "200g",
+     "grind": "Pour over",
+     "price": 155000,
+     "weight_g": 240,
+     "sku": "LR-GAYO-WINE-NATURAL-200-PO"
+    },
+    {
+     "size": "200g",
+     "grind": "French press",
+     "price": 155000,
+     "weight_g": 240,
+     "sku": "LR-GAYO-WINE-NATURAL-200-FR"
+    },
+    {
+     "size": "200g",
+     "grind": "Moka pot",
+     "price": 155000,
+     "weight_g": 240,
+     "sku": "LR-GAYO-WINE-NATURAL-200-MO"
+    },
+    {
+     "size": "500g",
+     "grind": "Whole bean",
+     "price": 355000,
+     "weight_g": 540,
+     "sku": "LR-GAYO-WINE-NATURAL-500-WH"
+    },
+    {
+     "size": "500g",
+     "grind": "Espresso",
+     "price": 355000,
+     "weight_g": 540,
+     "sku": "LR-GAYO-WINE-NATURAL-500-ES"
+    },
+    {
+     "size": "500g",
+     "grind": "Pour over",
+     "price": 355000,
+     "weight_g": 540,
+     "sku": "LR-GAYO-WINE-NATURAL-500-PO"
+    },
+    {
+     "size": "500g",
+     "grind": "French press",
+     "price": 355000,
+     "weight_g": 540,
+     "sku": "LR-GAYO-WINE-NATURAL-500-FR"
+    },
+    {
+     "size": "500g",
+     "grind": "Moka pot",
+     "price": 355000,
+     "weight_g": 540,
+     "sku": "LR-GAYO-WINE-NATURAL-500-MO"
+    },
+    {
+     "size": "1kg",
+     "grind": "Whole bean",
+     "price": 665000,
+     "weight_g": 1040,
+     "sku": "LR-GAYO-WINE-NATURAL-1000-WH"
+    },
+    {
+     "size": "1kg",
+     "grind": "Espresso",
+     "price": 665000,
+     "weight_g": 1040,
+     "sku": "LR-GAYO-WINE-NATURAL-1000-ES"
+    },
+    {
+     "size": "1kg",
+     "grind": "Pour over",
+     "price": 665000,
+     "weight_g": 1040,
+     "sku": "LR-GAYO-WINE-NATURAL-1000-PO"
+    },
+    {
+     "size": "1kg",
+     "grind": "French press",
+     "price": 665000,
+     "weight_g": 1040,
+     "sku": "LR-GAYO-WINE-NATURAL-1000-FR"
+    },
+    {
+     "size": "1kg",
+     "grind": "Moka pot",
+     "price": 665000,
+     "weight_g": 1040,
+     "sku": "LR-GAYO-WINE-NATURAL-1000-MO"
+    }
+   ]
+  },
+  {
+   "slug": "gayo-washed",
+   "name": "Gayo Washed",
+   "type": "coffee",
+   "kind": "single-origin",
+   "island": "Sumatra",
+   "province": "Aceh",
+   "region": "Gayo Highlands, Aceh Tengah",
+   "producer": "Kelompok Tani Lut Tawar",
+   "process": "Washed",
+   "roast": "light",
+   "altitude": "1,400–1,550 m",
+   "varietals": "Ateng, Gayo 1",
+   "notes": [
+    "Lime",
+    "Brown sugar",
+    "Black tea"
+   ],
+   "taste": [
+    "citrus",
+    "sweet"
+   ],
+   "score": 85.0,
+   "price": 125000,
+   "story": "Grown around Lake Lut Tawar and washed in spring water from the ridge above the farms.",
+   "species": "Arabica",
+   "harvest": "2026",
+   "recipe": "Pour over · 15 g coffee to 250 g water at 93 °C · 2:45 total",
+   "subscribable": true,
+   "category": "single-origin",
+   "variations": [
+    {
+     "size": "200g",
+     "grind": "Whole bean",
+     "price": 125000,
+     "weight_g": 240,
+     "sku": "LR-GAYO-WASHED-200-WH"
+    },
+    {
+     "size": "200g",
+     "grind": "Espresso",
+     "price": 125000,
+     "weight_g": 240,
+     "sku": "LR-GAYO-WASHED-200-ES"
+    },
+    {
+     "size": "200g",
+     "grind": "Pour over",
+     "price": 125000,
+     "weight_g": 240,
+     "sku": "LR-GAYO-WASHED-200-PO"
+    },
+    {
+     "size": "200g",
+     "grind": "French press",
+     "price": 125000,
+     "weight_g": 240,
+     "sku": "LR-GAYO-WASHED-200-FR"
+    },
+    {
+     "size": "200g",
+     "grind": "Moka pot",
+     "price": 125000,
+     "weight_g": 240,
+     "sku": "LR-GAYO-WASHED-200-MO"
+    },
+    {
+     "size": "500g",
+     "grind": "Whole bean",
+     "price": 290000,
+     "weight_g": 540,
+     "sku": "LR-GAYO-WASHED-500-WH"
+    },
+    {
+     "size": "500g",
+     "grind": "Espresso",
+     "price": 290000,
+     "weight_g": 540,
+     "sku": "LR-GAYO-WASHED-500-ES"
+    },
+    {
+     "size": "500g",
+     "grind": "Pour over",
+     "price": 290000,
+     "weight_g": 540,
+     "sku": "LR-GAYO-WASHED-500-PO"
+    },
+    {
+     "size": "500g",
+     "grind": "French press",
+     "price": 290000,
+     "weight_g": 540,
+     "sku": "LR-GAYO-WASHED-500-FR"
+    },
+    {
+     "size": "500g",
+     "grind": "Moka pot",
+     "price": 290000,
+     "weight_g": 540,
+     "sku": "LR-GAYO-WASHED-500-MO"
+    },
+    {
+     "size": "1kg",
+     "grind": "Whole bean",
+     "price": 540000,
+     "weight_g": 1040,
+     "sku": "LR-GAYO-WASHED-1000-WH"
+    },
+    {
+     "size": "1kg",
+     "grind": "Espresso",
+     "price": 540000,
+     "weight_g": 1040,
+     "sku": "LR-GAYO-WASHED-1000-ES"
+    },
+    {
+     "size": "1kg",
+     "grind": "Pour over",
+     "price": 540000,
+     "weight_g": 1040,
+     "sku": "LR-GAYO-WASHED-1000-PO"
+    },
+    {
+     "size": "1kg",
+     "grind": "French press",
+     "price": 540000,
+     "weight_g": 1040,
+     "sku": "LR-GAYO-WASHED-1000-FR"
+    },
+    {
+     "size": "1kg",
+     "grind": "Moka pot",
+     "price": 540000,
+     "weight_g": 1040,
+     "sku": "LR-GAYO-WASHED-1000-MO"
+    }
+   ]
+  },
+  {
+   "slug": "gayo-wet-hulled",
+   "name": "Gayo Giling Basah",
+   "type": "coffee",
+   "kind": "single-origin",
+   "island": "Sumatra",
+   "province": "Aceh",
+   "region": "Takengon",
+   "producer": "Pak Ramli and neighbours",
+   "process": "Wet-hulled",
+   "roast": "medium-dark",
+   "altitude": "1,300–1,500 m",
+   "varietals": "Ateng, Tim Tim",
+   "notes": [
+    "Cedar",
+    "Dark chocolate",
+    "Molasses"
+   ],
+   "taste": [
+    "earthy",
+    "chocolatey"
+   ],
+   "score": 84.0,
+   "price": 105000,
+   "story": "Giling basah is how most Sumatran coffee is processed: hulled while still wet, giving that heavy, cedar-like body.",
+   "species": "Arabica",
+   "harvest": "2026",
+   "recipe": "Espresso · 18 g in, 36 g out, 27 s · great with milk",
+   "subscribable": true,
+   "category": "single-origin",
+   "variations": [
+    {
+     "size": "200g",
+     "grind": "Whole bean",
+     "price": 105000,
+     "weight_g": 240,
+     "sku": "LR-GAYO-WET-HULLED-200-WH"
+    },
+    {
+     "size": "200g",
+     "grind": "Espresso",
+     "price": 105000,
+     "weight_g": 240,
+     "sku": "LR-GAYO-WET-HULLED-200-ES"
+    },
+    {
+     "size": "200g",
+     "grind": "Pour over",
+     "price": 105000,
+     "weight_g": 240,
+     "sku": "LR-GAYO-WET-HULLED-200-PO"
+    },
+    {
+     "size": "200g",
+     "grind": "French press",
+     "price": 105000,
+     "weight_g": 240,
+     "sku": "LR-GAYO-WET-HULLED-200-FR"
+    },
+    {
+     "size": "200g",
+     "grind": "Moka pot",
+     "price": 105000,
+     "weight_g": 240,
+     "sku": "LR-GAYO-WET-HULLED-200-MO"
+    },
+    {
+     "size": "500g",
+     "grind": "Whole bean",
+     "price": 240000,
+     "weight_g": 540,
+     "sku": "LR-GAYO-WET-HULLED-500-WH"
+    },
+    {
+     "size": "500g",
+     "grind": "Espresso",
+     "price": 240000,
+     "weight_g": 540,
+     "sku": "LR-GAYO-WET-HULLED-500-ES"
+    },
+    {
+     "size": "500g",
+     "grind": "Pour over",
+     "price": 240000,
+     "weight_g": 540,
+     "sku": "LR-GAYO-WET-HULLED-500-PO"
+    },
+    {
+     "size": "500g",
+     "grind": "French press",
+     "price": 240000,
+     "weight_g": 540,
+     "sku": "LR-GAYO-WET-HULLED-500-FR"
+    },
+    {
+     "size": "500g",
+     "grind": "Moka pot",
+     "price": 240000,
+     "weight_g": 540,
+     "sku": "LR-GAYO-WET-HULLED-500-MO"
+    },
+    {
+     "size": "1kg",
+     "grind": "Whole bean",
+     "price": 450000,
+     "weight_g": 1040,
+     "sku": "LR-GAYO-WET-HULLED-1000-WH"
+    },
+    {
+     "size": "1kg",
+     "grind": "Espresso",
+     "price": 450000,
+     "weight_g": 1040,
+     "sku": "LR-GAYO-WET-HULLED-1000-ES"
+    },
+    {
+     "size": "1kg",
+     "grind": "Pour over",
+     "price": 450000,
+     "weight_g": 1040,
+     "sku": "LR-GAYO-WET-HULLED-1000-PO"
+    },
+    {
+     "size": "1kg",
+     "grind": "French press",
+     "price": 450000,
+     "weight_g": 1040,
+     "sku": "LR-GAYO-WET-HULLED-1000-FR"
+    },
+    {
+     "size": "1kg",
+     "grind": "Moka pot",
+     "price": 450000,
+     "weight_g": 1040,
+     "sku": "LR-GAYO-WET-HULLED-1000-MO"
+    }
+   ]
+  },
+  {
+   "slug": "kerinci-honey",
+   "name": "Kerinci Yellow Honey",
+   "type": "coffee",
+   "kind": "single-origin",
+   "island": "Sumatra",
+   "province": "Jambi",
+   "region": "Kayu Aro, Kerinci",
+   "producer": "Koperasi Alko Kerinci",
+   "process": "Honey",
+   "roast": "light",
+   "altitude": "1,500–1,700 m",
+   "varietals": "Andungsari, Sigarar Utang",
+   "notes": [
+    "Pineapple",
+    "Honey",
+    "Lemongrass"
+   ],
+   "taste": [
+    "fruity",
+    "sweet"
+   ],
+   "score": 86.0,
+   "price": 145000,
+   "story": "Grown on the slopes of Mount Kerinci, the highest volcano in Indonesia, next to the Kayu Aro tea estates.",
+   "species": "Arabica",
+   "harvest": "2026",
+   "recipe": "Pour over · 15 g coffee to 250 g water at 93 °C · 2:45 total",
+   "subscribable": true,
+   "category": "single-origin",
+   "variations": [
+    {
+     "size": "200g",
+     "grind": "Whole bean",
+     "price": 145000,
+     "weight_g": 240,
+     "sku": "LR-KERINCI-HONEY-200-WH"
+    },
+    {
+     "size": "200g",
+     "grind": "Espresso",
+     "price": 145000,
+     "weight_g": 240,
+     "sku": "LR-KERINCI-HONEY-200-ES"
+    },
+    {
+     "size": "200g",
+     "grind": "Pour over",
+     "price": 145000,
+     "weight_g": 240,
+     "sku": "LR-KERINCI-HONEY-200-PO"
+    },
+    {
+     "size": "200g",
+     "grind": "French press",
+     "price": 145000,
+     "weight_g": 240,
+     "sku": "LR-KERINCI-HONEY-200-FR"
+    },
+    {
+     "size": "200g",
+     "grind": "Moka pot",
+     "price": 145000,
+     "weight_g": 240,
+     "sku": "LR-KERINCI-HONEY-200-MO"
+    },
+    {
+     "size": "500g",
+     "grind": "Whole bean",
+     "price": 335000,
+     "weight_g": 540,
+     "sku": "LR-KERINCI-HONEY-500-WH"
+    },
+    {
+     "size": "500g",
+     "grind": "Espresso",
+     "price": 335000,
+     "weight_g": 540,
+     "sku": "LR-KERINCI-HONEY-500-ES"
+    },
+    {
+     "size": "500g",
+     "grind": "Pour over",
+     "price": 335000,
+     "weight_g": 540,
+     "sku": "LR-KERINCI-HONEY-500-PO"
+    },
+    {
+     "size": "500g",
+     "grind": "French press",
+     "price": 335000,
+     "weight_g": 540,
+     "sku": "LR-KERINCI-HONEY-500-FR"
+    },
+    {
+     "size": "500g",
+     "grind": "Moka pot",
+     "price": 335000,
+     "weight_g": 540,
+     "sku": "LR-KERINCI-HONEY-500-MO"
+    },
+    {
+     "size": "1kg",
+     "grind": "Whole bean",
+     "price": 625000,
+     "weight_g": 1040,
+     "sku": "LR-KERINCI-HONEY-1000-WH"
+    },
+    {
+     "size": "1kg",
+     "grind": "Espresso",
+     "price": 625000,
+     "weight_g": 1040,
+     "sku": "LR-KERINCI-HONEY-1000-ES"
+    },
+    {
+     "size": "1kg",
+     "grind": "Pour over",
+     "price": 625000,
+     "weight_g": 1040,
+     "sku": "LR-KERINCI-HONEY-1000-PO"
+    },
+    {
+     "size": "1kg",
+     "grind": "French press",
+     "price": 625000,
+     "weight_g": 1040,
+     "sku": "LR-KERINCI-HONEY-1000-FR"
+    },
+    {
+     "size": "1kg",
+     "grind": "Moka pot",
+     "price": 625000,
+     "weight_g": 1040,
+     "sku": "LR-KERINCI-HONEY-1000-MO"
+    }
+   ]
+  },
+  {
+   "slug": "kerinci-washed",
+   "name": "Kerinci Washed",
+   "type": "coffee",
+   "kind": "single-origin",
+   "island": "Sumatra",
+   "province": "Jambi",
+   "region": "Gunung Tujuh, Kerinci",
+   "producer": "Kelompok Tani Danau Kaco",
+   "process": "Washed",
+   "roast": "light",
+   "altitude": "1,400–1,600 m",
+   "varietals": "Sigarar Utang",
+   "notes": [
+    "Green apple",
+    "Jasmine",
+    "Cane sugar"
+   ],
+   "taste": [
+    "floral",
+    "citrus"
+   ],
+   "score": 85.25,
+   "price": 130000,
+   "story": "A clean, bright washed coffee from smallholders around Lake Gunung Tujuh.",
+   "species": "Arabica",
+   "harvest": "2026",
+   "recipe": "Pour over · 15 g coffee to 250 g water at 93 °C · 2:45 total",
+   "subscribable": true,
+   "category": "single-origin",
+   "variations": [
+    {
+     "size": "200g",
+     "grind": "Whole bean",
+     "price": 130000,
+     "weight_g": 240,
+     "sku": "LR-KERINCI-WASHED-200-WH"
+    },
+    {
+     "size": "200g",
+     "grind": "Espresso",
+     "price": 130000,
+     "weight_g": 240,
+     "sku": "LR-KERINCI-WASHED-200-ES"
+    },
+    {
+     "size": "200g",
+     "grind": "Pour over",
+     "price": 130000,
+     "weight_g": 240,
+     "sku": "LR-KERINCI-WASHED-200-PO"
+    },
+    {
+     "size": "200g",
+     "grind": "French press",
+     "price": 130000,
+     "weight_g": 240,
+     "sku": "LR-KERINCI-WASHED-200-FR"
+    },
+    {
+     "size": "200g",
+     "grind": "Moka pot",
+     "price": 130000,
+     "weight_g": 240,
+     "sku": "LR-KERINCI-WASHED-200-MO"
+    },
+    {
+     "size": "500g",
+     "grind": "Whole bean",
+     "price": 300000,
+     "weight_g": 540,
+     "sku": "LR-KERINCI-WASHED-500-WH"
+    },
+    {
+     "size": "500g",
+     "grind": "Espresso",
+     "price": 300000,
+     "weight_g": 540,
+     "sku": "LR-KERINCI-WASHED-500-ES"
+    },
+    {
+     "size": "500g",
+     "grind": "Pour over",
+     "price": 300000,
+     "weight_g": 540,
+     "sku": "LR-KERINCI-WASHED-500-PO"
+    },
+    {
+     "size": "500g",
+     "grind": "French press",
+     "price": 300000,
+     "weight_g": 540,
+     "sku": "LR-KERINCI-WASHED-500-FR"
+    },
+    {
+     "size": "500g",
+     "grind": "Moka pot",
+     "price": 300000,
+     "weight_g": 540,
+     "sku": "LR-KERINCI-WASHED-500-MO"
+    },
+    {
+     "size": "1kg",
+     "grind": "Whole bean",
+     "price": 560000,
+     "weight_g": 1040,
+     "sku": "LR-KERINCI-WASHED-1000-WH"
+    },
+    {
+     "size": "1kg",
+     "grind": "Espresso",
+     "price": 560000,
+     "weight_g": 1040,
+     "sku": "LR-KERINCI-WASHED-1000-ES"
+    },
+    {
+     "size": "1kg",
+     "grind": "Pour over",
+     "price": 560000,
+     "weight_g": 1040,
+     "sku": "LR-KERINCI-WASHED-1000-PO"
+    },
+    {
+     "size": "1kg",
+     "grind": "French press",
+     "price": 560000,
+     "weight_g": 1040,
+     "sku": "LR-KERINCI-WASHED-1000-FR"
+    },
+    {
+     "size": "1kg",
+     "grind": "Moka pot",
+     "price": 560000,
+     "weight_g": 1040,
+     "sku": "LR-KERINCI-WASHED-1000-MO"
+    }
+   ]
+  },
+  {
+   "slug": "mandailing-classic",
+   "name": "Mandailing Classic",
+   "type": "coffee",
+   "kind": "single-origin",
+   "island": "Sumatra",
+   "province": "North Sumatra",
+   "region": "Pakantan, Mandailing Natal",
+   "producer": "Koperasi Pakantan",
+   "process": "Wet-hulled",
+   "roast": "medium-dark",
+   "altitude": "1,200–1,500 m",
+   "varietals": "Sigarar Utang, Typica",
+   "notes": [
+    "Dark chocolate",
+    "Tobacco",
+    "Spice"
+   ],
+   "taste": [
+    "chocolatey",
+    "spicy"
+   ],
+   "score": 83.75,
+   "price": 110000,
+   "story": "The name that made Sumatran coffee famous abroad, roasted a little darker for a syrupy cup.",
+   "species": "Arabica",
+   "harvest": "2026",
+   "recipe": "Espresso · 18 g in, 36 g out, 27 s · great with milk",
+   "subscribable": true,
+   "category": "single-origin",
+   "variations": [
+    {
+     "size": "200g",
+     "grind": "Whole bean",
+     "price": 110000,
+     "weight_g": 240,
+     "sku": "LR-MANDAILING-CLASSIC-200-WH"
+    },
+    {
+     "size": "200g",
+     "grind": "Espresso",
+     "price": 110000,
+     "weight_g": 240,
+     "sku": "LR-MANDAILING-CLASSIC-200-ES"
+    },
+    {
+     "size": "200g",
+     "grind": "Pour over",
+     "price": 110000,
+     "weight_g": 240,
+     "sku": "LR-MANDAILING-CLASSIC-200-PO"
+    },
+    {
+     "size": "200g",
+     "grind": "French press",
+     "price": 110000,
+     "weight_g": 240,
+     "sku": "LR-MANDAILING-CLASSIC-200-FR"
+    },
+    {
+     "size": "200g",
+     "grind": "Moka pot",
+     "price": 110000,
+     "weight_g": 240,
+     "sku": "LR-MANDAILING-CLASSIC-200-MO"
+    },
+    {
+     "size": "500g",
+     "grind": "Whole bean",
+     "price": 255000,
+     "weight_g": 540,
+     "sku": "LR-MANDAILING-CLASSIC-500-WH"
+    },
+    {
+     "size": "500g",
+     "grind": "Espresso",
+     "price": 255000,
+     "weight_g": 540,
+     "sku": "LR-MANDAILING-CLASSIC-500-ES"
+    },
+    {
+     "size": "500g",
+     "grind": "Pour over",
+     "price": 255000,
+     "weight_g": 540,
+     "sku": "LR-MANDAILING-CLASSIC-500-PO"
+    },
+    {
+     "size": "500g",
+     "grind": "French press",
+     "price": 255000,
+     "weight_g": 540,
+     "sku": "LR-MANDAILING-CLASSIC-500-FR"
+    },
+    {
+     "size": "500g",
+     "grind": "Moka pot",
+     "price": 255000,
+     "weight_g": 540,
+     "sku": "LR-MANDAILING-CLASSIC-500-MO"
+    },
+    {
+     "size": "1kg",
+     "grind": "Whole bean",
+     "price": 475000,
+     "weight_g": 1040,
+     "sku": "LR-MANDAILING-CLASSIC-1000-WH"
+    },
+    {
+     "size": "1kg",
+     "grind": "Espresso",
+     "price": 475000,
+     "weight_g": 1040,
+     "sku": "LR-MANDAILING-CLASSIC-1000-ES"
+    },
+    {
+     "size": "1kg",
+     "grind": "Pour over",
+     "price": 475000,
+     "weight_g": 1040,
+     "sku": "LR-MANDAILING-CLASSIC-1000-PO"
+    },
+    {
+     "size": "1kg",
+     "grind": "French press",
+     "price": 475000,
+     "weight_g": 1040,
+     "sku": "LR-MANDAILING-CLASSIC-1000-FR"
+    },
+    {
+     "size": "1kg",
+     "grind": "Moka pot",
+     "price": 475000,
+     "weight_g": 1040,
+     "sku": "LR-MANDAILING-CLASSIC-1000-MO"
+    }
+   ]
+  },
+  {
+   "slug": "lintong-natural",
+   "name": "Lintong Natural",
+   "type": "coffee",
+   "kind": "single-origin",
+   "island": "Sumatra",
+   "province": "North Sumatra",
+   "region": "Lintong Nihuta, Humbang Hasundutan",
+   "producer": "Ama Siregar",
+   "process": "Natural",
+   "roast": "medium",
+   "altitude": "1,300–1,500 m",
+   "varietals": "Sigarar Utang, Ateng",
+   "notes": [
+    "Blueberry",
+    "Clove",
+    "Fudge"
+   ],
+   "taste": [
+    "fruity",
+    "spicy"
+   ],
+   "score": 85.5,
+   "price": 135000,
+   "story": "Grown on the high plateau south of Lake Toba, where the morning mist clears late.",
+   "species": "Arabica",
+   "harvest": "2026",
+   "recipe": "Pour over · 16 g to 250 g at 92 °C · 2:30, or espresso 18 g in, 38 g out, 28 s",
+   "subscribable": true,
+   "category": "single-origin",
+   "variations": [
+    {
+     "size": "200g",
+     "grind": "Whole bean",
+     "price": 135000,
+     "weight_g": 240,
+     "sku": "LR-LINTONG-NATURAL-200-WH"
+    },
+    {
+     "size": "200g",
+     "grind": "Espresso",
+     "price": 135000,
+     "weight_g": 240,
+     "sku": "LR-LINTONG-NATURAL-200-ES"
+    },
+    {
+     "size": "200g",
+     "grind": "Pour over",
+     "price": 135000,
+     "weight_g": 240,
+     "sku": "LR-LINTONG-NATURAL-200-PO"
+    },
+    {
+     "size": "200g",
+     "grind": "French press",
+     "price": 135000,
+     "weight_g": 240,
+     "sku": "LR-LINTONG-NATURAL-200-FR"
+    },
+    {
+     "size": "200g",
+     "grind": "Moka pot",
+     "price": 135000,
+     "weight_g": 240,
+     "sku": "LR-LINTONG-NATURAL-200-MO"
+    },
+    {
+     "size": "500g",
+     "grind": "Whole bean",
+     "price": 310000,
+     "weight_g": 540,
+     "sku": "LR-LINTONG-NATURAL-500-WH"
+    },
+    {
+     "size": "500g",
+     "grind": "Espresso",
+     "price": 310000,
+     "weight_g": 540,
+     "sku": "LR-LINTONG-NATURAL-500-ES"
+    },
+    {
+     "size": "500g",
+     "grind": "Pour over",
+     "price": 310000,
+     "weight_g": 540,
+     "sku": "LR-LINTONG-NATURAL-500-PO"
+    },
+    {
+     "size": "500g",
+     "grind": "French press",
+     "price": 310000,
+     "weight_g": 540,
+     "sku": "LR-LINTONG-NATURAL-500-FR"
+    },
+    {
+     "size": "500g",
+     "grind": "Moka pot",
+     "price": 310000,
+     "weight_g": 540,
+     "sku": "LR-LINTONG-NATURAL-500-MO"
+    },
+    {
+     "size": "1kg",
+     "grind": "Whole bean",
+     "price": 580000,
+     "weight_g": 1040,
+     "sku": "LR-LINTONG-NATURAL-1000-WH"
+    },
+    {
+     "size": "1kg",
+     "grind": "Espresso",
+     "price": 580000,
+     "weight_g": 1040,
+     "sku": "LR-LINTONG-NATURAL-1000-ES"
+    },
+    {
+     "size": "1kg",
+     "grind": "Pour over",
+     "price": 580000,
+     "weight_g": 1040,
+     "sku": "LR-LINTONG-NATURAL-1000-PO"
+    },
+    {
+     "size": "1kg",
+     "grind": "French press",
+     "price": 580000,
+     "weight_g": 1040,
+     "sku": "LR-LINTONG-NATURAL-1000-FR"
+    },
+    {
+     "size": "1kg",
+     "grind": "Moka pot",
+     "price": 580000,
+     "weight_g": 1040,
+     "sku": "LR-LINTONG-NATURAL-1000-MO"
+    }
+   ]
+  },
+  {
+   "slug": "sidikalang-washed",
+   "name": "Sidikalang Washed",
+   "type": "coffee",
+   "kind": "single-origin",
+   "island": "Sumatra",
+   "province": "North Sumatra",
+   "region": "Sidikalang, Dairi",
+   "producer": "Kelompok Tani Sitinjo",
+   "process": "Washed",
+   "roast": "medium",
+   "altitude": "1,100–1,400 m",
+   "varietals": "Sigarar Utang",
+   "notes": [
+    "Toffee",
+    "Orange peel",
+    "Nutmeg"
+   ],
+   "taste": [
+    "sweet",
+    "spicy"
+   ],
+   "score": 84.25,
+   "price": 115000,
+   "story": "Dairi has grown coffee since the Dutch era; this lot is a modern washed take on it.",
+   "species": "Arabica",
+   "harvest": "2026",
+   "recipe": "Pour over · 16 g to 250 g at 92 °C · 2:30, or espresso 18 g in, 38 g out, 28 s",
+   "subscribable": true,
+   "category": "single-origin",
+   "variations": [
+    {
+     "size": "200g",
+     "grind": "Whole bean",
+     "price": 115000,
+     "weight_g": 240,
+     "sku": "LR-SIDIKALANG-WASHED-200-WH"
+    },
+    {
+     "size": "200g",
+     "grind": "Espresso",
+     "price": 115000,
+     "weight_g": 240,
+     "sku": "LR-SIDIKALANG-WASHED-200-ES"
+    },
+    {
+     "size": "200g",
+     "grind": "Pour over",
+     "price": 115000,
+     "weight_g": 240,
+     "sku": "LR-SIDIKALANG-WASHED-200-PO"
+    },
+    {
+     "size": "200g",
+     "grind": "French press",
+     "price": 115000,
+     "weight_g": 240,
+     "sku": "LR-SIDIKALANG-WASHED-200-FR"
+    },
+    {
+     "size": "200g",
+     "grind": "Moka pot",
+     "price": 115000,
+     "weight_g": 240,
+     "sku": "LR-SIDIKALANG-WASHED-200-MO"
+    },
+    {
+     "size": "500g",
+     "grind": "Whole bean",
+     "price": 265000,
+     "weight_g": 540,
+     "sku": "LR-SIDIKALANG-WASHED-500-WH"
+    },
+    {
+     "size": "500g",
+     "grind": "Espresso",
+     "price": 265000,
+     "weight_g": 540,
+     "sku": "LR-SIDIKALANG-WASHED-500-ES"
+    },
+    {
+     "size": "500g",
+     "grind": "Pour over",
+     "price": 265000,
+     "weight_g": 540,
+     "sku": "LR-SIDIKALANG-WASHED-500-PO"
+    },
+    {
+     "size": "500g",
+     "grind": "French press",
+     "price": 265000,
+     "weight_g": 540,
+     "sku": "LR-SIDIKALANG-WASHED-500-FR"
+    },
+    {
+     "size": "500g",
+     "grind": "Moka pot",
+     "price": 265000,
+     "weight_g": 540,
+     "sku": "LR-SIDIKALANG-WASHED-500-MO"
+    },
+    {
+     "size": "1kg",
+     "grind": "Whole bean",
+     "price": 495000,
+     "weight_g": 1040,
+     "sku": "LR-SIDIKALANG-WASHED-1000-WH"
+    },
+    {
+     "size": "1kg",
+     "grind": "Espresso",
+     "price": 495000,
+     "weight_g": 1040,
+     "sku": "LR-SIDIKALANG-WASHED-1000-ES"
+    },
+    {
+     "size": "1kg",
+     "grind": "Pour over",
+     "price": 495000,
+     "weight_g": 1040,
+     "sku": "LR-SIDIKALANG-WASHED-1000-PO"
+    },
+    {
+     "size": "1kg",
+     "grind": "French press",
+     "price": 495000,
+     "weight_g": 1040,
+     "sku": "LR-SIDIKALANG-WASHED-1000-FR"
+    },
+    {
+     "size": "1kg",
+     "grind": "Moka pot",
+     "price": 495000,
+     "weight_g": 1040,
+     "sku": "LR-SIDIKALANG-WASHED-1000-MO"
+    }
+   ]
+  },
+  {
+   "slug": "solok-radjo-natural",
+   "name": "Solok Radjo Natural",
+   "type": "coffee",
+   "kind": "single-origin",
+   "island": "Sumatra",
+   "province": "West Sumatra",
+   "region": "Aie Dingin, Solok",
+   "producer": "Koperasi Solok Radjo",
+   "process": "Natural",
+   "roast": "light",
+   "altitude": "1,400–1,700 m",
+   "varietals": "Andungsari, Sigarar Utang",
+   "notes": [
+    "Strawberry",
+    "Rum",
+    "Milk chocolate"
+   ],
+   "taste": [
+    "fruity",
+    "sweet"
+   ],
+   "score": 86.25,
+   "price": 150000,
+   "story": "A young cooperative in the hills around Mount Talang, now a regular at national cupping competitions.",
+   "species": "Arabica",
+   "harvest": "2026",
+   "recipe": "Pour over · 15 g coffee to 250 g water at 93 °C · 2:45 total",
+   "subscribable": true,
+   "category": "single-origin",
+   "variations": [
+    {
+     "size": "200g",
+     "grind": "Whole bean",
+     "price": 150000,
+     "weight_g": 240,
+     "sku": "LR-SOLOK-RADJO-NATURA-200-WH"
+    },
+    {
+     "size": "200g",
+     "grind": "Espresso",
+     "price": 150000,
+     "weight_g": 240,
+     "sku": "LR-SOLOK-RADJO-NATURA-200-ES"
+    },
+    {
+     "size": "200g",
+     "grind": "Pour over",
+     "price": 150000,
+     "weight_g": 240,
+     "sku": "LR-SOLOK-RADJO-NATURA-200-PO"
+    },
+    {
+     "size": "200g",
+     "grind": "French press",
+     "price": 150000,
+     "weight_g": 240,
+     "sku": "LR-SOLOK-RADJO-NATURA-200-FR"
+    },
+    {
+     "size": "200g",
+     "grind": "Moka pot",
+     "price": 150000,
+     "weight_g": 240,
+     "sku": "LR-SOLOK-RADJO-NATURA-200-MO"
+    },
+    {
+     "size": "500g",
+     "grind": "Whole bean",
+     "price": 345000,
+     "weight_g": 540,
+     "sku": "LR-SOLOK-RADJO-NATURA-500-WH"
+    },
+    {
+     "size": "500g",
+     "grind": "Espresso",
+     "price": 345000,
+     "weight_g": 540,
+     "sku": "LR-SOLOK-RADJO-NATURA-500-ES"
+    },
+    {
+     "size": "500g",
+     "grind": "Pour over",
+     "price": 345000,
+     "weight_g": 540,
+     "sku": "LR-SOLOK-RADJO-NATURA-500-PO"
+    },
+    {
+     "size": "500g",
+     "grind": "French press",
+     "price": 345000,
+     "weight_g": 540,
+     "sku": "LR-SOLOK-RADJO-NATURA-500-FR"
+    },
+    {
+     "size": "500g",
+     "grind": "Moka pot",
+     "price": 345000,
+     "weight_g": 540,
+     "sku": "LR-SOLOK-RADJO-NATURA-500-MO"
+    },
+    {
+     "size": "1kg",
+     "grind": "Whole bean",
+     "price": 645000,
+     "weight_g": 1040,
+     "sku": "LR-SOLOK-RADJO-NATURA-1000-WH"
+    },
+    {
+     "size": "1kg",
+     "grind": "Espresso",
+     "price": 645000,
+     "weight_g": 1040,
+     "sku": "LR-SOLOK-RADJO-NATURA-1000-ES"
+    },
+    {
+     "size": "1kg",
+     "grind": "Pour over",
+     "price": 645000,
+     "weight_g": 1040,
+     "sku": "LR-SOLOK-RADJO-NATURA-1000-PO"
+    },
+    {
+     "size": "1kg",
+     "grind": "French press",
+     "price": 645000,
+     "weight_g": 1040,
+     "sku": "LR-SOLOK-RADJO-NATURA-1000-FR"
+    },
+    {
+     "size": "1kg",
+     "grind": "Moka pot",
+     "price": 645000,
+     "weight_g": 1040,
+     "sku": "LR-SOLOK-RADJO-NATURA-1000-MO"
+    }
+   ]
+  },
+  {
+   "slug": "java-malabar-washed",
+   "name": "Java Malabar Washed",
+   "type": "coffee",
+   "kind": "single-origin",
+   "island": "Java",
+   "province": "West Java",
+   "region": "Mount Malabar, Bandung",
+   "producer": "Kebun Pangalengan",
+   "process": "Washed",
+   "roast": "light",
+   "altitude": "1,400–1,600 m",
+   "varietals": "Sigarar Utang, Typica, Lini S",
+   "notes": [
+    "Mandarin",
+    "Hazelnut",
+    "Caramel"
+   ],
+   "taste": [
+    "citrus",
+    "nutty"
+   ],
+   "score": 85.0,
+   "price": 125000,
+   "story": "The slopes of Mount Malabar, south of Bandung, are where Java's specialty revival started.",
+   "species": "Arabica",
+   "harvest": "2026",
+   "recipe": "Pour over · 15 g coffee to 250 g water at 93 °C · 2:45 total",
+   "subscribable": true,
+   "category": "single-origin",
+   "variations": [
+    {
+     "size": "200g",
+     "grind": "Whole bean",
+     "price": 125000,
+     "weight_g": 240,
+     "sku": "LR-JAVA-MALABAR-WASHE-200-WH"
+    },
+    {
+     "size": "200g",
+     "grind": "Espresso",
+     "price": 125000,
+     "weight_g": 240,
+     "sku": "LR-JAVA-MALABAR-WASHE-200-ES"
+    },
+    {
+     "size": "200g",
+     "grind": "Pour over",
+     "price": 125000,
+     "weight_g": 240,
+     "sku": "LR-JAVA-MALABAR-WASHE-200-PO"
+    },
+    {
+     "size": "200g",
+     "grind": "French press",
+     "price": 125000,
+     "weight_g": 240,
+     "sku": "LR-JAVA-MALABAR-WASHE-200-FR"
+    },
+    {
+     "size": "200g",
+     "grind": "Moka pot",
+     "price": 125000,
+     "weight_g": 240,
+     "sku": "LR-JAVA-MALABAR-WASHE-200-MO"
+    },
+    {
+     "size": "500g",
+     "grind": "Whole bean",
+     "price": 290000,
+     "weight_g": 540,
+     "sku": "LR-JAVA-MALABAR-WASHE-500-WH"
+    },
+    {
+     "size": "500g",
+     "grind": "Espresso",
+     "price": 290000,
+     "weight_g": 540,
+     "sku": "LR-JAVA-MALABAR-WASHE-500-ES"
+    },
+    {
+     "size": "500g",
+     "grind": "Pour over",
+     "price": 290000,
+     "weight_g": 540,
+     "sku": "LR-JAVA-MALABAR-WASHE-500-PO"
+    },
+    {
+     "size": "500g",
+     "grind": "French press",
+     "price": 290000,
+     "weight_g": 540,
+     "sku": "LR-JAVA-MALABAR-WASHE-500-FR"
+    },
+    {
+     "size": "500g",
+     "grind": "Moka pot",
+     "price": 290000,
+     "weight_g": 540,
+     "sku": "LR-JAVA-MALABAR-WASHE-500-MO"
+    },
+    {
+     "size": "1kg",
+     "grind": "Whole bean",
+     "price": 540000,
+     "weight_g": 1040,
+     "sku": "LR-JAVA-MALABAR-WASHE-1000-WH"
+    },
+    {
+     "size": "1kg",
+     "grind": "Espresso",
+     "price": 540000,
+     "weight_g": 1040,
+     "sku": "LR-JAVA-MALABAR-WASHE-1000-ES"
+    },
+    {
+     "size": "1kg",
+     "grind": "Pour over",
+     "price": 540000,
+     "weight_g": 1040,
+     "sku": "LR-JAVA-MALABAR-WASHE-1000-PO"
+    },
+    {
+     "size": "1kg",
+     "grind": "French press",
+     "price": 540000,
+     "weight_g": 1040,
+     "sku": "LR-JAVA-MALABAR-WASHE-1000-FR"
+    },
+    {
+     "size": "1kg",
+     "grind": "Moka pot",
+     "price": 540000,
+     "weight_g": 1040,
+     "sku": "LR-JAVA-MALABAR-WASHE-1000-MO"
+    }
+   ]
+  },
+  {
+   "slug": "java-puntang-honey",
+   "name": "Java Puntang Honey",
+   "type": "coffee",
+   "kind": "single-origin",
+   "island": "Java",
+   "province": "West Java",
+   "region": "Mount Puntang, Bandung",
+   "producer": "Pak Ayi and family",
+   "process": "Honey",
+   "roast": "light",
+   "altitude": "1,300–1,500 m",
+   "varietals": "Sigarar Utang, Lini S",
+   "notes": [
+    "Peach",
+    "Honey",
+    "Rose"
+   ],
+   "taste": [
+    "floral",
+    "sweet"
+   ],
+   "score": 86.75,
+   "price": 160000,
+   "story": "A family plot on Mount Puntang that has placed in the Indonesian specialty coffee championship.",
+   "species": "Arabica",
+   "harvest": "2026",
+   "recipe": "Pour over · 15 g coffee to 250 g water at 93 °C · 2:45 total",
+   "subscribable": true,
+   "category": "single-origin",
+   "variations": [
+    {
+     "size": "200g",
+     "grind": "Whole bean",
+     "price": 160000,
+     "weight_g": 240,
+     "sku": "LR-JAVA-PUNTANG-HONEY-200-WH"
+    },
+    {
+     "size": "200g",
+     "grind": "Espresso",
+     "price": 160000,
+     "weight_g": 240,
+     "sku": "LR-JAVA-PUNTANG-HONEY-200-ES"
+    },
+    {
+     "size": "200g",
+     "grind": "Pour over",
+     "price": 160000,
+     "weight_g": 240,
+     "sku": "LR-JAVA-PUNTANG-HONEY-200-PO"
+    },
+    {
+     "size": "200g",
+     "grind": "French press",
+     "price": 160000,
+     "weight_g": 240,
+     "sku": "LR-JAVA-PUNTANG-HONEY-200-FR"
+    },
+    {
+     "size": "200g",
+     "grind": "Moka pot",
+     "price": 160000,
+     "weight_g": 240,
+     "sku": "LR-JAVA-PUNTANG-HONEY-200-MO"
+    },
+    {
+     "size": "500g",
+     "grind": "Whole bean",
+     "price": 370000,
+     "weight_g": 540,
+     "sku": "LR-JAVA-PUNTANG-HONEY-500-WH"
+    },
+    {
+     "size": "500g",
+     "grind": "Espresso",
+     "price": 370000,
+     "weight_g": 540,
+     "sku": "LR-JAVA-PUNTANG-HONEY-500-ES"
+    },
+    {
+     "size": "500g",
+     "grind": "Pour over",
+     "price": 370000,
+     "weight_g": 540,
+     "sku": "LR-JAVA-PUNTANG-HONEY-500-PO"
+    },
+    {
+     "size": "500g",
+     "grind": "French press",
+     "price": 370000,
+     "weight_g": 540,
+     "sku": "LR-JAVA-PUNTANG-HONEY-500-FR"
+    },
+    {
+     "size": "500g",
+     "grind": "Moka pot",
+     "price": 370000,
+     "weight_g": 540,
+     "sku": "LR-JAVA-PUNTANG-HONEY-500-MO"
+    },
+    {
+     "size": "1kg",
+     "grind": "Whole bean",
+     "price": 690000,
+     "weight_g": 1040,
+     "sku": "LR-JAVA-PUNTANG-HONEY-1000-WH"
+    },
+    {
+     "size": "1kg",
+     "grind": "Espresso",
+     "price": 690000,
+     "weight_g": 1040,
+     "sku": "LR-JAVA-PUNTANG-HONEY-1000-ES"
+    },
+    {
+     "size": "1kg",
+     "grind": "Pour over",
+     "price": 690000,
+     "weight_g": 1040,
+     "sku": "LR-JAVA-PUNTANG-HONEY-1000-PO"
+    },
+    {
+     "size": "1kg",
+     "grind": "French press",
+     "price": 690000,
+     "weight_g": 1040,
+     "sku": "LR-JAVA-PUNTANG-HONEY-1000-FR"
+    },
+    {
+     "size": "1kg",
+     "grind": "Moka pot",
+     "price": 690000,
+     "weight_g": 1040,
+     "sku": "LR-JAVA-PUNTANG-HONEY-1000-MO"
+    }
+   ]
+  },
+  {
+   "slug": "java-halu-natural",
+   "name": "Java Halu Natural",
+   "type": "coffee",
+   "kind": "single-origin",
+   "island": "Java",
+   "province": "West Java",
+   "region": "Mount Halu, West Bandung",
+   "producer": "Kelompok Tani Margamulya",
+   "process": "Natural",
+   "roast": "light",
+   "altitude": "1,450–1,650 m",
+   "varietals": "Typica, Sigarar Utang",
+   "notes": [
+    "Raspberry",
+    "Cocoa",
+    "Vanilla"
+   ],
+   "taste": [
+    "fruity",
+    "chocolatey"
+   ],
+   "score": 85.75,
+   "price": 145000,
+   "story": "Dried slowly in the cool air of Mount Halu, under the shade of eucalyptus.",
+   "species": "Arabica",
+   "harvest": "2026",
+   "recipe": "Pour over · 15 g coffee to 250 g water at 93 °C · 2:45 total",
+   "subscribable": true,
+   "category": "single-origin",
+   "variations": [
+    {
+     "size": "200g",
+     "grind": "Whole bean",
+     "price": 145000,
+     "weight_g": 240,
+     "sku": "LR-JAVA-HALU-NATURAL-200-WH"
+    },
+    {
+     "size": "200g",
+     "grind": "Espresso",
+     "price": 145000,
+     "weight_g": 240,
+     "sku": "LR-JAVA-HALU-NATURAL-200-ES"
+    },
+    {
+     "size": "200g",
+     "grind": "Pour over",
+     "price": 145000,
+     "weight_g": 240,
+     "sku": "LR-JAVA-HALU-NATURAL-200-PO"
+    },
+    {
+     "size": "200g",
+     "grind": "French press",
+     "price": 145000,
+     "weight_g": 240,
+     "sku": "LR-JAVA-HALU-NATURAL-200-FR"
+    },
+    {
+     "size": "200g",
+     "grind": "Moka pot",
+     "price": 145000,
+     "weight_g": 240,
+     "sku": "LR-JAVA-HALU-NATURAL-200-MO"
+    },
+    {
+     "size": "500g",
+     "grind": "Whole bean",
+     "price": 335000,
+     "weight_g": 540,
+     "sku": "LR-JAVA-HALU-NATURAL-500-WH"
+    },
+    {
+     "size": "500g",
+     "grind": "Espresso",
+     "price": 335000,
+     "weight_g": 540,
+     "sku": "LR-JAVA-HALU-NATURAL-500-ES"
+    },
+    {
+     "size": "500g",
+     "grind": "Pour over",
+     "price": 335000,
+     "weight_g": 540,
+     "sku": "LR-JAVA-HALU-NATURAL-500-PO"
+    },
+    {
+     "size": "500g",
+     "grind": "French press",
+     "price": 335000,
+     "weight_g": 540,
+     "sku": "LR-JAVA-HALU-NATURAL-500-FR"
+    },
+    {
+     "size": "500g",
+     "grind": "Moka pot",
+     "price": 335000,
+     "weight_g": 540,
+     "sku": "LR-JAVA-HALU-NATURAL-500-MO"
+    },
+    {
+     "size": "1kg",
+     "grind": "Whole bean",
+     "price": 625000,
+     "weight_g": 1040,
+     "sku": "LR-JAVA-HALU-NATURAL-1000-WH"
+    },
+    {
+     "size": "1kg",
+     "grind": "Espresso",
+     "price": 625000,
+     "weight_g": 1040,
+     "sku": "LR-JAVA-HALU-NATURAL-1000-ES"
+    },
+    {
+     "size": "1kg",
+     "grind": "Pour over",
+     "price": 625000,
+     "weight_g": 1040,
+     "sku": "LR-JAVA-HALU-NATURAL-1000-PO"
+    },
+    {
+     "size": "1kg",
+     "grind": "French press",
+     "price": 625000,
+     "weight_g": 1040,
+     "sku": "LR-JAVA-HALU-NATURAL-1000-FR"
+    },
+    {
+     "size": "1kg",
+     "grind": "Moka pot",
+     "price": 625000,
+     "weight_g": 1040,
+     "sku": "LR-JAVA-HALU-NATURAL-1000-MO"
+    }
+   ]
+  },
+  {
+   "slug": "java-papandayan-washed",
+   "name": "Java Papandayan Washed",
+   "type": "coffee",
+   "kind": "single-origin",
+   "island": "Java",
+   "province": "West Java",
+   "region": "Mount Papandayan, Garut",
+   "producer": "Koperasi Cikajang",
+   "process": "Washed",
+   "roast": "light",
+   "altitude": "1,500–1,700 m",
+   "varietals": "Sigarar Utang, Andungsari",
+   "notes": [
+    "Lemon",
+    "Black tea",
+    "Brown sugar"
+   ],
+   "taste": [
+    "citrus",
+    "floral"
+   ],
+   "score": 85.25,
+   "price": 130000,
+   "story": "High-grown near the Papandayan crater; volcanic soil, cold nights, slow ripening.",
+   "species": "Arabica",
+   "harvest": "2026",
+   "recipe": "Pour over · 15 g coffee to 250 g water at 93 °C · 2:45 total",
+   "subscribable": true,
+   "category": "single-origin",
+   "variations": [
+    {
+     "size": "200g",
+     "grind": "Whole bean",
+     "price": 130000,
+     "weight_g": 240,
+     "sku": "LR-JAVA-PAPANDAYAN-WA-200-WH"
+    },
+    {
+     "size": "200g",
+     "grind": "Espresso",
+     "price": 130000,
+     "weight_g": 240,
+     "sku": "LR-JAVA-PAPANDAYAN-WA-200-ES"
+    },
+    {
+     "size": "200g",
+     "grind": "Pour over",
+     "price": 130000,
+     "weight_g": 240,
+     "sku": "LR-JAVA-PAPANDAYAN-WA-200-PO"
+    },
+    {
+     "size": "200g",
+     "grind": "French press",
+     "price": 130000,
+     "weight_g": 240,
+     "sku": "LR-JAVA-PAPANDAYAN-WA-200-FR"
+    },
+    {
+     "size": "200g",
+     "grind": "Moka pot",
+     "price": 130000,
+     "weight_g": 240,
+     "sku": "LR-JAVA-PAPANDAYAN-WA-200-MO"
+    },
+    {
+     "size": "500g",
+     "grind": "Whole bean",
+     "price": 300000,
+     "weight_g": 540,
+     "sku": "LR-JAVA-PAPANDAYAN-WA-500-WH"
+    },
+    {
+     "size": "500g",
+     "grind": "Espresso",
+     "price": 300000,
+     "weight_g": 540,
+     "sku": "LR-JAVA-PAPANDAYAN-WA-500-ES"
+    },
+    {
+     "size": "500g",
+     "grind": "Pour over",
+     "price": 300000,
+     "weight_g": 540,
+     "sku": "LR-JAVA-PAPANDAYAN-WA-500-PO"
+    },
+    {
+     "size": "500g",
+     "grind": "French press",
+     "price": 300000,
+     "weight_g": 540,
+     "sku": "LR-JAVA-PAPANDAYAN-WA-500-FR"
+    },
+    {
+     "size": "500g",
+     "grind": "Moka pot",
+     "price": 300000,
+     "weight_g": 540,
+     "sku": "LR-JAVA-PAPANDAYAN-WA-500-MO"
+    },
+    {
+     "size": "1kg",
+     "grind": "Whole bean",
+     "price": 560000,
+     "weight_g": 1040,
+     "sku": "LR-JAVA-PAPANDAYAN-WA-1000-WH"
+    },
+    {
+     "size": "1kg",
+     "grind": "Espresso",
+     "price": 560000,
+     "weight_g": 1040,
+     "sku": "LR-JAVA-PAPANDAYAN-WA-1000-ES"
+    },
+    {
+     "size": "1kg",
+     "grind": "Pour over",
+     "price": 560000,
+     "weight_g": 1040,
+     "sku": "LR-JAVA-PAPANDAYAN-WA-1000-PO"
+    },
+    {
+     "size": "1kg",
+     "grind": "French press",
+     "price": 560000,
+     "weight_g": 1040,
+     "sku": "LR-JAVA-PAPANDAYAN-WA-1000-FR"
+    },
+    {
+     "size": "1kg",
+     "grind": "Moka pot",
+     "price": 560000,
+     "weight_g": 1040,
+     "sku": "LR-JAVA-PAPANDAYAN-WA-1000-MO"
+    }
+   ]
+  },
+  {
+   "slug": "java-cikuray-semi-washed",
+   "name": "Java Cikuray",
+   "type": "coffee",
+   "kind": "single-origin",
+   "island": "Java",
+   "province": "West Java",
+   "region": "Mount Cikuray, Garut",
+   "producer": "Kebun Cikuray",
+   "process": "Semi-washed",
+   "roast": "medium",
+   "altitude": "1,300–1,500 m",
+   "varietals": "Lini S, Sigarar Utang",
+   "notes": [
+    "Milk chocolate",
+    "Almond",
+    "Orange"
+   ],
+   "taste": [
+    "chocolatey",
+    "nutty"
+   ],
+   "score": 84.25,
+   "price": 115000,
+   "story": "An easy, round coffee that works as well in a V60 as in a flat white.",
+   "species": "Arabica",
+   "harvest": "2026",
+   "recipe": "Pour over · 16 g to 250 g at 92 °C · 2:30, or espresso 18 g in, 38 g out, 28 s",
+   "subscribable": true,
+   "category": "single-origin",
+   "variations": [
+    {
+     "size": "200g",
+     "grind": "Whole bean",
+     "price": 115000,
+     "weight_g": 240,
+     "sku": "LR-JAVA-CIKURAY-SEMI--200-WH"
+    },
+    {
+     "size": "200g",
+     "grind": "Espresso",
+     "price": 115000,
+     "weight_g": 240,
+     "sku": "LR-JAVA-CIKURAY-SEMI--200-ES"
+    },
+    {
+     "size": "200g",
+     "grind": "Pour over",
+     "price": 115000,
+     "weight_g": 240,
+     "sku": "LR-JAVA-CIKURAY-SEMI--200-PO"
+    },
+    {
+     "size": "200g",
+     "grind": "French press",
+     "price": 115000,
+     "weight_g": 240,
+     "sku": "LR-JAVA-CIKURAY-SEMI--200-FR"
+    },
+    {
+     "size": "200g",
+     "grind": "Moka pot",
+     "price": 115000,
+     "weight_g": 240,
+     "sku": "LR-JAVA-CIKURAY-SEMI--200-MO"
+    },
+    {
+     "size": "500g",
+     "grind": "Whole bean",
+     "price": 265000,
+     "weight_g": 540,
+     "sku": "LR-JAVA-CIKURAY-SEMI--500-WH"
+    },
+    {
+     "size": "500g",
+     "grind": "Espresso",
+     "price": 265000,
+     "weight_g": 540,
+     "sku": "LR-JAVA-CIKURAY-SEMI--500-ES"
+    },
+    {
+     "size": "500g",
+     "grind": "Pour over",
+     "price": 265000,
+     "weight_g": 540,
+     "sku": "LR-JAVA-CIKURAY-SEMI--500-PO"
+    },
+    {
+     "size": "500g",
+     "grind": "French press",
+     "price": 265000,
+     "weight_g": 540,
+     "sku": "LR-JAVA-CIKURAY-SEMI--500-FR"
+    },
+    {
+     "size": "500g",
+     "grind": "Moka pot",
+     "price": 265000,
+     "weight_g": 540,
+     "sku": "LR-JAVA-CIKURAY-SEMI--500-MO"
+    },
+    {
+     "size": "1kg",
+     "grind": "Whole bean",
+     "price": 495000,
+     "weight_g": 1040,
+     "sku": "LR-JAVA-CIKURAY-SEMI--1000-WH"
+    },
+    {
+     "size": "1kg",
+     "grind": "Espresso",
+     "price": 495000,
+     "weight_g": 1040,
+     "sku": "LR-JAVA-CIKURAY-SEMI--1000-ES"
+    },
+    {
+     "size": "1kg",
+     "grind": "Pour over",
+     "price": 495000,
+     "weight_g": 1040,
+     "sku": "LR-JAVA-CIKURAY-SEMI--1000-PO"
+    },
+    {
+     "size": "1kg",
+     "grind": "French press",
+     "price": 495000,
+     "weight_g": 1040,
+     "sku": "LR-JAVA-CIKURAY-SEMI--1000-FR"
+    },
+    {
+     "size": "1kg",
+     "grind": "Moka pot",
+     "price": 495000,
+     "weight_g": 1040,
+     "sku": "LR-JAVA-CIKURAY-SEMI--1000-MO"
+    }
+   ]
+  },
+  {
+   "slug": "java-sindoro-natural",
+   "name": "Java Sindoro Natural",
+   "type": "coffee",
+   "kind": "single-origin",
+   "island": "Java",
+   "province": "Central Java",
+   "region": "Mount Sindoro, Temanggung",
+   "producer": "Kelompok Tani Sindoro",
+   "process": "Natural",
+   "roast": "medium",
+   "altitude": "1,200–1,500 m",
+   "varietals": "Kartika, Lini S",
+   "notes": [
+    "Jackfruit",
+    "Brown sugar",
+    "Spice"
+   ],
+   "taste": [
+    "fruity",
+    "spicy"
+   ],
+   "score": 84.75,
+   "price": 125000,
+   "story": "Temanggung is better known for tobacco; its farmers now grow arabica between the rows.",
+   "species": "Arabica",
+   "harvest": "2026",
+   "recipe": "Pour over · 16 g to 250 g at 92 °C · 2:30, or espresso 18 g in, 38 g out, 28 s",
+   "subscribable": true,
+   "category": "single-origin",
+   "variations": [
+    {
+     "size": "200g",
+     "grind": "Whole bean",
+     "price": 125000,
+     "weight_g": 240,
+     "sku": "LR-JAVA-SINDORO-NATUR-200-WH"
+    },
+    {
+     "size": "200g",
+     "grind": "Espresso",
+     "price": 125000,
+     "weight_g": 240,
+     "sku": "LR-JAVA-SINDORO-NATUR-200-ES"
+    },
+    {
+     "size": "200g",
+     "grind": "Pour over",
+     "price": 125000,
+     "weight_g": 240,
+     "sku": "LR-JAVA-SINDORO-NATUR-200-PO"
+    },
+    {
+     "size": "200g",
+     "grind": "French press",
+     "price": 125000,
+     "weight_g": 240,
+     "sku": "LR-JAVA-SINDORO-NATUR-200-FR"
+    },
+    {
+     "size": "200g",
+     "grind": "Moka pot",
+     "price": 125000,
+     "weight_g": 240,
+     "sku": "LR-JAVA-SINDORO-NATUR-200-MO"
+    },
+    {
+     "size": "500g",
+     "grind": "Whole bean",
+     "price": 290000,
+     "weight_g": 540,
+     "sku": "LR-JAVA-SINDORO-NATUR-500-WH"
+    },
+    {
+     "size": "500g",
+     "grind": "Espresso",
+     "price": 290000,
+     "weight_g": 540,
+     "sku": "LR-JAVA-SINDORO-NATUR-500-ES"
+    },
+    {
+     "size": "500g",
+     "grind": "Pour over",
+     "price": 290000,
+     "weight_g": 540,
+     "sku": "LR-JAVA-SINDORO-NATUR-500-PO"
+    },
+    {
+     "size": "500g",
+     "grind": "French press",
+     "price": 290000,
+     "weight_g": 540,
+     "sku": "LR-JAVA-SINDORO-NATUR-500-FR"
+    },
+    {
+     "size": "500g",
+     "grind": "Moka pot",
+     "price": 290000,
+     "weight_g": 540,
+     "sku": "LR-JAVA-SINDORO-NATUR-500-MO"
+    },
+    {
+     "size": "1kg",
+     "grind": "Whole bean",
+     "price": 540000,
+     "weight_g": 1040,
+     "sku": "LR-JAVA-SINDORO-NATUR-1000-WH"
+    },
+    {
+     "size": "1kg",
+     "grind": "Espresso",
+     "price": 540000,
+     "weight_g": 1040,
+     "sku": "LR-JAVA-SINDORO-NATUR-1000-ES"
+    },
+    {
+     "size": "1kg",
+     "grind": "Pour over",
+     "price": 540000,
+     "weight_g": 1040,
+     "sku": "LR-JAVA-SINDORO-NATUR-1000-PO"
+    },
+    {
+     "size": "1kg",
+     "grind": "French press",
+     "price": 540000,
+     "weight_g": 1040,
+     "sku": "LR-JAVA-SINDORO-NATUR-1000-FR"
+    },
+    {
+     "size": "1kg",
+     "grind": "Moka pot",
+     "price": 540000,
+     "weight_g": 1040,
+     "sku": "LR-JAVA-SINDORO-NATUR-1000-MO"
+    }
+   ]
+  },
+  {
+   "slug": "java-ijen-washed",
+   "name": "Java Ijen Washed",
+   "type": "coffee",
+   "kind": "single-origin",
+   "island": "Java",
+   "province": "East Java",
+   "region": "Ijen Plateau, Bondowoso",
+   "producer": "Kebun Blawan",
+   "process": "Washed",
+   "roast": "medium",
+   "altitude": "1,100–1,450 m",
+   "varietals": "Typica, Bourbon",
+   "notes": [
+    "Hazelnut",
+    "Caramel",
+    "Red apple"
+   ],
+   "taste": [
+    "nutty",
+    "sweet"
+   ],
+   "score": 84.0,
+   "price": 110000,
+   "story": "From the old estates on the Ijen plateau, near the blue-fire crater.",
+   "species": "Arabica",
+   "harvest": "2026",
+   "recipe": "Pour over · 16 g to 250 g at 92 °C · 2:30, or espresso 18 g in, 38 g out, 28 s",
+   "subscribable": true,
+   "category": "single-origin",
+   "variations": [
+    {
+     "size": "200g",
+     "grind": "Whole bean",
+     "price": 110000,
+     "weight_g": 240,
+     "sku": "LR-JAVA-IJEN-WASHED-200-WH"
+    },
+    {
+     "size": "200g",
+     "grind": "Espresso",
+     "price": 110000,
+     "weight_g": 240,
+     "sku": "LR-JAVA-IJEN-WASHED-200-ES"
+    },
+    {
+     "size": "200g",
+     "grind": "Pour over",
+     "price": 110000,
+     "weight_g": 240,
+     "sku": "LR-JAVA-IJEN-WASHED-200-PO"
+    },
+    {
+     "size": "200g",
+     "grind": "French press",
+     "price": 110000,
+     "weight_g": 240,
+     "sku": "LR-JAVA-IJEN-WASHED-200-FR"
+    },
+    {
+     "size": "200g",
+     "grind": "Moka pot",
+     "price": 110000,
+     "weight_g": 240,
+     "sku": "LR-JAVA-IJEN-WASHED-200-MO"
+    },
+    {
+     "size": "500g",
+     "grind": "Whole bean",
+     "price": 255000,
+     "weight_g": 540,
+     "sku": "LR-JAVA-IJEN-WASHED-500-WH"
+    },
+    {
+     "size": "500g",
+     "grind": "Espresso",
+     "price": 255000,
+     "weight_g": 540,
+     "sku": "LR-JAVA-IJEN-WASHED-500-ES"
+    },
+    {
+     "size": "500g",
+     "grind": "Pour over",
+     "price": 255000,
+     "weight_g": 540,
+     "sku": "LR-JAVA-IJEN-WASHED-500-PO"
+    },
+    {
+     "size": "500g",
+     "grind": "French press",
+     "price": 255000,
+     "weight_g": 540,
+     "sku": "LR-JAVA-IJEN-WASHED-500-FR"
+    },
+    {
+     "size": "500g",
+     "grind": "Moka pot",
+     "price": 255000,
+     "weight_g": 540,
+     "sku": "LR-JAVA-IJEN-WASHED-500-MO"
+    },
+    {
+     "size": "1kg",
+     "grind": "Whole bean",
+     "price": 475000,
+     "weight_g": 1040,
+     "sku": "LR-JAVA-IJEN-WASHED-1000-WH"
+    },
+    {
+     "size": "1kg",
+     "grind": "Espresso",
+     "price": 475000,
+     "weight_g": 1040,
+     "sku": "LR-JAVA-IJEN-WASHED-1000-ES"
+    },
+    {
+     "size": "1kg",
+     "grind": "Pour over",
+     "price": 475000,
+     "weight_g": 1040,
+     "sku": "LR-JAVA-IJEN-WASHED-1000-PO"
+    },
+    {
+     "size": "1kg",
+     "grind": "French press",
+     "price": 475000,
+     "weight_g": 1040,
+     "sku": "LR-JAVA-IJEN-WASHED-1000-FR"
+    },
+    {
+     "size": "1kg",
+     "grind": "Moka pot",
+     "price": 475000,
+     "weight_g": 1040,
+     "sku": "LR-JAVA-IJEN-WASHED-1000-MO"
+    }
+   ]
+  },
+  {
+   "slug": "java-argopuro-honey",
+   "name": "Java Argopuro Honey",
+   "type": "coffee",
+   "kind": "single-origin",
+   "island": "Java",
+   "province": "East Java",
+   "region": "Mount Argopuro, Situbondo",
+   "producer": "Kelompok Tani Argopuro",
+   "process": "Honey",
+   "roast": "light",
+   "altitude": "1,200–1,500 m",
+   "varietals": "Typica, Lini S",
+   "notes": [
+    "Apricot",
+    "Honey",
+    "Cinnamon"
+   ],
+   "taste": [
+    "sweet",
+    "spicy"
+   ],
+   "score": 85.0,
+   "price": 130000,
+   "story": "A forest coffee: grown under native shade trees on the slopes of Argopuro.",
+   "species": "Arabica",
+   "harvest": "2026",
+   "recipe": "Pour over · 15 g coffee to 250 g water at 93 °C · 2:45 total",
+   "subscribable": true,
+   "category": "single-origin",
+   "variations": [
+    {
+     "size": "200g",
+     "grind": "Whole bean",
+     "price": 130000,
+     "weight_g": 240,
+     "sku": "LR-JAVA-ARGOPURO-HONE-200-WH"
+    },
+    {
+     "size": "200g",
+     "grind": "Espresso",
+     "price": 130000,
+     "weight_g": 240,
+     "sku": "LR-JAVA-ARGOPURO-HONE-200-ES"
+    },
+    {
+     "size": "200g",
+     "grind": "Pour over",
+     "price": 130000,
+     "weight_g": 240,
+     "sku": "LR-JAVA-ARGOPURO-HONE-200-PO"
+    },
+    {
+     "size": "200g",
+     "grind": "French press",
+     "price": 130000,
+     "weight_g": 240,
+     "sku": "LR-JAVA-ARGOPURO-HONE-200-FR"
+    },
+    {
+     "size": "200g",
+     "grind": "Moka pot",
+     "price": 130000,
+     "weight_g": 240,
+     "sku": "LR-JAVA-ARGOPURO-HONE-200-MO"
+    },
+    {
+     "size": "500g",
+     "grind": "Whole bean",
+     "price": 300000,
+     "weight_g": 540,
+     "sku": "LR-JAVA-ARGOPURO-HONE-500-WH"
+    },
+    {
+     "size": "500g",
+     "grind": "Espresso",
+     "price": 300000,
+     "weight_g": 540,
+     "sku": "LR-JAVA-ARGOPURO-HONE-500-ES"
+    },
+    {
+     "size": "500g",
+     "grind": "Pour over",
+     "price": 300000,
+     "weight_g": 540,
+     "sku": "LR-JAVA-ARGOPURO-HONE-500-PO"
+    },
+    {
+     "size": "500g",
+     "grind": "French press",
+     "price": 300000,
+     "weight_g": 540,
+     "sku": "LR-JAVA-ARGOPURO-HONE-500-FR"
+    },
+    {
+     "size": "500g",
+     "grind": "Moka pot",
+     "price": 300000,
+     "weight_g": 540,
+     "sku": "LR-JAVA-ARGOPURO-HONE-500-MO"
+    },
+    {
+     "size": "1kg",
+     "grind": "Whole bean",
+     "price": 560000,
+     "weight_g": 1040,
+     "sku": "LR-JAVA-ARGOPURO-HONE-1000-WH"
+    },
+    {
+     "size": "1kg",
+     "grind": "Espresso",
+     "price": 560000,
+     "weight_g": 1040,
+     "sku": "LR-JAVA-ARGOPURO-HONE-1000-ES"
+    },
+    {
+     "size": "1kg",
+     "grind": "Pour over",
+     "price": 560000,
+     "weight_g": 1040,
+     "sku": "LR-JAVA-ARGOPURO-HONE-1000-PO"
+    },
+    {
+     "size": "1kg",
+     "grind": "French press",
+     "price": 560000,
+     "weight_g": 1040,
+     "sku": "LR-JAVA-ARGOPURO-HONE-1000-FR"
+    },
+    {
+     "size": "1kg",
+     "grind": "Moka pot",
+     "price": 560000,
+     "weight_g": 1040,
+     "sku": "LR-JAVA-ARGOPURO-HONE-1000-MO"
+    }
+   ]
+  },
+  {
+   "slug": "bali-kintamani-washed",
+   "name": "Bali Kintamani Washed",
+   "type": "coffee",
+   "kind": "single-origin",
+   "island": "Bali",
+   "province": "Bali",
+   "region": "Kintamani, Bangli",
+   "producer": "Subak Abian Kerta Waringin",
+   "process": "Washed",
+   "roast": "light",
+   "altitude": "1,200–1,500 m",
+   "varietals": "Kopyol, Typica",
+   "notes": [
+    "Orange",
+    "Brown sugar",
+    "Lemongrass"
+   ],
+   "taste": [
+    "citrus",
+    "sweet"
+   ],
+   "score": 85.25,
+   "price": 130000,
+   "story": "Farmed under the subak abian system, Bali's traditional cooperative way of sharing land and water.",
+   "species": "Arabica",
+   "harvest": "2026",
+   "recipe": "Pour over · 15 g coffee to 250 g water at 93 °C · 2:45 total",
+   "subscribable": true,
+   "category": "single-origin",
+   "variations": [
+    {
+     "size": "200g",
+     "grind": "Whole bean",
+     "price": 130000,
+     "weight_g": 240,
+     "sku": "LR-BALI-KINTAMANI-WAS-200-WH"
+    },
+    {
+     "size": "200g",
+     "grind": "Espresso",
+     "price": 130000,
+     "weight_g": 240,
+     "sku": "LR-BALI-KINTAMANI-WAS-200-ES"
+    },
+    {
+     "size": "200g",
+     "grind": "Pour over",
+     "price": 130000,
+     "weight_g": 240,
+     "sku": "LR-BALI-KINTAMANI-WAS-200-PO"
+    },
+    {
+     "size": "200g",
+     "grind": "French press",
+     "price": 130000,
+     "weight_g": 240,
+     "sku": "LR-BALI-KINTAMANI-WAS-200-FR"
+    },
+    {
+     "size": "200g",
+     "grind": "Moka pot",
+     "price": 130000,
+     "weight_g": 240,
+     "sku": "LR-BALI-KINTAMANI-WAS-200-MO"
+    },
+    {
+     "size": "500g",
+     "grind": "Whole bean",
+     "price": 300000,
+     "weight_g": 540,
+     "sku": "LR-BALI-KINTAMANI-WAS-500-WH"
+    },
+    {
+     "size": "500g",
+     "grind": "Espresso",
+     "price": 300000,
+     "weight_g": 540,
+     "sku": "LR-BALI-KINTAMANI-WAS-500-ES"
+    },
+    {
+     "size": "500g",
+     "grind": "Pour over",
+     "price": 300000,
+     "weight_g": 540,
+     "sku": "LR-BALI-KINTAMANI-WAS-500-PO"
+    },
+    {
+     "size": "500g",
+     "grind": "French press",
+     "price": 300000,
+     "weight_g": 540,
+     "sku": "LR-BALI-KINTAMANI-WAS-500-FR"
+    },
+    {
+     "size": "500g",
+     "grind": "Moka pot",
+     "price": 300000,
+     "weight_g": 540,
+     "sku": "LR-BALI-KINTAMANI-WAS-500-MO"
+    },
+    {
+     "size": "1kg",
+     "grind": "Whole bean",
+     "price": 560000,
+     "weight_g": 1040,
+     "sku": "LR-BALI-KINTAMANI-WAS-1000-WH"
+    },
+    {
+     "size": "1kg",
+     "grind": "Espresso",
+     "price": 560000,
+     "weight_g": 1040,
+     "sku": "LR-BALI-KINTAMANI-WAS-1000-ES"
+    },
+    {
+     "size": "1kg",
+     "grind": "Pour over",
+     "price": 560000,
+     "weight_g": 1040,
+     "sku": "LR-BALI-KINTAMANI-WAS-1000-PO"
+    },
+    {
+     "size": "1kg",
+     "grind": "French press",
+     "price": 560000,
+     "weight_g": 1040,
+     "sku": "LR-BALI-KINTAMANI-WAS-1000-FR"
+    },
+    {
+     "size": "1kg",
+     "grind": "Moka pot",
+     "price": 560000,
+     "weight_g": 1040,
+     "sku": "LR-BALI-KINTAMANI-WAS-1000-MO"
+    }
+   ]
+  },
+  {
+   "slug": "bali-kintamani-natural",
+   "name": "Bali Kintamani Natural",
+   "type": "coffee",
+   "kind": "single-origin",
+   "island": "Bali",
+   "province": "Bali",
+   "region": "Belantih, Kintamani",
+   "producer": "Pak Ketut Sudira",
+   "process": "Natural",
+   "roast": "light",
+   "altitude": "1,300–1,500 m",
+   "varietals": "Kopyol, Lini S",
+   "notes": [
+    "Mango",
+    "Cacao",
+    "Tamarind"
+   ],
+   "taste": [
+    "fruity",
+    "sweet"
+   ],
+   "score": 86.0,
+   "price": 145000,
+   "story": "Grown between orange trees, which is why so many Kintamani coffees taste of citrus.",
+   "species": "Arabica",
+   "harvest": "2026",
+   "recipe": "Pour over · 15 g coffee to 250 g water at 93 °C · 2:45 total",
+   "subscribable": true,
+   "category": "single-origin",
+   "variations": [
+    {
+     "size": "200g",
+     "grind": "Whole bean",
+     "price": 145000,
+     "weight_g": 240,
+     "sku": "LR-BALI-KINTAMANI-NAT-200-WH"
+    },
+    {
+     "size": "200g",
+     "grind": "Espresso",
+     "price": 145000,
+     "weight_g": 240,
+     "sku": "LR-BALI-KINTAMANI-NAT-200-ES"
+    },
+    {
+     "size": "200g",
+     "grind": "Pour over",
+     "price": 145000,
+     "weight_g": 240,
+     "sku": "LR-BALI-KINTAMANI-NAT-200-PO"
+    },
+    {
+     "size": "200g",
+     "grind": "French press",
+     "price": 145000,
+     "weight_g": 240,
+     "sku": "LR-BALI-KINTAMANI-NAT-200-FR"
+    },
+    {
+     "size": "200g",
+     "grind": "Moka pot",
+     "price": 145000,
+     "weight_g": 240,
+     "sku": "LR-BALI-KINTAMANI-NAT-200-MO"
+    },
+    {
+     "size": "500g",
+     "grind": "Whole bean",
+     "price": 335000,
+     "weight_g": 540,
+     "sku": "LR-BALI-KINTAMANI-NAT-500-WH"
+    },
+    {
+     "size": "500g",
+     "grind": "Espresso",
+     "price": 335000,
+     "weight_g": 540,
+     "sku": "LR-BALI-KINTAMANI-NAT-500-ES"
+    },
+    {
+     "size": "500g",
+     "grind": "Pour over",
+     "price": 335000,
+     "weight_g": 540,
+     "sku": "LR-BALI-KINTAMANI-NAT-500-PO"
+    },
+    {
+     "size": "500g",
+     "grind": "French press",
+     "price": 335000,
+     "weight_g": 540,
+     "sku": "LR-BALI-KINTAMANI-NAT-500-FR"
+    },
+    {
+     "size": "500g",
+     "grind": "Moka pot",
+     "price": 335000,
+     "weight_g": 540,
+     "sku": "LR-BALI-KINTAMANI-NAT-500-MO"
+    },
+    {
+     "size": "1kg",
+     "grind": "Whole bean",
+     "price": 625000,
+     "weight_g": 1040,
+     "sku": "LR-BALI-KINTAMANI-NAT-1000-WH"
+    },
+    {
+     "size": "1kg",
+     "grind": "Espresso",
+     "price": 625000,
+     "weight_g": 1040,
+     "sku": "LR-BALI-KINTAMANI-NAT-1000-ES"
+    },
+    {
+     "size": "1kg",
+     "grind": "Pour over",
+     "price": 625000,
+     "weight_g": 1040,
+     "sku": "LR-BALI-KINTAMANI-NAT-1000-PO"
+    },
+    {
+     "size": "1kg",
+     "grind": "French press",
+     "price": 625000,
+     "weight_g": 1040,
+     "sku": "LR-BALI-KINTAMANI-NAT-1000-FR"
+    },
+    {
+     "size": "1kg",
+     "grind": "Moka pot",
+     "price": 625000,
+     "weight_g": 1040,
+     "sku": "LR-BALI-KINTAMANI-NAT-1000-MO"
+    }
+   ]
+  },
+  {
+   "slug": "flores-bajawa-washed",
+   "name": "Flores Bajawa Washed",
+   "type": "coffee",
+   "kind": "single-origin",
+   "island": "Nusa Tenggara",
+   "province": "East Nusa Tenggara",
+   "region": "Bajawa, Ngada",
+   "producer": "Koperasi Fa Masa",
+   "process": "Washed",
+   "roast": "light",
+   "altitude": "1,200–1,600 m",
+   "varietals": "Typica, Catimor",
+   "notes": [
+    "Jasmine",
+    "Lime",
+    "Black tea"
+   ],
+   "taste": [
+    "floral",
+    "citrus"
+   ],
+   "score": 85.5,
+   "price": 140000,
+   "story": "High on the Bajawa plateau of Flores, under the Inerie volcano.",
+   "species": "Arabica",
+   "harvest": "2026",
+   "recipe": "Pour over · 15 g coffee to 250 g water at 93 °C · 2:45 total",
+   "subscribable": true,
+   "category": "single-origin",
+   "variations": [
+    {
+     "size": "200g",
+     "grind": "Whole bean",
+     "price": 140000,
+     "weight_g": 240,
+     "sku": "LR-FLORES-BAJAWA-WASH-200-WH"
+    },
+    {
+     "size": "200g",
+     "grind": "Espresso",
+     "price": 140000,
+     "weight_g": 240,
+     "sku": "LR-FLORES-BAJAWA-WASH-200-ES"
+    },
+    {
+     "size": "200g",
+     "grind": "Pour over",
+     "price": 140000,
+     "weight_g": 240,
+     "sku": "LR-FLORES-BAJAWA-WASH-200-PO"
+    },
+    {
+     "size": "200g",
+     "grind": "French press",
+     "price": 140000,
+     "weight_g": 240,
+     "sku": "LR-FLORES-BAJAWA-WASH-200-FR"
+    },
+    {
+     "size": "200g",
+     "grind": "Moka pot",
+     "price": 140000,
+     "weight_g": 240,
+     "sku": "LR-FLORES-BAJAWA-WASH-200-MO"
+    },
+    {
+     "size": "500g",
+     "grind": "Whole bean",
+     "price": 320000,
+     "weight_g": 540,
+     "sku": "LR-FLORES-BAJAWA-WASH-500-WH"
+    },
+    {
+     "size": "500g",
+     "grind": "Espresso",
+     "price": 320000,
+     "weight_g": 540,
+     "sku": "LR-FLORES-BAJAWA-WASH-500-ES"
+    },
+    {
+     "size": "500g",
+     "grind": "Pour over",
+     "price": 320000,
+     "weight_g": 540,
+     "sku": "LR-FLORES-BAJAWA-WASH-500-PO"
+    },
+    {
+     "size": "500g",
+     "grind": "French press",
+     "price": 320000,
+     "weight_g": 540,
+     "sku": "LR-FLORES-BAJAWA-WASH-500-FR"
+    },
+    {
+     "size": "500g",
+     "grind": "Moka pot",
+     "price": 320000,
+     "weight_g": 540,
+     "sku": "LR-FLORES-BAJAWA-WASH-500-MO"
+    },
+    {
+     "size": "1kg",
+     "grind": "Whole bean",
+     "price": 600000,
+     "weight_g": 1040,
+     "sku": "LR-FLORES-BAJAWA-WASH-1000-WH"
+    },
+    {
+     "size": "1kg",
+     "grind": "Espresso",
+     "price": 600000,
+     "weight_g": 1040,
+     "sku": "LR-FLORES-BAJAWA-WASH-1000-ES"
+    },
+    {
+     "size": "1kg",
+     "grind": "Pour over",
+     "price": 600000,
+     "weight_g": 1040,
+     "sku": "LR-FLORES-BAJAWA-WASH-1000-PO"
+    },
+    {
+     "size": "1kg",
+     "grind": "French press",
+     "price": 600000,
+     "weight_g": 1040,
+     "sku": "LR-FLORES-BAJAWA-WASH-1000-FR"
+    },
+    {
+     "size": "1kg",
+     "grind": "Moka pot",
+     "price": 600000,
+     "weight_g": 1040,
+     "sku": "LR-FLORES-BAJAWA-WASH-1000-MO"
+    }
+   ]
+  },
+  {
+   "slug": "flores-manggarai-natural",
+   "name": "Flores Manggarai Natural",
+   "type": "coffee",
+   "kind": "single-origin",
+   "island": "Nusa Tenggara",
+   "province": "East Nusa Tenggara",
+   "region": "Colol, Manggarai Timur",
+   "producer": "Kelompok Tani Colol",
+   "process": "Natural",
+   "roast": "medium",
+   "altitude": "1,200–1,500 m",
+   "varietals": "Typica, Juria",
+   "notes": [
+    "Dark berries",
+    "Spice",
+    "Cocoa"
+   ],
+   "taste": [
+    "fruity",
+    "spicy"
+   ],
+   "score": 85.0,
+   "price": 135000,
+   "story": "Colol village keeps old Typica and Juria trees that most of Indonesia replanted decades ago.",
+   "species": "Arabica",
+   "harvest": "2026",
+   "recipe": "Pour over · 16 g to 250 g at 92 °C · 2:30, or espresso 18 g in, 38 g out, 28 s",
+   "subscribable": true,
+   "category": "single-origin",
+   "variations": [
+    {
+     "size": "200g",
+     "grind": "Whole bean",
+     "price": 135000,
+     "weight_g": 240,
+     "sku": "LR-FLORES-MANGGARAI-N-200-WH"
+    },
+    {
+     "size": "200g",
+     "grind": "Espresso",
+     "price": 135000,
+     "weight_g": 240,
+     "sku": "LR-FLORES-MANGGARAI-N-200-ES"
+    },
+    {
+     "size": "200g",
+     "grind": "Pour over",
+     "price": 135000,
+     "weight_g": 240,
+     "sku": "LR-FLORES-MANGGARAI-N-200-PO"
+    },
+    {
+     "size": "200g",
+     "grind": "French press",
+     "price": 135000,
+     "weight_g": 240,
+     "sku": "LR-FLORES-MANGGARAI-N-200-FR"
+    },
+    {
+     "size": "200g",
+     "grind": "Moka pot",
+     "price": 135000,
+     "weight_g": 240,
+     "sku": "LR-FLORES-MANGGARAI-N-200-MO"
+    },
+    {
+     "size": "500g",
+     "grind": "Whole bean",
+     "price": 310000,
+     "weight_g": 540,
+     "sku": "LR-FLORES-MANGGARAI-N-500-WH"
+    },
+    {
+     "size": "500g",
+     "grind": "Espresso",
+     "price": 310000,
+     "weight_g": 540,
+     "sku": "LR-FLORES-MANGGARAI-N-500-ES"
+    },
+    {
+     "size": "500g",
+     "grind": "Pour over",
+     "price": 310000,
+     "weight_g": 540,
+     "sku": "LR-FLORES-MANGGARAI-N-500-PO"
+    },
+    {
+     "size": "500g",
+     "grind": "French press",
+     "price": 310000,
+     "weight_g": 540,
+     "sku": "LR-FLORES-MANGGARAI-N-500-FR"
+    },
+    {
+     "size": "500g",
+     "grind": "Moka pot",
+     "price": 310000,
+     "weight_g": 540,
+     "sku": "LR-FLORES-MANGGARAI-N-500-MO"
+    },
+    {
+     "size": "1kg",
+     "grind": "Whole bean",
+     "price": 580000,
+     "weight_g": 1040,
+     "sku": "LR-FLORES-MANGGARAI-N-1000-WH"
+    },
+    {
+     "size": "1kg",
+     "grind": "Espresso",
+     "price": 580000,
+     "weight_g": 1040,
+     "sku": "LR-FLORES-MANGGARAI-N-1000-ES"
+    },
+    {
+     "size": "1kg",
+     "grind": "Pour over",
+     "price": 580000,
+     "weight_g": 1040,
+     "sku": "LR-FLORES-MANGGARAI-N-1000-PO"
+    },
+    {
+     "size": "1kg",
+     "grind": "French press",
+     "price": 580000,
+     "weight_g": 1040,
+     "sku": "LR-FLORES-MANGGARAI-N-1000-FR"
+    },
+    {
+     "size": "1kg",
+     "grind": "Moka pot",
+     "price": 580000,
+     "weight_g": 1040,
+     "sku": "LR-FLORES-MANGGARAI-N-1000-MO"
+    }
+   ]
+  },
+  {
+   "slug": "toraja-sapan-washed",
+   "name": "Toraja Sapan Washed",
+   "type": "coffee",
+   "kind": "single-origin",
+   "island": "Sulawesi",
+   "province": "South Sulawesi",
+   "region": "Sapan, Tana Toraja",
+   "producer": "Koperasi Sapan Minanga",
+   "process": "Washed",
+   "roast": "medium",
+   "altitude": "1,500–1,800 m",
+   "varietals": "S795, Typica",
+   "notes": [
+    "Red currant",
+    "Dark chocolate",
+    "Cedar"
+   ],
+   "taste": [
+    "fruity",
+    "chocolatey"
+   ],
+   "score": 85.75,
+   "price": 145000,
+   "story": "From the highlands of Tana Toraja, where coffee is grown around carved tongkonan houses.",
+   "species": "Arabica",
+   "harvest": "2026",
+   "recipe": "Pour over · 16 g to 250 g at 92 °C · 2:30, or espresso 18 g in, 38 g out, 28 s",
+   "subscribable": true,
+   "category": "single-origin",
+   "variations": [
+    {
+     "size": "200g",
+     "grind": "Whole bean",
+     "price": 145000,
+     "weight_g": 240,
+     "sku": "LR-TORAJA-SAPAN-WASHE-200-WH"
+    },
+    {
+     "size": "200g",
+     "grind": "Espresso",
+     "price": 145000,
+     "weight_g": 240,
+     "sku": "LR-TORAJA-SAPAN-WASHE-200-ES"
+    },
+    {
+     "size": "200g",
+     "grind": "Pour over",
+     "price": 145000,
+     "weight_g": 240,
+     "sku": "LR-TORAJA-SAPAN-WASHE-200-PO"
+    },
+    {
+     "size": "200g",
+     "grind": "French press",
+     "price": 145000,
+     "weight_g": 240,
+     "sku": "LR-TORAJA-SAPAN-WASHE-200-FR"
+    },
+    {
+     "size": "200g",
+     "grind": "Moka pot",
+     "price": 145000,
+     "weight_g": 240,
+     "sku": "LR-TORAJA-SAPAN-WASHE-200-MO"
+    },
+    {
+     "size": "500g",
+     "grind": "Whole bean",
+     "price": 335000,
+     "weight_g": 540,
+     "sku": "LR-TORAJA-SAPAN-WASHE-500-WH"
+    },
+    {
+     "size": "500g",
+     "grind": "Espresso",
+     "price": 335000,
+     "weight_g": 540,
+     "sku": "LR-TORAJA-SAPAN-WASHE-500-ES"
+    },
+    {
+     "size": "500g",
+     "grind": "Pour over",
+     "price": 335000,
+     "weight_g": 540,
+     "sku": "LR-TORAJA-SAPAN-WASHE-500-PO"
+    },
+    {
+     "size": "500g",
+     "grind": "French press",
+     "price": 335000,
+     "weight_g": 540,
+     "sku": "LR-TORAJA-SAPAN-WASHE-500-FR"
+    },
+    {
+     "size": "500g",
+     "grind": "Moka pot",
+     "price": 335000,
+     "weight_g": 540,
+     "sku": "LR-TORAJA-SAPAN-WASHE-500-MO"
+    },
+    {
+     "size": "1kg",
+     "grind": "Whole bean",
+     "price": 625000,
+     "weight_g": 1040,
+     "sku": "LR-TORAJA-SAPAN-WASHE-1000-WH"
+    },
+    {
+     "size": "1kg",
+     "grind": "Espresso",
+     "price": 625000,
+     "weight_g": 1040,
+     "sku": "LR-TORAJA-SAPAN-WASHE-1000-ES"
+    },
+    {
+     "size": "1kg",
+     "grind": "Pour over",
+     "price": 625000,
+     "weight_g": 1040,
+     "sku": "LR-TORAJA-SAPAN-WASHE-1000-PO"
+    },
+    {
+     "size": "1kg",
+     "grind": "French press",
+     "price": 625000,
+     "weight_g": 1040,
+     "sku": "LR-TORAJA-SAPAN-WASHE-1000-FR"
+    },
+    {
+     "size": "1kg",
+     "grind": "Moka pot",
+     "price": 625000,
+     "weight_g": 1040,
+     "sku": "LR-TORAJA-SAPAN-WASHE-1000-MO"
+    }
+   ]
+  },
+  {
+   "slug": "toraja-kalosi-wet-hulled",
+   "name": "Toraja Kalosi",
+   "type": "coffee",
+   "kind": "single-origin",
+   "island": "Sulawesi",
+   "province": "South Sulawesi",
+   "region": "Kalosi, Enrekang",
+   "producer": "Kelompok Tani Latimojong",
+   "process": "Wet-hulled",
+   "roast": "medium-dark",
+   "altitude": "1,400–1,700 m",
+   "varietals": "S795, Typica",
+   "notes": [
+    "Dark chocolate",
+    "Spice",
+    "Earth"
+   ],
+   "taste": [
+    "chocolatey",
+    "earthy"
+   ],
+   "score": 84.0,
+   "price": 115000,
+   "story": "Kalosi is a trading town for coffee from the Latimojong mountains; full-bodied and low in acidity.",
+   "species": "Arabica",
+   "harvest": "2026",
+   "recipe": "Espresso · 18 g in, 36 g out, 27 s · great with milk",
+   "subscribable": true,
+   "category": "single-origin",
+   "variations": [
+    {
+     "size": "200g",
+     "grind": "Whole bean",
+     "price": 115000,
+     "weight_g": 240,
+     "sku": "LR-TORAJA-KALOSI-WET--200-WH"
+    },
+    {
+     "size": "200g",
+     "grind": "Espresso",
+     "price": 115000,
+     "weight_g": 240,
+     "sku": "LR-TORAJA-KALOSI-WET--200-ES"
+    },
+    {
+     "size": "200g",
+     "grind": "Pour over",
+     "price": 115000,
+     "weight_g": 240,
+     "sku": "LR-TORAJA-KALOSI-WET--200-PO"
+    },
+    {
+     "size": "200g",
+     "grind": "French press",
+     "price": 115000,
+     "weight_g": 240,
+     "sku": "LR-TORAJA-KALOSI-WET--200-FR"
+    },
+    {
+     "size": "200g",
+     "grind": "Moka pot",
+     "price": 115000,
+     "weight_g": 240,
+     "sku": "LR-TORAJA-KALOSI-WET--200-MO"
+    },
+    {
+     "size": "500g",
+     "grind": "Whole bean",
+     "price": 265000,
+     "weight_g": 540,
+     "sku": "LR-TORAJA-KALOSI-WET--500-WH"
+    },
+    {
+     "size": "500g",
+     "grind": "Espresso",
+     "price": 265000,
+     "weight_g": 540,
+     "sku": "LR-TORAJA-KALOSI-WET--500-ES"
+    },
+    {
+     "size": "500g",
+     "grind": "Pour over",
+     "price": 265000,
+     "weight_g": 540,
+     "sku": "LR-TORAJA-KALOSI-WET--500-PO"
+    },
+    {
+     "size": "500g",
+     "grind": "French press",
+     "price": 265000,
+     "weight_g": 540,
+     "sku": "LR-TORAJA-KALOSI-WET--500-FR"
+    },
+    {
+     "size": "500g",
+     "grind": "Moka pot",
+     "price": 265000,
+     "weight_g": 540,
+     "sku": "LR-TORAJA-KALOSI-WET--500-MO"
+    },
+    {
+     "size": "1kg",
+     "grind": "Whole bean",
+     "price": 495000,
+     "weight_g": 1040,
+     "sku": "LR-TORAJA-KALOSI-WET--1000-WH"
+    },
+    {
+     "size": "1kg",
+     "grind": "Espresso",
+     "price": 495000,
+     "weight_g": 1040,
+     "sku": "LR-TORAJA-KALOSI-WET--1000-ES"
+    },
+    {
+     "size": "1kg",
+     "grind": "Pour over",
+     "price": 495000,
+     "weight_g": 1040,
+     "sku": "LR-TORAJA-KALOSI-WET--1000-PO"
+    },
+    {
+     "size": "1kg",
+     "grind": "French press",
+     "price": 495000,
+     "weight_g": 1040,
+     "sku": "LR-TORAJA-KALOSI-WET--1000-FR"
+    },
+    {
+     "size": "1kg",
+     "grind": "Moka pot",
+     "price": 495000,
+     "weight_g": 1040,
+     "sku": "LR-TORAJA-KALOSI-WET--1000-MO"
+    }
+   ]
+  },
+  {
+   "slug": "mamasa-natural",
+   "name": "Mamasa Natural",
+   "type": "coffee",
+   "kind": "single-origin",
+   "island": "Sulawesi",
+   "province": "West Sulawesi",
+   "region": "Mamasa",
+   "producer": "Kelompok Tani Rantebulahan",
+   "process": "Natural",
+   "roast": "light",
+   "altitude": "1,300–1,600 m",
+   "varietals": "S795, Typica",
+   "notes": [
+    "Plum",
+    "Brown sugar",
+    "Rose"
+   ],
+   "taste": [
+    "fruity",
+    "floral"
+   ],
+   "score": 85.5,
+   "price": 140000,
+   "story": "A small, remote valley west of Toraja reached by a single winding road.",
+   "species": "Arabica",
+   "harvest": "2026",
+   "recipe": "Pour over · 15 g coffee to 250 g water at 93 °C · 2:45 total",
+   "subscribable": true,
+   "category": "single-origin",
+   "variations": [
+    {
+     "size": "200g",
+     "grind": "Whole bean",
+     "price": 140000,
+     "weight_g": 240,
+     "sku": "LR-MAMASA-NATURAL-200-WH"
+    },
+    {
+     "size": "200g",
+     "grind": "Espresso",
+     "price": 140000,
+     "weight_g": 240,
+     "sku": "LR-MAMASA-NATURAL-200-ES"
+    },
+    {
+     "size": "200g",
+     "grind": "Pour over",
+     "price": 140000,
+     "weight_g": 240,
+     "sku": "LR-MAMASA-NATURAL-200-PO"
+    },
+    {
+     "size": "200g",
+     "grind": "French press",
+     "price": 140000,
+     "weight_g": 240,
+     "sku": "LR-MAMASA-NATURAL-200-FR"
+    },
+    {
+     "size": "200g",
+     "grind": "Moka pot",
+     "price": 140000,
+     "weight_g": 240,
+     "sku": "LR-MAMASA-NATURAL-200-MO"
+    },
+    {
+     "size": "500g",
+     "grind": "Whole bean",
+     "price": 320000,
+     "weight_g": 540,
+     "sku": "LR-MAMASA-NATURAL-500-WH"
+    },
+    {
+     "size": "500g",
+     "grind": "Espresso",
+     "price": 320000,
+     "weight_g": 540,
+     "sku": "LR-MAMASA-NATURAL-500-ES"
+    },
+    {
+     "size": "500g",
+     "grind": "Pour over",
+     "price": 320000,
+     "weight_g": 540,
+     "sku": "LR-MAMASA-NATURAL-500-PO"
+    },
+    {
+     "size": "500g",
+     "grind": "French press",
+     "price": 320000,
+     "weight_g": 540,
+     "sku": "LR-MAMASA-NATURAL-500-FR"
+    },
+    {
+     "size": "500g",
+     "grind": "Moka pot",
+     "price": 320000,
+     "weight_g": 540,
+     "sku": "LR-MAMASA-NATURAL-500-MO"
+    },
+    {
+     "size": "1kg",
+     "grind": "Whole bean",
+     "price": 600000,
+     "weight_g": 1040,
+     "sku": "LR-MAMASA-NATURAL-1000-WH"
+    },
+    {
+     "size": "1kg",
+     "grind": "Espresso",
+     "price": 600000,
+     "weight_g": 1040,
+     "sku": "LR-MAMASA-NATURAL-1000-ES"
+    },
+    {
+     "size": "1kg",
+     "grind": "Pour over",
+     "price": 600000,
+     "weight_g": 1040,
+     "sku": "LR-MAMASA-NATURAL-1000-PO"
+    },
+    {
+     "size": "1kg",
+     "grind": "French press",
+     "price": 600000,
+     "weight_g": 1040,
+     "sku": "LR-MAMASA-NATURAL-1000-FR"
+    },
+    {
+     "size": "1kg",
+     "grind": "Moka pot",
+     "price": 600000,
+     "weight_g": 1040,
+     "sku": "LR-MAMASA-NATURAL-1000-MO"
+    }
+   ]
+  },
+  {
+   "slug": "papua-wamena-washed",
+   "name": "Papua Wamena Washed",
+   "type": "coffee",
+   "kind": "single-origin",
+   "island": "Papua",
+   "province": "Highland Papua",
+   "region": "Baliem Valley, Wamena",
+   "producer": "Koperasi Baliem Arabica",
+   "process": "Washed",
+   "roast": "medium",
+   "altitude": "1,500–1,900 m",
+   "varietals": "Typica",
+   "notes": [
+    "Milk chocolate",
+    "Hazelnut",
+    "Plum"
+   ],
+   "taste": [
+    "chocolatey",
+    "nutty"
+   ],
+   "score": 85.0,
+   "price": 155000,
+   "story": "Typica trees planted in the 1950s, grown without chemicals in the Baliem Valley.",
+   "species": "Arabica",
+   "harvest": "2026",
+   "recipe": "Pour over · 16 g to 250 g at 92 °C · 2:30, or espresso 18 g in, 38 g out, 28 s",
+   "subscribable": true,
+   "category": "single-origin",
+   "variations": [
+    {
+     "size": "200g",
+     "grind": "Whole bean",
+     "price": 155000,
+     "weight_g": 240,
+     "sku": "LR-PAPUA-WAMENA-WASHE-200-WH"
+    },
+    {
+     "size": "200g",
+     "grind": "Espresso",
+     "price": 155000,
+     "weight_g": 240,
+     "sku": "LR-PAPUA-WAMENA-WASHE-200-ES"
+    },
+    {
+     "size": "200g",
+     "grind": "Pour over",
+     "price": 155000,
+     "weight_g": 240,
+     "sku": "LR-PAPUA-WAMENA-WASHE-200-PO"
+    },
+    {
+     "size": "200g",
+     "grind": "French press",
+     "price": 155000,
+     "weight_g": 240,
+     "sku": "LR-PAPUA-WAMENA-WASHE-200-FR"
+    },
+    {
+     "size": "200g",
+     "grind": "Moka pot",
+     "price": 155000,
+     "weight_g": 240,
+     "sku": "LR-PAPUA-WAMENA-WASHE-200-MO"
+    },
+    {
+     "size": "500g",
+     "grind": "Whole bean",
+     "price": 355000,
+     "weight_g": 540,
+     "sku": "LR-PAPUA-WAMENA-WASHE-500-WH"
+    },
+    {
+     "size": "500g",
+     "grind": "Espresso",
+     "price": 355000,
+     "weight_g": 540,
+     "sku": "LR-PAPUA-WAMENA-WASHE-500-ES"
+    },
+    {
+     "size": "500g",
+     "grind": "Pour over",
+     "price": 355000,
+     "weight_g": 540,
+     "sku": "LR-PAPUA-WAMENA-WASHE-500-PO"
+    },
+    {
+     "size": "500g",
+     "grind": "French press",
+     "price": 355000,
+     "weight_g": 540,
+     "sku": "LR-PAPUA-WAMENA-WASHE-500-FR"
+    },
+    {
+     "size": "500g",
+     "grind": "Moka pot",
+     "price": 355000,
+     "weight_g": 540,
+     "sku": "LR-PAPUA-WAMENA-WASHE-500-MO"
+    },
+    {
+     "size": "1kg",
+     "grind": "Whole bean",
+     "price": 665000,
+     "weight_g": 1040,
+     "sku": "LR-PAPUA-WAMENA-WASHE-1000-WH"
+    },
+    {
+     "size": "1kg",
+     "grind": "Espresso",
+     "price": 665000,
+     "weight_g": 1040,
+     "sku": "LR-PAPUA-WAMENA-WASHE-1000-ES"
+    },
+    {
+     "size": "1kg",
+     "grind": "Pour over",
+     "price": 665000,
+     "weight_g": 1040,
+     "sku": "LR-PAPUA-WAMENA-WASHE-1000-PO"
+    },
+    {
+     "size": "1kg",
+     "grind": "French press",
+     "price": 665000,
+     "weight_g": 1040,
+     "sku": "LR-PAPUA-WAMENA-WASHE-1000-FR"
+    },
+    {
+     "size": "1kg",
+     "grind": "Moka pot",
+     "price": 665000,
+     "weight_g": 1040,
+     "sku": "LR-PAPUA-WAMENA-WASHE-1000-MO"
+    }
+   ]
+  },
+  {
+   "slug": "papua-moanemani-washed",
+   "name": "Papua Moanemani",
+   "type": "coffee",
+   "kind": "single-origin",
+   "island": "Papua",
+   "province": "Central Papua",
+   "region": "Moanemani, Dogiyai",
+   "producer": "Kelompok Tani Kamuu",
+   "process": "Washed",
+   "roast": "medium",
+   "altitude": "1,500–1,700 m",
+   "varietals": "Typica",
+   "notes": [
+    "Caramel",
+    "Orange",
+    "Spice"
+   ],
+   "taste": [
+    "sweet",
+    "citrus"
+   ],
+   "score": 84.75,
+   "price": 150000,
+   "story": "From the Kamuu valley; flown out of the highlands by small plane before it reaches us.",
+   "species": "Arabica",
+   "harvest": "2026",
+   "recipe": "Pour over · 16 g to 250 g at 92 °C · 2:30, or espresso 18 g in, 38 g out, 28 s",
+   "subscribable": true,
+   "category": "single-origin",
+   "variations": [
+    {
+     "size": "200g",
+     "grind": "Whole bean",
+     "price": 150000,
+     "weight_g": 240,
+     "sku": "LR-PAPUA-MOANEMANI-WA-200-WH"
+    },
+    {
+     "size": "200g",
+     "grind": "Espresso",
+     "price": 150000,
+     "weight_g": 240,
+     "sku": "LR-PAPUA-MOANEMANI-WA-200-ES"
+    },
+    {
+     "size": "200g",
+     "grind": "Pour over",
+     "price": 150000,
+     "weight_g": 240,
+     "sku": "LR-PAPUA-MOANEMANI-WA-200-PO"
+    },
+    {
+     "size": "200g",
+     "grind": "French press",
+     "price": 150000,
+     "weight_g": 240,
+     "sku": "LR-PAPUA-MOANEMANI-WA-200-FR"
+    },
+    {
+     "size": "200g",
+     "grind": "Moka pot",
+     "price": 150000,
+     "weight_g": 240,
+     "sku": "LR-PAPUA-MOANEMANI-WA-200-MO"
+    },
+    {
+     "size": "500g",
+     "grind": "Whole bean",
+     "price": 345000,
+     "weight_g": 540,
+     "sku": "LR-PAPUA-MOANEMANI-WA-500-WH"
+    },
+    {
+     "size": "500g",
+     "grind": "Espresso",
+     "price": 345000,
+     "weight_g": 540,
+     "sku": "LR-PAPUA-MOANEMANI-WA-500-ES"
+    },
+    {
+     "size": "500g",
+     "grind": "Pour over",
+     "price": 345000,
+     "weight_g": 540,
+     "sku": "LR-PAPUA-MOANEMANI-WA-500-PO"
+    },
+    {
+     "size": "500g",
+     "grind": "French press",
+     "price": 345000,
+     "weight_g": 540,
+     "sku": "LR-PAPUA-MOANEMANI-WA-500-FR"
+    },
+    {
+     "size": "500g",
+     "grind": "Moka pot",
+     "price": 345000,
+     "weight_g": 540,
+     "sku": "LR-PAPUA-MOANEMANI-WA-500-MO"
+    },
+    {
+     "size": "1kg",
+     "grind": "Whole bean",
+     "price": 645000,
+     "weight_g": 1040,
+     "sku": "LR-PAPUA-MOANEMANI-WA-1000-WH"
+    },
+    {
+     "size": "1kg",
+     "grind": "Espresso",
+     "price": 645000,
+     "weight_g": 1040,
+     "sku": "LR-PAPUA-MOANEMANI-WA-1000-ES"
+    },
+    {
+     "size": "1kg",
+     "grind": "Pour over",
+     "price": 645000,
+     "weight_g": 1040,
+     "sku": "LR-PAPUA-MOANEMANI-WA-1000-PO"
+    },
+    {
+     "size": "1kg",
+     "grind": "French press",
+     "price": 645000,
+     "weight_g": 1040,
+     "sku": "LR-PAPUA-MOANEMANI-WA-1000-FR"
+    },
+    {
+     "size": "1kg",
+     "grind": "Moka pot",
+     "price": 645000,
+     "weight_g": 1040,
+     "sku": "LR-PAPUA-MOANEMANI-WA-1000-MO"
+    }
+   ]
+  },
+  {
+   "slug": "lampung-robusta-fine",
+   "name": "Lampung Fine Robusta",
+   "type": "coffee",
+   "kind": "single-origin",
+   "island": "Sumatra",
+   "province": "Lampung",
+   "region": "Sumberjaya, Lampung Barat",
+   "producer": "Kelompok Tani Way Petai",
+   "process": "Natural",
+   "roast": "medium-dark",
+   "altitude": "700–900 m",
+   "varietals": "Robusta (BP 42, BP 358)",
+   "notes": [
+    "Dark chocolate",
+    "Peanut",
+    "Molasses"
+   ],
+   "taste": [
+    "chocolatey",
+    "nutty"
+   ],
+   "score": 82.5,
+   "price": 75000,
+   "story": "Fine robusta: red-cherry picked and carefully dried, made for kopi susu and tubruk.",
+   "species": "Robusta",
+   "harvest": "2026",
+   "recipe": "Espresso · 18 g in, 36 g out, 27 s · great with milk",
+   "subscribable": true,
+   "category": "single-origin",
+   "variations": [
+    {
+     "size": "200g",
+     "grind": "Whole bean",
+     "price": 75000,
+     "weight_g": 240,
+     "sku": "LR-LAMPUNG-ROBUSTA-FI-200-WH"
+    },
+    {
+     "size": "200g",
+     "grind": "Espresso",
+     "price": 75000,
+     "weight_g": 240,
+     "sku": "LR-LAMPUNG-ROBUSTA-FI-200-ES"
+    },
+    {
+     "size": "200g",
+     "grind": "Pour over",
+     "price": 75000,
+     "weight_g": 240,
+     "sku": "LR-LAMPUNG-ROBUSTA-FI-200-PO"
+    },
+    {
+     "size": "200g",
+     "grind": "French press",
+     "price": 75000,
+     "weight_g": 240,
+     "sku": "LR-LAMPUNG-ROBUSTA-FI-200-FR"
+    },
+    {
+     "size": "200g",
+     "grind": "Moka pot",
+     "price": 75000,
+     "weight_g": 240,
+     "sku": "LR-LAMPUNG-ROBUSTA-FI-200-MO"
+    },
+    {
+     "size": "500g",
+     "grind": "Whole bean",
+     "price": 170000,
+     "weight_g": 540,
+     "sku": "LR-LAMPUNG-ROBUSTA-FI-500-WH"
+    },
+    {
+     "size": "500g",
+     "grind": "Espresso",
+     "price": 170000,
+     "weight_g": 540,
+     "sku": "LR-LAMPUNG-ROBUSTA-FI-500-ES"
+    },
+    {
+     "size": "500g",
+     "grind": "Pour over",
+     "price": 170000,
+     "weight_g": 540,
+     "sku": "LR-LAMPUNG-ROBUSTA-FI-500-PO"
+    },
+    {
+     "size": "500g",
+     "grind": "French press",
+     "price": 170000,
+     "weight_g": 540,
+     "sku": "LR-LAMPUNG-ROBUSTA-FI-500-FR"
+    },
+    {
+     "size": "500g",
+     "grind": "Moka pot",
+     "price": 170000,
+     "weight_g": 540,
+     "sku": "LR-LAMPUNG-ROBUSTA-FI-500-MO"
+    },
+    {
+     "size": "1kg",
+     "grind": "Whole bean",
+     "price": 320000,
+     "weight_g": 1040,
+     "sku": "LR-LAMPUNG-ROBUSTA-FI-1000-WH"
+    },
+    {
+     "size": "1kg",
+     "grind": "Espresso",
+     "price": 320000,
+     "weight_g": 1040,
+     "sku": "LR-LAMPUNG-ROBUSTA-FI-1000-ES"
+    },
+    {
+     "size": "1kg",
+     "grind": "Pour over",
+     "price": 320000,
+     "weight_g": 1040,
+     "sku": "LR-LAMPUNG-ROBUSTA-FI-1000-PO"
+    },
+    {
+     "size": "1kg",
+     "grind": "French press",
+     "price": 320000,
+     "weight_g": 1040,
+     "sku": "LR-LAMPUNG-ROBUSTA-FI-1000-FR"
+    },
+    {
+     "size": "1kg",
+     "grind": "Moka pot",
+     "price": 320000,
+     "weight_g": 1040,
+     "sku": "LR-LAMPUNG-ROBUSTA-FI-1000-MO"
+    }
+   ]
+  },
+  {
+   "slug": "temanggung-robusta-natural",
+   "name": "Temanggung Fine Robusta",
+   "type": "coffee",
+   "kind": "single-origin",
+   "island": "Java",
+   "province": "Central Java",
+   "region": "Mount Sumbing, Temanggung",
+   "producer": "Kelompok Tani Sumbing",
+   "process": "Natural",
+   "roast": "dark",
+   "altitude": "800–1,100 m",
+   "varietals": "Robusta",
+   "notes": [
+    "Cocoa",
+    "Roasted grain",
+    "Spice"
+   ],
+   "taste": [
+    "chocolatey",
+    "earthy"
+   ],
+   "score": 82.0,
+   "price": 70000,
+   "story": "Sun-dried robusta from the lower slopes of Sumbing; strong and sweet with condensed milk.",
+   "species": "Robusta",
+   "harvest": "2026",
+   "recipe": "Tubruk or moka pot · 10 g to 150 g just-off-boil water · let it settle 4 minutes",
+   "subscribable": true,
+   "category": "single-origin",
+   "variations": [
+    {
+     "size": "200g",
+     "grind": "Whole bean",
+     "price": 70000,
+     "weight_g": 240,
+     "sku": "LR-TEMANGGUNG-ROBUSTA-200-WH"
+    },
+    {
+     "size": "200g",
+     "grind": "Espresso",
+     "price": 70000,
+     "weight_g": 240,
+     "sku": "LR-TEMANGGUNG-ROBUSTA-200-ES"
+    },
+    {
+     "size": "200g",
+     "grind": "Pour over",
+     "price": 70000,
+     "weight_g": 240,
+     "sku": "LR-TEMANGGUNG-ROBUSTA-200-PO"
+    },
+    {
+     "size": "200g",
+     "grind": "French press",
+     "price": 70000,
+     "weight_g": 240,
+     "sku": "LR-TEMANGGUNG-ROBUSTA-200-FR"
+    },
+    {
+     "size": "200g",
+     "grind": "Moka pot",
+     "price": 70000,
+     "weight_g": 240,
+     "sku": "LR-TEMANGGUNG-ROBUSTA-200-MO"
+    },
+    {
+     "size": "500g",
+     "grind": "Whole bean",
+     "price": 160000,
+     "weight_g": 540,
+     "sku": "LR-TEMANGGUNG-ROBUSTA-500-WH"
+    },
+    {
+     "size": "500g",
+     "grind": "Espresso",
+     "price": 160000,
+     "weight_g": 540,
+     "sku": "LR-TEMANGGUNG-ROBUSTA-500-ES"
+    },
+    {
+     "size": "500g",
+     "grind": "Pour over",
+     "price": 160000,
+     "weight_g": 540,
+     "sku": "LR-TEMANGGUNG-ROBUSTA-500-PO"
+    },
+    {
+     "size": "500g",
+     "grind": "French press",
+     "price": 160000,
+     "weight_g": 540,
+     "sku": "LR-TEMANGGUNG-ROBUSTA-500-FR"
+    },
+    {
+     "size": "500g",
+     "grind": "Moka pot",
+     "price": 160000,
+     "weight_g": 540,
+     "sku": "LR-TEMANGGUNG-ROBUSTA-500-MO"
+    },
+    {
+     "size": "1kg",
+     "grind": "Whole bean",
+     "price": 300000,
+     "weight_g": 1040,
+     "sku": "LR-TEMANGGUNG-ROBUSTA-1000-WH"
+    },
+    {
+     "size": "1kg",
+     "grind": "Espresso",
+     "price": 300000,
+     "weight_g": 1040,
+     "sku": "LR-TEMANGGUNG-ROBUSTA-1000-ES"
+    },
+    {
+     "size": "1kg",
+     "grind": "Pour over",
+     "price": 300000,
+     "weight_g": 1040,
+     "sku": "LR-TEMANGGUNG-ROBUSTA-1000-PO"
+    },
+    {
+     "size": "1kg",
+     "grind": "French press",
+     "price": 300000,
+     "weight_g": 1040,
+     "sku": "LR-TEMANGGUNG-ROBUSTA-1000-FR"
+    },
+    {
+     "size": "1kg",
+     "grind": "Moka pot",
+     "price": 300000,
+     "weight_g": 1040,
+     "sku": "LR-TEMANGGUNG-ROBUSTA-1000-MO"
+    }
+   ]
+  },
+  {
+   "slug": "liberika-jambi",
+   "name": "Jambi Liberica",
+   "type": "coffee",
+   "kind": "single-origin",
+   "island": "Sumatra",
+   "province": "Jambi",
+   "region": "Tanjung Jabung Barat",
+   "producer": "Kelompok Tani Mekar Jaya",
+   "process": "Natural",
+   "roast": "medium",
+   "altitude": "10–50 m",
+   "varietals": "Liberica",
+   "notes": [
+    "Jackfruit",
+    "Smoke",
+    "Dark sugar"
+   ],
+   "taste": [
+    "fruity",
+    "earthy"
+   ],
+   "score": 82.0,
+   "price": 95000,
+   "story": "Liberica grows on the peat lowlands of Jambi's east coast; big beans, unusual jackfruit sweetness.",
+   "species": "Liberica",
+   "harvest": "2026",
+   "recipe": "Pour over · 16 g to 250 g at 92 °C · 2:30, or espresso 18 g in, 38 g out, 28 s",
+   "subscribable": true,
+   "category": "single-origin",
+   "variations": [
+    {
+     "size": "200g",
+     "grind": "Whole bean",
+     "price": 95000,
+     "weight_g": 240,
+     "sku": "LR-LIBERIKA-JAMBI-200-WH"
+    },
+    {
+     "size": "200g",
+     "grind": "Espresso",
+     "price": 95000,
+     "weight_g": 240,
+     "sku": "LR-LIBERIKA-JAMBI-200-ES"
+    },
+    {
+     "size": "200g",
+     "grind": "Pour over",
+     "price": 95000,
+     "weight_g": 240,
+     "sku": "LR-LIBERIKA-JAMBI-200-PO"
+    },
+    {
+     "size": "200g",
+     "grind": "French press",
+     "price": 95000,
+     "weight_g": 240,
+     "sku": "LR-LIBERIKA-JAMBI-200-FR"
+    },
+    {
+     "size": "200g",
+     "grind": "Moka pot",
+     "price": 95000,
+     "weight_g": 240,
+     "sku": "LR-LIBERIKA-JAMBI-200-MO"
+    },
+    {
+     "size": "500g",
+     "grind": "Whole bean",
+     "price": 220000,
+     "weight_g": 540,
+     "sku": "LR-LIBERIKA-JAMBI-500-WH"
+    },
+    {
+     "size": "500g",
+     "grind": "Espresso",
+     "price": 220000,
+     "weight_g": 540,
+     "sku": "LR-LIBERIKA-JAMBI-500-ES"
+    },
+    {
+     "size": "500g",
+     "grind": "Pour over",
+     "price": 220000,
+     "weight_g": 540,
+     "sku": "LR-LIBERIKA-JAMBI-500-PO"
+    },
+    {
+     "size": "500g",
+     "grind": "French press",
+     "price": 220000,
+     "weight_g": 540,
+     "sku": "LR-LIBERIKA-JAMBI-500-FR"
+    },
+    {
+     "size": "500g",
+     "grind": "Moka pot",
+     "price": 220000,
+     "weight_g": 540,
+     "sku": "LR-LIBERIKA-JAMBI-500-MO"
+    },
+    {
+     "size": "1kg",
+     "grind": "Whole bean",
+     "price": 410000,
+     "weight_g": 1040,
+     "sku": "LR-LIBERIKA-JAMBI-1000-WH"
+    },
+    {
+     "size": "1kg",
+     "grind": "Espresso",
+     "price": 410000,
+     "weight_g": 1040,
+     "sku": "LR-LIBERIKA-JAMBI-1000-ES"
+    },
+    {
+     "size": "1kg",
+     "grind": "Pour over",
+     "price": 410000,
+     "weight_g": 1040,
+     "sku": "LR-LIBERIKA-JAMBI-1000-PO"
+    },
+    {
+     "size": "1kg",
+     "grind": "French press",
+     "price": 410000,
+     "weight_g": 1040,
+     "sku": "LR-LIBERIKA-JAMBI-1000-FR"
+    },
+    {
+     "size": "1kg",
+     "grind": "Moka pot",
+     "price": 410000,
+     "weight_g": 1040,
+     "sku": "LR-LIBERIKA-JAMBI-1000-MO"
+    }
+   ]
+  },
+  {
+   "slug": "lereng-house-espresso",
+   "name": "Lereng House Espresso",
+   "type": "coffee",
+   "kind": "blend",
+   "roast": "medium-dark",
+   "notes": [
+    "Milk chocolate",
+    "Caramel",
+    "Red apple"
+   ],
+   "taste": [
+    "chocolatey",
+    "sweet"
+   ],
+   "components": "Mandailing, Java Cikuray, Bali Kintamani",
+   "price": 115000,
+   "story": "Our everyday espresso. Built to taste good straight and better with milk.",
+   "process": "Blend",
+   "island": "Blend",
+   "species": "Arabica",
+   "recipe": "Espresso · 18 g in, 36 g out, 27 s · great with milk",
+   "subscribable": true,
+   "category": "blends",
+   "variations": [
+    {
+     "size": "200g",
+     "grind": "Whole bean",
+     "price": 115000,
+     "weight_g": 240,
+     "sku": "LR-LERENG-HOUSE-ESPRE-200-WH"
+    },
+    {
+     "size": "200g",
+     "grind": "Espresso",
+     "price": 115000,
+     "weight_g": 240,
+     "sku": "LR-LERENG-HOUSE-ESPRE-200-ES"
+    },
+    {
+     "size": "200g",
+     "grind": "Pour over",
+     "price": 115000,
+     "weight_g": 240,
+     "sku": "LR-LERENG-HOUSE-ESPRE-200-PO"
+    },
+    {
+     "size": "200g",
+     "grind": "French press",
+     "price": 115000,
+     "weight_g": 240,
+     "sku": "LR-LERENG-HOUSE-ESPRE-200-FR"
+    },
+    {
+     "size": "200g",
+     "grind": "Moka pot",
+     "price": 115000,
+     "weight_g": 240,
+     "sku": "LR-LERENG-HOUSE-ESPRE-200-MO"
+    },
+    {
+     "size": "500g",
+     "grind": "Whole bean",
+     "price": 265000,
+     "weight_g": 540,
+     "sku": "LR-LERENG-HOUSE-ESPRE-500-WH"
+    },
+    {
+     "size": "500g",
+     "grind": "Espresso",
+     "price": 265000,
+     "weight_g": 540,
+     "sku": "LR-LERENG-HOUSE-ESPRE-500-ES"
+    },
+    {
+     "size": "500g",
+     "grind": "Pour over",
+     "price": 265000,
+     "weight_g": 540,
+     "sku": "LR-LERENG-HOUSE-ESPRE-500-PO"
+    },
+    {
+     "size": "500g",
+     "grind": "French press",
+     "price": 265000,
+     "weight_g": 540,
+     "sku": "LR-LERENG-HOUSE-ESPRE-500-FR"
+    },
+    {
+     "size": "500g",
+     "grind": "Moka pot",
+     "price": 265000,
+     "weight_g": 540,
+     "sku": "LR-LERENG-HOUSE-ESPRE-500-MO"
+    },
+    {
+     "size": "1kg",
+     "grind": "Whole bean",
+     "price": 495000,
+     "weight_g": 1040,
+     "sku": "LR-LERENG-HOUSE-ESPRE-1000-WH"
+    },
+    {
+     "size": "1kg",
+     "grind": "Espresso",
+     "price": 495000,
+     "weight_g": 1040,
+     "sku": "LR-LERENG-HOUSE-ESPRE-1000-ES"
+    },
+    {
+     "size": "1kg",
+     "grind": "Pour over",
+     "price": 495000,
+     "weight_g": 1040,
+     "sku": "LR-LERENG-HOUSE-ESPRE-1000-PO"
+    },
+    {
+     "size": "1kg",
+     "grind": "French press",
+     "price": 495000,
+     "weight_g": 1040,
+     "sku": "LR-LERENG-HOUSE-ESPRE-1000-FR"
+    },
+    {
+     "size": "1kg",
+     "grind": "Moka pot",
+     "price": 495000,
+     "weight_g": 1040,
+     "sku": "LR-LERENG-HOUSE-ESPRE-1000-MO"
+    }
+   ]
+  },
+  {
+   "slug": "pagi-filter-blend",
+   "name": "Pagi Filter Blend",
+   "type": "coffee",
+   "kind": "blend",
+   "roast": "light",
+   "notes": [
+    "Orange",
+    "Honey",
+    "Black tea"
+   ],
+   "taste": [
+    "citrus",
+    "sweet"
+   ],
+   "components": "Gayo washed, Flores Bajawa",
+   "price": 120000,
+   "story": "Bright and easy, for the first cup of the day.",
+   "process": "Blend",
+   "island": "Blend",
+   "species": "Arabica",
+   "recipe": "Pour over · 15 g coffee to 250 g water at 93 °C · 2:45 total",
+   "subscribable": true,
+   "category": "blends",
+   "variations": [
+    {
+     "size": "200g",
+     "grind": "Whole bean",
+     "price": 120000,
+     "weight_g": 240,
+     "sku": "LR-PAGI-FILTER-BLEND-200-WH"
+    },
+    {
+     "size": "200g",
+     "grind": "Espresso",
+     "price": 120000,
+     "weight_g": 240,
+     "sku": "LR-PAGI-FILTER-BLEND-200-ES"
+    },
+    {
+     "size": "200g",
+     "grind": "Pour over",
+     "price": 120000,
+     "weight_g": 240,
+     "sku": "LR-PAGI-FILTER-BLEND-200-PO"
+    },
+    {
+     "size": "200g",
+     "grind": "French press",
+     "price": 120000,
+     "weight_g": 240,
+     "sku": "LR-PAGI-FILTER-BLEND-200-FR"
+    },
+    {
+     "size": "200g",
+     "grind": "Moka pot",
+     "price": 120000,
+     "weight_g": 240,
+     "sku": "LR-PAGI-FILTER-BLEND-200-MO"
+    },
+    {
+     "size": "500g",
+     "grind": "Whole bean",
+     "price": 275000,
+     "weight_g": 540,
+     "sku": "LR-PAGI-FILTER-BLEND-500-WH"
+    },
+    {
+     "size": "500g",
+     "grind": "Espresso",
+     "price": 275000,
+     "weight_g": 540,
+     "sku": "LR-PAGI-FILTER-BLEND-500-ES"
+    },
+    {
+     "size": "500g",
+     "grind": "Pour over",
+     "price": 275000,
+     "weight_g": 540,
+     "sku": "LR-PAGI-FILTER-BLEND-500-PO"
+    },
+    {
+     "size": "500g",
+     "grind": "French press",
+     "price": 275000,
+     "weight_g": 540,
+     "sku": "LR-PAGI-FILTER-BLEND-500-FR"
+    },
+    {
+     "size": "500g",
+     "grind": "Moka pot",
+     "price": 275000,
+     "weight_g": 540,
+     "sku": "LR-PAGI-FILTER-BLEND-500-MO"
+    },
+    {
+     "size": "1kg",
+     "grind": "Whole bean",
+     "price": 515000,
+     "weight_g": 1040,
+     "sku": "LR-PAGI-FILTER-BLEND-1000-WH"
+    },
+    {
+     "size": "1kg",
+     "grind": "Espresso",
+     "price": 515000,
+     "weight_g": 1040,
+     "sku": "LR-PAGI-FILTER-BLEND-1000-ES"
+    },
+    {
+     "size": "1kg",
+     "grind": "Pour over",
+     "price": 515000,
+     "weight_g": 1040,
+     "sku": "LR-PAGI-FILTER-BLEND-1000-PO"
+    },
+    {
+     "size": "1kg",
+     "grind": "French press",
+     "price": 515000,
+     "weight_g": 1040,
+     "sku": "LR-PAGI-FILTER-BLEND-1000-FR"
+    },
+    {
+     "size": "1kg",
+     "grind": "Moka pot",
+     "price": 515000,
+     "weight_g": 1040,
+     "sku": "LR-PAGI-FILTER-BLEND-1000-MO"
+    }
+   ]
+  },
+  {
+   "slug": "kopi-susu-blend",
+   "name": "Kopi Susu Blend",
+   "type": "coffee",
+   "kind": "blend",
+   "roast": "medium-dark",
+   "notes": [
+    "Palm sugar",
+    "Dark chocolate",
+    "Roasted nut"
+   ],
+   "taste": [
+    "chocolatey",
+    "nutty"
+   ],
+   "components": "Lampung fine robusta, Gayo wet-hulled",
+   "price": 95000,
+   "story": "Arabica and robusta, roasted for es kopi susu with gula aren.",
+   "process": "Blend",
+   "island": "Blend",
+   "species": "Arabica & robusta",
+   "recipe": "Espresso · 18 g in, 36 g out, 27 s · great with milk",
+   "subscribable": true,
+   "category": "blends",
+   "variations": [
+    {
+     "size": "200g",
+     "grind": "Whole bean",
+     "price": 95000,
+     "weight_g": 240,
+     "sku": "LR-KOPI-SUSU-BLEND-200-WH"
+    },
+    {
+     "size": "200g",
+     "grind": "Espresso",
+     "price": 95000,
+     "weight_g": 240,
+     "sku": "LR-KOPI-SUSU-BLEND-200-ES"
+    },
+    {
+     "size": "200g",
+     "grind": "Pour over",
+     "price": 95000,
+     "weight_g": 240,
+     "sku": "LR-KOPI-SUSU-BLEND-200-PO"
+    },
+    {
+     "size": "200g",
+     "grind": "French press",
+     "price": 95000,
+     "weight_g": 240,
+     "sku": "LR-KOPI-SUSU-BLEND-200-FR"
+    },
+    {
+     "size": "200g",
+     "grind": "Moka pot",
+     "price": 95000,
+     "weight_g": 240,
+     "sku": "LR-KOPI-SUSU-BLEND-200-MO"
+    },
+    {
+     "size": "500g",
+     "grind": "Whole bean",
+     "price": 220000,
+     "weight_g": 540,
+     "sku": "LR-KOPI-SUSU-BLEND-500-WH"
+    },
+    {
+     "size": "500g",
+     "grind": "Espresso",
+     "price": 220000,
+     "weight_g": 540,
+     "sku": "LR-KOPI-SUSU-BLEND-500-ES"
+    },
+    {
+     "size": "500g",
+     "grind": "Pour over",
+     "price": 220000,
+     "weight_g": 540,
+     "sku": "LR-KOPI-SUSU-BLEND-500-PO"
+    },
+    {
+     "size": "500g",
+     "grind": "French press",
+     "price": 220000,
+     "weight_g": 540,
+     "sku": "LR-KOPI-SUSU-BLEND-500-FR"
+    },
+    {
+     "size": "500g",
+     "grind": "Moka pot",
+     "price": 220000,
+     "weight_g": 540,
+     "sku": "LR-KOPI-SUSU-BLEND-500-MO"
+    },
+    {
+     "size": "1kg",
+     "grind": "Whole bean",
+     "price": 410000,
+     "weight_g": 1040,
+     "sku": "LR-KOPI-SUSU-BLEND-1000-WH"
+    },
+    {
+     "size": "1kg",
+     "grind": "Espresso",
+     "price": 410000,
+     "weight_g": 1040,
+     "sku": "LR-KOPI-SUSU-BLEND-1000-ES"
+    },
+    {
+     "size": "1kg",
+     "grind": "Pour over",
+     "price": 410000,
+     "weight_g": 1040,
+     "sku": "LR-KOPI-SUSU-BLEND-1000-PO"
+    },
+    {
+     "size": "1kg",
+     "grind": "French press",
+     "price": 410000,
+     "weight_g": 1040,
+     "sku": "LR-KOPI-SUSU-BLEND-1000-FR"
+    },
+    {
+     "size": "1kg",
+     "grind": "Moka pot",
+     "price": 410000,
+     "weight_g": 1040,
+     "sku": "LR-KOPI-SUSU-BLEND-1000-MO"
+    }
+   ]
+  },
+  {
+   "slug": "malam-decaf",
+   "name": "Malam Decaf",
+   "type": "coffee",
+   "kind": "blend",
+   "roast": "medium",
+   "notes": [
+    "Milk chocolate",
+    "Toffee",
+    "Plum"
+   ],
+   "taste": [
+    "chocolatey",
+    "sweet"
+   ],
+   "components": "Gayo, sugarcane decaffeinated",
+   "price": 130000,
+   "story": "Decaffeinated with sugarcane ethyl acetate, so it still tastes like coffee after dinner.",
+   "process": "Blend",
+   "island": "Blend",
+   "species": "Arabica",
+   "recipe": "Pour over · 16 g to 250 g at 92 °C · 2:30, or espresso 18 g in, 38 g out, 28 s",
+   "subscribable": true,
+   "category": "blends",
+   "variations": [
+    {
+     "size": "200g",
+     "grind": "Whole bean",
+     "price": 130000,
+     "weight_g": 240,
+     "sku": "LR-MALAM-DECAF-200-WH"
+    },
+    {
+     "size": "200g",
+     "grind": "Espresso",
+     "price": 130000,
+     "weight_g": 240,
+     "sku": "LR-MALAM-DECAF-200-ES"
+    },
+    {
+     "size": "200g",
+     "grind": "Pour over",
+     "price": 130000,
+     "weight_g": 240,
+     "sku": "LR-MALAM-DECAF-200-PO"
+    },
+    {
+     "size": "200g",
+     "grind": "French press",
+     "price": 130000,
+     "weight_g": 240,
+     "sku": "LR-MALAM-DECAF-200-FR"
+    },
+    {
+     "size": "200g",
+     "grind": "Moka pot",
+     "price": 130000,
+     "weight_g": 240,
+     "sku": "LR-MALAM-DECAF-200-MO"
+    },
+    {
+     "size": "500g",
+     "grind": "Whole bean",
+     "price": 300000,
+     "weight_g": 540,
+     "sku": "LR-MALAM-DECAF-500-WH"
+    },
+    {
+     "size": "500g",
+     "grind": "Espresso",
+     "price": 300000,
+     "weight_g": 540,
+     "sku": "LR-MALAM-DECAF-500-ES"
+    },
+    {
+     "size": "500g",
+     "grind": "Pour over",
+     "price": 300000,
+     "weight_g": 540,
+     "sku": "LR-MALAM-DECAF-500-PO"
+    },
+    {
+     "size": "500g",
+     "grind": "French press",
+     "price": 300000,
+     "weight_g": 540,
+     "sku": "LR-MALAM-DECAF-500-FR"
+    },
+    {
+     "size": "500g",
+     "grind": "Moka pot",
+     "price": 300000,
+     "weight_g": 540,
+     "sku": "LR-MALAM-DECAF-500-MO"
+    },
+    {
+     "size": "1kg",
+     "grind": "Whole bean",
+     "price": 560000,
+     "weight_g": 1040,
+     "sku": "LR-MALAM-DECAF-1000-WH"
+    },
+    {
+     "size": "1kg",
+     "grind": "Espresso",
+     "price": 560000,
+     "weight_g": 1040,
+     "sku": "LR-MALAM-DECAF-1000-ES"
+    },
+    {
+     "size": "1kg",
+     "grind": "Pour over",
+     "price": 560000,
+     "weight_g": 1040,
+     "sku": "LR-MALAM-DECAF-1000-PO"
+    },
+    {
+     "size": "1kg",
+     "grind": "French press",
+     "price": 560000,
+     "weight_g": 1040,
+     "sku": "LR-MALAM-DECAF-1000-FR"
+    },
+    {
+     "size": "1kg",
+     "grind": "Moka pot",
+     "price": 560000,
+     "weight_g": 1040,
+     "sku": "LR-MALAM-DECAF-1000-MO"
+    }
+   ]
+  },
+  {
+   "slug": "tubruk-blend",
+   "name": "Tubruk Blend",
+   "type": "coffee",
+   "kind": "blend",
+   "roast": "dark",
+   "notes": [
+    "Cocoa",
+    "Spice",
+    "Roasted grain"
+   ],
+   "taste": [
+    "chocolatey",
+    "spicy"
+   ],
+   "components": "Temanggung robusta, Toraja Kalosi",
+   "price": 80000,
+   "story": "Ground fine for kopi tubruk: boiled water straight onto the grounds, sugar optional.",
+   "process": "Blend",
+   "island": "Blend",
+   "species": "Arabica & robusta",
+   "recipe": "Tubruk or moka pot · 10 g to 150 g just-off-boil water · let it settle 4 minutes",
+   "subscribable": true,
+   "category": "blends",
+   "variations": [
+    {
+     "size": "200g",
+     "grind": "Whole bean",
+     "price": 80000,
+     "weight_g": 240,
+     "sku": "LR-TUBRUK-BLEND-200-WH"
+    },
+    {
+     "size": "200g",
+     "grind": "Espresso",
+     "price": 80000,
+     "weight_g": 240,
+     "sku": "LR-TUBRUK-BLEND-200-ES"
+    },
+    {
+     "size": "200g",
+     "grind": "Pour over",
+     "price": 80000,
+     "weight_g": 240,
+     "sku": "LR-TUBRUK-BLEND-200-PO"
+    },
+    {
+     "size": "200g",
+     "grind": "French press",
+     "price": 80000,
+     "weight_g": 240,
+     "sku": "LR-TUBRUK-BLEND-200-FR"
+    },
+    {
+     "size": "200g",
+     "grind": "Moka pot",
+     "price": 80000,
+     "weight_g": 240,
+     "sku": "LR-TUBRUK-BLEND-200-MO"
+    },
+    {
+     "size": "500g",
+     "grind": "Whole bean",
+     "price": 185000,
+     "weight_g": 540,
+     "sku": "LR-TUBRUK-BLEND-500-WH"
+    },
+    {
+     "size": "500g",
+     "grind": "Espresso",
+     "price": 185000,
+     "weight_g": 540,
+     "sku": "LR-TUBRUK-BLEND-500-ES"
+    },
+    {
+     "size": "500g",
+     "grind": "Pour over",
+     "price": 185000,
+     "weight_g": 540,
+     "sku": "LR-TUBRUK-BLEND-500-PO"
+    },
+    {
+     "size": "500g",
+     "grind": "French press",
+     "price": 185000,
+     "weight_g": 540,
+     "sku": "LR-TUBRUK-BLEND-500-FR"
+    },
+    {
+     "size": "500g",
+     "grind": "Moka pot",
+     "price": 185000,
+     "weight_g": 540,
+     "sku": "LR-TUBRUK-BLEND-500-MO"
+    },
+    {
+     "size": "1kg",
+     "grind": "Whole bean",
+     "price": 345000,
+     "weight_g": 1040,
+     "sku": "LR-TUBRUK-BLEND-1000-WH"
+    },
+    {
+     "size": "1kg",
+     "grind": "Espresso",
+     "price": 345000,
+     "weight_g": 1040,
+     "sku": "LR-TUBRUK-BLEND-1000-ES"
+    },
+    {
+     "size": "1kg",
+     "grind": "Pour over",
+     "price": 345000,
+     "weight_g": 1040,
+     "sku": "LR-TUBRUK-BLEND-1000-PO"
+    },
+    {
+     "size": "1kg",
+     "grind": "French press",
+     "price": 345000,
+     "weight_g": 1040,
+     "sku": "LR-TUBRUK-BLEND-1000-FR"
+    },
+    {
+     "size": "1kg",
+     "grind": "Moka pot",
+     "price": 345000,
+     "weight_g": 1040,
+     "sku": "LR-TUBRUK-BLEND-1000-MO"
+    }
+   ]
+  },
+  {
+   "slug": "gayo-anaerobic-natural-lot-07",
+   "name": "Gayo Anaerobic Natural · Lot 07",
+   "type": "coffee",
+   "kind": "microlot",
+   "island": "Sumatra",
+   "province": "Aceh",
+   "region": "Bener Meriah",
+   "producer": "Ibu Rahmah",
+   "process": "Anaerobic natural",
+   "roast": "light",
+   "altitude": "1,550 m",
+   "varietals": "Ateng Super",
+   "notes": [
+    "Strawberry yoghurt",
+    "Cinnamon",
+    "Red wine"
+   ],
+   "taste": [
+    "fruity",
+    "winey"
+   ],
+   "score": 88.0,
+   "price": 195000,
+   "story": "Fermented in sealed tanks for 96 hours before drying. Only 60 bags of this lot.",
+   "species": "Arabica",
+   "harvest": "2026",
+   "recipe": "Pour over · 15 g coffee to 250 g water at 93 °C · 2:45 total",
+   "subscribable": false,
+   "category": "micro-lots",
+   "variations": [
+    {
+     "size": "100g",
+     "grind": "Whole bean",
+     "price": 195000,
+     "weight_g": 140,
+     "sku": "LR-GAYO-ANAEROBIC-NAT-100-WH"
+    },
+    {
+     "size": "100g",
+     "grind": "Espresso",
+     "price": 195000,
+     "weight_g": 140,
+     "sku": "LR-GAYO-ANAEROBIC-NAT-100-ES"
+    },
+    {
+     "size": "100g",
+     "grind": "Pour over",
+     "price": 195000,
+     "weight_g": 140,
+     "sku": "LR-GAYO-ANAEROBIC-NAT-100-PO"
+    },
+    {
+     "size": "100g",
+     "grind": "French press",
+     "price": 195000,
+     "weight_g": 140,
+     "sku": "LR-GAYO-ANAEROBIC-NAT-100-FR"
+    },
+    {
+     "size": "100g",
+     "grind": "Moka pot",
+     "price": 195000,
+     "weight_g": 140,
+     "sku": "LR-GAYO-ANAEROBIC-NAT-100-MO"
+    },
+    {
+     "size": "250g",
+     "grind": "Whole bean",
+     "price": 460000,
+     "weight_g": 290,
+     "sku": "LR-GAYO-ANAEROBIC-NAT-250-WH"
+    },
+    {
+     "size": "250g",
+     "grind": "Espresso",
+     "price": 460000,
+     "weight_g": 290,
+     "sku": "LR-GAYO-ANAEROBIC-NAT-250-ES"
+    },
+    {
+     "size": "250g",
+     "grind": "Pour over",
+     "price": 460000,
+     "weight_g": 290,
+     "sku": "LR-GAYO-ANAEROBIC-NAT-250-PO"
+    },
+    {
+     "size": "250g",
+     "grind": "French press",
+     "price": 460000,
+     "weight_g": 290,
+     "sku": "LR-GAYO-ANAEROBIC-NAT-250-FR"
+    },
+    {
+     "size": "250g",
+     "grind": "Moka pot",
+     "price": 460000,
+     "weight_g": 290,
+     "sku": "LR-GAYO-ANAEROBIC-NAT-250-MO"
+    }
+   ],
+   "stock": 60
+  },
+  {
+   "slug": "kerinci-carbonic-lot-02",
+   "name": "Kerinci Carbonic Maceration · Lot 02",
+   "type": "coffee",
+   "kind": "microlot",
+   "island": "Sumatra",
+   "province": "Jambi",
+   "region": "Kayu Aro",
+   "producer": "Koperasi Alko Kerinci",
+   "process": "Carbonic maceration",
+   "roast": "light",
+   "altitude": "1,650 m",
+   "varietals": "Andungsari",
+   "notes": [
+    "Grape",
+    "Hibiscus",
+    "Candied orange"
+   ],
+   "taste": [
+    "fruity",
+    "floral"
+   ],
+   "score": 88.5,
+   "price": 220000,
+   "story": "Whole cherries fermented under CO₂, a technique borrowed from Beaujolais winemaking.",
+   "species": "Arabica",
+   "harvest": "2026",
+   "recipe": "Pour over · 15 g coffee to 250 g water at 93 °C · 2:45 total",
+   "subscribable": false,
+   "category": "micro-lots",
+   "variations": [
+    {
+     "size": "100g",
+     "grind": "Whole bean",
+     "price": 220000,
+     "weight_g": 140,
+     "sku": "LR-KERINCI-CARBONIC-L-100-WH"
+    },
+    {
+     "size": "100g",
+     "grind": "Espresso",
+     "price": 220000,
+     "weight_g": 140,
+     "sku": "LR-KERINCI-CARBONIC-L-100-ES"
+    },
+    {
+     "size": "100g",
+     "grind": "Pour over",
+     "price": 220000,
+     "weight_g": 140,
+     "sku": "LR-KERINCI-CARBONIC-L-100-PO"
+    },
+    {
+     "size": "100g",
+     "grind": "French press",
+     "price": 220000,
+     "weight_g": 140,
+     "sku": "LR-KERINCI-CARBONIC-L-100-FR"
+    },
+    {
+     "size": "100g",
+     "grind": "Moka pot",
+     "price": 220000,
+     "weight_g": 140,
+     "sku": "LR-KERINCI-CARBONIC-L-100-MO"
+    },
+    {
+     "size": "250g",
+     "grind": "Whole bean",
+     "price": 515000,
+     "weight_g": 290,
+     "sku": "LR-KERINCI-CARBONIC-L-250-WH"
+    },
+    {
+     "size": "250g",
+     "grind": "Espresso",
+     "price": 515000,
+     "weight_g": 290,
+     "sku": "LR-KERINCI-CARBONIC-L-250-ES"
+    },
+    {
+     "size": "250g",
+     "grind": "Pour over",
+     "price": 515000,
+     "weight_g": 290,
+     "sku": "LR-KERINCI-CARBONIC-L-250-PO"
+    },
+    {
+     "size": "250g",
+     "grind": "French press",
+     "price": 515000,
+     "weight_g": 290,
+     "sku": "LR-KERINCI-CARBONIC-L-250-FR"
+    },
+    {
+     "size": "250g",
+     "grind": "Moka pot",
+     "price": 515000,
+     "weight_g": 290,
+     "sku": "LR-KERINCI-CARBONIC-L-250-MO"
+    }
+   ],
+   "stock": 40
+  },
+  {
+   "slug": "java-puntang-gesha",
+   "name": "Java Puntang Gesha",
+   "type": "coffee",
+   "kind": "microlot",
+   "island": "Java",
+   "province": "West Java",
+   "region": "Mount Puntang",
+   "producer": "Pak Ayi and family",
+   "process": "Washed",
+   "roast": "light",
+   "altitude": "1,450 m",
+   "varietals": "Gesha",
+   "notes": [
+    "Jasmine",
+    "Bergamot",
+    "Peach"
+   ],
+   "taste": [
+    "floral",
+    "citrus"
+   ],
+   "score": 89.0,
+   "price": 260000,
+   "story": "Gesha seedlings planted in 2019; this is the first harvest big enough to sell.",
+   "species": "Arabica",
+   "harvest": "2026",
+   "recipe": "Pour over · 15 g coffee to 250 g water at 93 °C · 2:45 total",
+   "subscribable": false,
+   "category": "micro-lots",
+   "variations": [
+    {
+     "size": "100g",
+     "grind": "Whole bean",
+     "price": 260000,
+     "weight_g": 140,
+     "sku": "LR-JAVA-PUNTANG-GESHA-100-WH"
+    },
+    {
+     "size": "100g",
+     "grind": "Espresso",
+     "price": 260000,
+     "weight_g": 140,
+     "sku": "LR-JAVA-PUNTANG-GESHA-100-ES"
+    },
+    {
+     "size": "100g",
+     "grind": "Pour over",
+     "price": 260000,
+     "weight_g": 140,
+     "sku": "LR-JAVA-PUNTANG-GESHA-100-PO"
+    },
+    {
+     "size": "100g",
+     "grind": "French press",
+     "price": 260000,
+     "weight_g": 140,
+     "sku": "LR-JAVA-PUNTANG-GESHA-100-FR"
+    },
+    {
+     "size": "100g",
+     "grind": "Moka pot",
+     "price": 260000,
+     "weight_g": 140,
+     "sku": "LR-JAVA-PUNTANG-GESHA-100-MO"
+    },
+    {
+     "size": "250g",
+     "grind": "Whole bean",
+     "price": 610000,
+     "weight_g": 290,
+     "sku": "LR-JAVA-PUNTANG-GESHA-250-WH"
+    },
+    {
+     "size": "250g",
+     "grind": "Espresso",
+     "price": 610000,
+     "weight_g": 290,
+     "sku": "LR-JAVA-PUNTANG-GESHA-250-ES"
+    },
+    {
+     "size": "250g",
+     "grind": "Pour over",
+     "price": 610000,
+     "weight_g": 290,
+     "sku": "LR-JAVA-PUNTANG-GESHA-250-PO"
+    },
+    {
+     "size": "250g",
+     "grind": "French press",
+     "price": 610000,
+     "weight_g": 290,
+     "sku": "LR-JAVA-PUNTANG-GESHA-250-FR"
+    },
+    {
+     "size": "250g",
+     "grind": "Moka pot",
+     "price": 610000,
+     "weight_g": 290,
+     "sku": "LR-JAVA-PUNTANG-GESHA-250-MO"
+    }
+   ],
+   "stock": 30
+  },
+  {
+   "slug": "bali-kintamani-double-ferment",
+   "name": "Bali Kintamani Double Ferment",
+   "type": "coffee",
+   "kind": "microlot",
+   "island": "Bali",
+   "province": "Bali",
+   "region": "Belantih",
+   "producer": "Pak Ketut Sudira",
+   "process": "Double-fermented honey",
+   "roast": "light",
+   "altitude": "1,450 m",
+   "varietals": "Kopyol",
+   "notes": [
+    "Passion fruit",
+    "Molasses",
+    "Lime"
+   ],
+   "taste": [
+    "fruity",
+    "citrus"
+   ],
+   "score": 87.5,
+   "price": 185000,
+   "story": "Fermented twice, once in cherry and once as parchment, then dried as a red honey.",
+   "species": "Arabica",
+   "harvest": "2026",
+   "recipe": "Pour over · 15 g coffee to 250 g water at 93 °C · 2:45 total",
+   "subscribable": false,
+   "category": "micro-lots",
+   "variations": [
+    {
+     "size": "100g",
+     "grind": "Whole bean",
+     "price": 185000,
+     "weight_g": 140,
+     "sku": "LR-BALI-KINTAMANI-DOU-100-WH"
+    },
+    {
+     "size": "100g",
+     "grind": "Espresso",
+     "price": 185000,
+     "weight_g": 140,
+     "sku": "LR-BALI-KINTAMANI-DOU-100-ES"
+    },
+    {
+     "size": "100g",
+     "grind": "Pour over",
+     "price": 185000,
+     "weight_g": 140,
+     "sku": "LR-BALI-KINTAMANI-DOU-100-PO"
+    },
+    {
+     "size": "100g",
+     "grind": "French press",
+     "price": 185000,
+     "weight_g": 140,
+     "sku": "LR-BALI-KINTAMANI-DOU-100-FR"
+    },
+    {
+     "size": "100g",
+     "grind": "Moka pot",
+     "price": 185000,
+     "weight_g": 140,
+     "sku": "LR-BALI-KINTAMANI-DOU-100-MO"
+    },
+    {
+     "size": "250g",
+     "grind": "Whole bean",
+     "price": 435000,
+     "weight_g": 290,
+     "sku": "LR-BALI-KINTAMANI-DOU-250-WH"
+    },
+    {
+     "size": "250g",
+     "grind": "Espresso",
+     "price": 435000,
+     "weight_g": 290,
+     "sku": "LR-BALI-KINTAMANI-DOU-250-ES"
+    },
+    {
+     "size": "250g",
+     "grind": "Pour over",
+     "price": 435000,
+     "weight_g": 290,
+     "sku": "LR-BALI-KINTAMANI-DOU-250-PO"
+    },
+    {
+     "size": "250g",
+     "grind": "French press",
+     "price": 435000,
+     "weight_g": 290,
+     "sku": "LR-BALI-KINTAMANI-DOU-250-FR"
+    },
+    {
+     "size": "250g",
+     "grind": "Moka pot",
+     "price": 435000,
+     "weight_g": 290,
+     "sku": "LR-BALI-KINTAMANI-DOU-250-MO"
+    }
+   ],
+   "stock": 50,
+   "preorder": {
+    "ships": "2026-11-20",
+    "note": "Roasting on 18 November. Ships from 20 November."
+   }
+  },
+  {
+   "slug": "drip-bag-gayo",
+   "name": "Drip Bags · Gayo Washed (10)",
+   "type": "simple",
+   "category": "drip-bags",
+   "price": 95000,
+   "weight_g": 150,
+   "sku": "LR-DRIP-BAG-GAYO",
+   "description": "Ten single-serve drip bags. Hang one on a cup, pour 180 ml of water just off the boil in three pours.",
+   "source": "gayo-washed",
+   "subscribable": true
+  },
+  {
+   "slug": "drip-bag-kintamani",
+   "name": "Drip Bags · Bali Kintamani (10)",
+   "type": "simple",
+   "category": "drip-bags",
+   "price": 95000,
+   "weight_g": 150,
+   "sku": "LR-DRIP-BAG-KINTAMANI",
+   "description": "Ten single-serve drip bags. Hang one on a cup, pour 180 ml of water just off the boil in three pours.",
+   "source": "bali-kintamani-washed",
+   "subscribable": true
+  },
+  {
+   "slug": "drip-bag-house",
+   "name": "Drip Bags · Pagi Filter Blend (10)",
+   "type": "simple",
+   "category": "drip-bags",
+   "price": 85000,
+   "weight_g": 150,
+   "sku": "LR-DRIP-BAG-HOUSE",
+   "description": "Ten single-serve drip bags. Hang one on a cup, pour 180 ml of water just off the boil in three pours.",
+   "source": "pagi-filter-blend",
+   "subscribable": true
+  },
+  {
+   "slug": "cold-brew-concentrate-500",
+   "name": "Cold Brew Concentrate · 500 ml",
+   "type": "simple",
+   "category": "cold-brew",
+   "price": 85000,
+   "weight_g": 600,
+   "sku": "LR-COLD-BREW-CONCENTRATE-500",
+   "description": "Steeped for 18 hours from Java Cikuray. Mix 1:2 with water or milk. Keep refrigerated; delivered chilled in Bali only.",
+   "shipping_class": "chilled-bali-only"
+  },
+  {
+   "slug": "cold-brew-concentrate-1l",
+   "name": "Cold Brew Concentrate · 1 L",
+   "type": "simple",
+   "category": "cold-brew",
+   "price": 155000,
+   "weight_g": 1100,
+   "sku": "LR-COLD-BREW-CONCENTRATE-1L",
+   "description": "Steeped for 18 hours from Java Cikuray. Mix 1:2 with water or milk. Keep refrigerated; delivered chilled in Bali only.",
+   "shipping_class": "chilled-bali-only"
+  },
+  {
+   "slug": "ceramic-dripper-02",
+   "name": "Ceramic Dripper 02",
+   "type": "simple",
+   "category": "brewers",
+   "price": 285000,
+   "weight_g": 450,
+   "sku": "LR-EQ-CERAMIC-DRIPPER-",
+   "description": "A cone dripper with spiral ribs, size 02 (1–4 cups). Heavy ceramic keeps the brew temperature steady.",
+   "stock": 25
+  },
+  {
+   "slug": "flat-bottom-dripper",
+   "name": "Flat-Bottom Dripper 185",
+   "type": "simple",
+   "category": "brewers",
+   "price": 395000,
+   "weight_g": 350,
+   "sku": "LR-EQ-FLAT-BOTTOM-DRIP",
+   "description": "Three small holes and a flat bed for an even, forgiving extraction.",
+   "stock": 25
+  },
+  {
+   "slug": "glass-pour-over-carafe",
+   "name": "Glass Pour-Over Carafe 6-cup",
+   "type": "simple",
+   "category": "brewers",
+   "price": 620000,
+   "weight_g": 700,
+   "sku": "LR-EQ-GLASS-POUR-OVER-",
+   "description": "Borosilicate glass carafe with a wooden collar. Brew and serve in one piece.",
+   "stock": 25
+  },
+  {
+   "slug": "immersion-brewer",
+   "name": "Immersion Brewer",
+   "type": "simple",
+   "category": "brewers",
+   "price": 545000,
+   "weight_g": 400,
+   "sku": "LR-EQ-IMMERSION-BREWER",
+   "description": "Pressure brewer for a full cup in two minutes. Travels well.",
+   "stock": 25
+  },
+  {
+   "slug": "french-press-600",
+   "name": "French Press 600 ml",
+   "type": "simple",
+   "category": "brewers",
+   "price": 345000,
+   "weight_g": 700,
+   "sku": "LR-EQ-FRENCH-PRESS-600",
+   "description": "Double-wall steel press with a fine mesh filter.",
+   "stock": 25
+  },
+  {
+   "slug": "moka-pot-3",
+   "name": "Moka Pot 3-cup",
+   "type": "simple",
+   "category": "brewers",
+   "price": 395000,
+   "weight_g": 600,
+   "sku": "LR-EQ-MOKA-POT-3",
+   "description": "Aluminium stovetop brewer. Works with our Tubruk and Kopi Susu blends.",
+   "stock": 25
+  },
+  {
+   "slug": "hand-grinder-c3",
+   "name": "Hand Grinder · Conical Burr",
+   "type": "simple",
+   "category": "grinders",
+   "price": 895000,
+   "weight_g": 550,
+   "sku": "LR-EQ-HAND-GRINDER-C3",
+   "description": "Stainless steel conical burrs with 36 click settings, from espresso to French press.",
+   "stock": 25
+  },
+  {
+   "slug": "electric-grinder-flat",
+   "name": "Electric Grinder · Flat Burr",
+   "type": "simple",
+   "category": "grinders",
+   "price": 3450000,
+   "weight_g": 3200,
+   "sku": "LR-EQ-ELECTRIC-GRINDER",
+   "description": "64 mm flat burrs, single-dose hopper, low retention. For the home bar.",
+   "stock": 25
+  },
+  {
+   "slug": "gooseneck-kettle",
+   "name": "Gooseneck Kettle 0.9 L",
+   "type": "simple",
+   "category": "kettles-scales",
+   "price": 745000,
+   "weight_g": 900,
+   "sku": "LR-EQ-GOOSENECK-KETTLE",
+   "description": "Stovetop gooseneck for a slow, precise pour. Works on induction.",
+   "stock": 25
+  },
+  {
+   "slug": "electric-kettle-temp",
+   "name": "Electric Kettle · Temperature Control",
+   "type": "simple",
+   "category": "kettles-scales",
+   "price": 1650000,
+   "weight_g": 1400,
+   "sku": "LR-EQ-ELECTRIC-KETTLE-",
+   "description": "Holds water at any temperature from 60 to 100 °C.",
+   "stock": 25
+  },
+  {
+   "slug": "brew-scale",
+   "name": "Brew Scale with Timer",
+   "type": "simple",
+   "category": "kettles-scales",
+   "price": 425000,
+   "weight_g": 500,
+   "sku": "LR-EQ-BREW-SCALE",
+   "description": "0.1 g resolution, built-in timer, USB-C charging.",
+   "stock": 25
+  },
+  {
+   "slug": "paper-filters-02",
+   "name": "Paper Filters 02 · 100 pcs",
+   "type": "simple",
+   "category": "filters",
+   "price": 65000,
+   "weight_g": 150,
+   "sku": "LR-EQ-PAPER-FILTERS-02",
+   "description": "Unbleached paper filters for 02 cone drippers.",
+   "stock": 25
+  },
+  {
+   "slug": "paper-filters-flat",
+   "name": "Paper Filters 185 · 100 pcs",
+   "type": "simple",
+   "category": "filters",
+   "price": 85000,
+   "weight_g": 150,
+   "sku": "LR-EQ-PAPER-FILTERS-FL",
+   "description": "Wave filters for flat-bottom drippers.",
+   "stock": 25
+  },
+  {
+   "slug": "glass-server-600",
+   "name": "Glass Server 600 ml",
+   "type": "simple",
+   "category": "brewers",
+   "price": 225000,
+   "weight_g": 400,
+   "sku": "LR-EQ-GLASS-SERVER-600",
+   "description": "Heat-resistant server with 100 ml markings.",
+   "stock": 25
+  },
+  {
+   "slug": "enamel-mug",
+   "name": "Enamel Camp Mug",
+   "type": "simple",
+   "category": "merch",
+   "price": 145000,
+   "weight_g": 350,
+   "sku": "LR-MR-ENAMEL-MUG",
+   "description": "Speckled enamel mug, 350 ml. Survives campfires and dishwashers.",
+   "stock": 40
+  },
+  {
+   "slug": "canvas-tote",
+   "name": "Canvas Tote",
+   "type": "simple",
+   "category": "merch",
+   "price": 125000,
+   "weight_g": 250,
+   "sku": "LR-MR-CANVAS-TOTE",
+   "description": "Heavy canvas tote, fits 3 kg of beans and a laptop.",
+   "stock": 40
+  },
+  {
+   "slug": "lereng-tee",
+   "name": "Lereng Tee",
+   "type": "variable-merch",
+   "category": "merch",
+   "price": 225000,
+   "weight_g": 250,
+   "sku": "LR-MR-LERENG-TEE",
+   "description": "Heavyweight cotton tee with the Lereng contour-line print.",
+   "stock": 40,
+   "sizes": [
+    "S",
+    "M",
+    "L",
+    "XL"
+   ]
+  },
+  {
+   "slug": "bucket-hat",
+   "name": "Bucket Hat",
+   "type": "simple",
+   "category": "merch",
+   "price": 195000,
+   "weight_g": 150,
+   "sku": "LR-MR-BUCKET-HAT",
+   "description": "Washed cotton bucket hat for the farm visits.",
+   "stock": 40
+  },
+  {
+   "slug": "lereng-gift-card",
+   "name": "Lereng Gift Card",
+   "type": "gift-card",
+   "category": "gift-cards",
+   "amounts": [
+    100000,
+    250000,
+    500000,
+    1000000
+   ],
+   "description": "Sent by email right away, with your message. Works on everything in the shop, including subscriptions, and never expires."
+  },
+  {
+   "slug": "discovery-box",
+   "name": "Discovery Box · Pick 3",
+   "type": "bundle-pick",
+   "category": "bundles",
+   "pick": 3,
+   "size": "100g",
+   "discount": 15,
+   "from": "single-origin",
+   "description": "Choose any three single origins in 100 g bags and save 15%. The easiest way to find your coffee."
+  },
+  {
+   "slug": "brew-starter-kit",
+   "name": "Brew Starter Kit",
+   "type": "bundle-fixed",
+   "category": "bundles",
+   "discount": 12,
+   "items": [
+    [
+     "ceramic-dripper-02",
+     1
+    ],
+    [
+     "paper-filters-02",
+     1
+    ],
+    [
+     "glass-server-600",
+     1
+    ],
+    [
+     "pagi-filter-blend",
+     1
+    ]
+   ],
+   "description": "Everything for your first pour over: dripper, filters, server and 200 g of Pagi Filter Blend, 12% less than buying them separately."
+  },
+  {
+   "slug": "office-pack",
+   "name": "Office Pack · 3 kg",
+   "type": "bundle-fixed",
+   "category": "bundles",
+   "discount": 10,
+   "items": [
+    [
+     "lereng-house-espresso",
+     3
+    ]
+   ],
+   "variation": {
+    "size": "1kg",
+    "grind": "Whole bean"
+   },
+   "description": "Three kilos of House Espresso, whole bean, for the office machine. 10% off."
+  },
+  {
+   "slug": "roasters-choice-subscription",
+   "name": "Roaster's Choice Subscription",
+   "type": "subscription-only",
+   "category": "subscriptions",
+   "price": 125000,
+   "description": "A different single origin every delivery, chosen by our roasters, with tasting notes and a brew card. Pause or cancel anytime.",
+   "sizes": [
+    "200g",
+    "500g"
+   ],
+   "grind_choice": true
+  }
+ ]
+}

@@ -1,0 +1,41 @@
+<!-- wp:template-part {"slug":"header","tagName":"header"} /-->
+<!-- wp:group {"tagName":"main","className":"pdp","layout":{"type":"constrained"}} -->
+<main class="wp-block-group pdp"><!-- wp:woocommerce/breadcrumbs {"align":"wide","fontSize":"xs"} /-->
+<!-- wp:woocommerce/store-notices {"align":"wide"} /-->
+<!-- wp:columns {"align":"wide","className":"pdp__cols"} -->
+<div class="wp-block-columns alignwide pdp__cols"><!-- wp:column {"width":"55%","className":"pdp__media"} -->
+<div class="wp-block-column pdp__media" style="flex-basis:55%"><!-- wp:woocommerce/product-image-gallery /--></div>
+<!-- /wp:column -->
+<!-- wp:column {"width":"45%","className":"pdp__info"} -->
+<div class="wp-block-column pdp__info" style="flex-basis:45%"><!-- wp:lereng/card-label {"variant":"large"} /-->
+<!-- wp:post-title {"level":1,"className":"pdp__title","__woocommerceNamespace":"woocommerce/product-query/product-title"} /-->
+<!-- wp:woocommerce/product-rating {"isDescendentOfSingleProductTemplate":true} /-->
+<!-- wp:woocommerce/product-price {"isDescendentOfSingleProductTemplate":true,"fontSize":"large"} /-->
+<!-- wp:lereng/card-notes {"variant":"chips"} /-->
+<!-- wp:post-excerpt {"className":"pdp__excerpt","__woocommerceNamespace":"woocommerce/product-query/product-summary"} /-->
+<!-- wp:woocommerce/add-to-cart-form /-->
+<!-- wp:lereng/delivery-promise /--></div>
+<!-- /wp:column --></div>
+<!-- /wp:columns -->
+<!-- wp:lereng/coffee-facts {"align":"wide"} /-->
+<!-- wp:woocommerce/product-details {"align":"wide","className":"pdp__details is-style-minimal"} /-->
+<!-- wp:group {"align":"wide","className":"section","layout":{"type":"default"}} -->
+<div class="wp-block-group alignwide section"><!-- wp:heading --><h2 class="wp-block-heading">You might also like</h2><!-- /wp:heading -->
+<!-- wp:woocommerce/product-collection {"queryId":21,"query":{"perPage":4,"pages":1,"offset":0,"postType":"product","order":"asc","orderBy":"title","search":"","exclude":[],"inherit":false,"taxQuery":{},"isProductCollectionBlock":true,"woocommerceStockStatus":["instock","onbackorder"],"woocommerceAttributes":[],"relatedBy":{"categories":true,"tags":true}},"tagName":"div","displayLayout":{"type":"flex","columns":4,"shrinkColumns":true},"collection":"woocommerce/product-collection/related","hideControls":["inherit"],"queryContextIncludes":["collection"]} -->
+<div class="wp-block-woocommerce-product-collection"><!-- lereng:card -->
+<!-- wp:woocommerce/product-template {"className":"product-grid"} -->
+<!-- wp:group {"className":"card","layout":{"type":"flex","orientation":"vertical"}} -->
+<div class="wp-block-group card"><!-- wp:woocommerce/product-image {"imageSizing":"thumbnail","isDescendentOfQueryLoop":true,"aspectRatio":"4/5","scale":"cover","className":"card__img"} -->
+<!-- wp:woocommerce/product-sale-badge {"isDescendentOfQueryLoop":true,"align":"right"} /-->
+<!-- /wp:woocommerce/product-image -->
+<!-- wp:lereng/card-label /-->
+<!-- wp:post-title {"level":3,"isLink":true,"className":"card__title","__woocommerceNamespace":"woocommerce/product-collection/product-title"} /-->
+<!-- wp:lereng/card-notes /-->
+<!-- wp:woocommerce/product-price {"isDescendentOfQueryLoop":true,"className":"card__price"} /--></div>
+<!-- /wp:group -->
+<!-- /wp:woocommerce/product-template -->
+<!-- /lereng:card --></div>
+<!-- /wp:woocommerce/product-collection --></div>
+<!-- /wp:group --></main>
+<!-- /wp:group -->
+<!-- wp:template-part {"slug":"footer","tagName":"footer"} /-->

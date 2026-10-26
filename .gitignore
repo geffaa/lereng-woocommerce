@@ -1,0 +1,6 @@
+node_modules
+.wp/
+vendor/
+.DS_Store
+demo/out
+.phpunit.cache

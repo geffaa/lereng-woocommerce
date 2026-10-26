@@ -1,0 +1,20 @@
+{
+  "name": "lereng-woocommerce",
+  "version": "1.0.0",
+  "private": true,
+  "description": "WooCommerce build for an Indonesian specialty coffee roaster: block theme, subscriptions, local shipping and payments, wholesale",
+  "type": "module",
+  "scripts": {
+    "setup": "node scripts/wp.mjs setup",
+    "dev": "node scripts/wp.mjs serve",
+    "seed": "node scripts/wp.mjs seed",
+    "php": "node scripts/wp.mjs php",
+    "test": "cd wp-content/plugins/lereng-commerce && composer test",
+    "e2e": "node scripts/e2e.mjs"
+  },
+  "devDependencies": {
+    "@fontsource-variable/schibsted-grotesk": "^5.3.0",
+    "@fontsource/ibm-plex-mono": "^5.3.0",
+    "puppeteer-core": "^25.16.0"
+  }
+}
