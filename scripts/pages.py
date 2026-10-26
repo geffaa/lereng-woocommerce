@@ -67,7 +67,7 @@ pages = {
  ])},
  "about": {"title": "About Lereng", "content": "\n".join([
     p('Lereng means slope. Almost all of Indonesia’s best coffee grows on the slopes of volcanoes, between 1,200 and 1,900 metres, on farms of one or two hectares.', 'lead'),
-    p('We buy from farmers and cooperatives on seven islands, cup every lot blind, and pay above the local cherry price for the ones we choose. Every bag names the producer and the place.'),
+    p('We buy from farmers and cooperatives on six islands, cup every lot blind, and pay above the local cherry price for the ones we choose. Every bag names the producer and the place.'),
     p('Everything is roasted in small batches in Kerobokan, Bali, twice a week.'),
     p('<em>Lereng is a fictional brand built as a portfolio project. The origins, processes and varieties are real; producers and the roastery are invented.</em>'),
  ])},

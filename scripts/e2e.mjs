@@ -54,7 +54,7 @@ async function addCoffee(page, slug, size = '200g', grind = 'Whole bean', qty = 
 async function checkout(page, { city = 'Canggu', state = 'BA', method = 'lereng_qris', bank = null, coupon = null, email = `guest${Date.now()}@example.com`, ship = true, extra } = {}) {
   await page.goto(`${BASE}/checkout/`, { waitUntil: 'networkidle0' });
   await page.waitForSelector('.wc-block-checkout__shipping-method-option, #shipping-first_name, #billing-first_name', { timeout: 60000 });
-  if (ship) await page.evaluate(() => [...document.querySelectorAll('.wc-block-checkout__shipping-method-option')].find((b) => /ship/i.test(b.textContent))?.click());
+  if (ship) await page.evaluate(() => [...document.querySelectorAll('.wc-block-checkout__shipping-method-option')].find((b) => /ship|kirim/i.test(b.textContent))?.click());
   const prefix = ship ? 'shipping' : 'billing';
   // A returning session shows the saved address as a summary card: open it for editing.
   await page.waitForFunction((p) => document.querySelector(`#${p}-first_name`) || document.querySelector('.wc-block-components-address-card__edit'), { timeout: 60000 }, prefix);
@@ -401,6 +401,45 @@ await check('wholesale: register, apply, approval, quick order at wholesale pric
 });
 
 await browser.close();
+await check('newsletter: sign-up keeps the address and sends the welcome code', async (page) => {
+  const email = `news${Date.now()}@example.com`;
+  await page.goto(`${BASE}/`, { waitUntil: 'networkidle0' });
+  await page.type('.newsletter input[type=email]', email);
+  await page.click('.newsletter button');
+  await page.waitForFunction(() => /you.re in/i.test(document.querySelector('.newsletter__msg')?.textContent || ''), { timeout: 30000 });
+  const again = await api(page, '/lereng/v1/newsletter', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ email }) });
+  assert(again.status === 200 && /already/i.test(again.body.message), 'second sign-up is recognised');
+  const bad = await api(page, '/lereng/v1/newsletter', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ email: 'nope' }) });
+  assert(bad.status === 422, 'invalid email refused');
+  assert((await inbox(page, /Welcome to Lereng/)).length > 0, 'welcome email');
+});
+
+await check('language: Bahasa Indonesia storefront, checkout, payment page and order email', async (page) => {
+  await page.goto(`${BASE}/?lang=id`, { waitUntil: 'networkidle0' });
+  assert((await page.$eval('html', (h) => h.lang)) === 'id', 'html lang');
+  assert(/Panduan seduh/.test(await text(page, '.site-nav')), 'navigation in Indonesian');
+  assert(!page.url().includes('lang='), 'the switch leaves a clean URL');
+  await page.goto(`${BASE}/product/gayo-wine-natural/`, { waitUntil: 'networkidle0' });
+  const facts = await text(page, '.coffee-facts');
+  assert(/Cara kami menyeduhnya/.test(facts) && /para-para/.test(facts), 'coffee facts and the farm story in Indonesian');
+  assert(/Anggur merah/.test(await text(page, '.notes-chips')), 'tasting notes in Indonesian');
+  await addCoffee(page, 'gayo-wine-natural', '200g', 'Biji utuh');
+  const email = `bahasa${Date.now()}@example.com`;
+  await checkout(page, { method: 'lereng_qris', email });
+  assert(/Pindai untuk bayar/.test(await page.$eval('body', (b) => b.textContent)), 'payment page in Indonesian');
+  await pay(page);
+  assert(/Kami menyangrai kopi Anda/.test(await text(page, '.roast-note')), 'roast note in Indonesian');
+  const id = orderIdFromUrl(page.url());
+  await page.goto(`${BASE}/brew-guides/`, { waitUntil: 'networkidle0' });
+  assert(/Giling sedang-halus/.test(await page.$eval('main', (m) => m.textContent)), 'page content in Indonesian');
+  await page.goto(`${BASE}/demo-inbox/`, { waitUntil: 'networkidle0' });
+  const row = await page.$$eval('tr', (rows, e) => rows.map((r) => r.textContent).find((t) => t.includes(e.split('@')[0].slice(0, 6)) || t.includes(e)), email);
+  assert(row && !/Your .* order has been received/i.test(row), `order email subject is Indonesian: ${row}`);
+  await page.goto(`${BASE}/?lang=en`, { waitUntil: 'networkidle0' });
+  assert((await page.$eval('html', (h) => h.lang)) === 'en-US', 'back to English');
+  assert(id > 0, 'order placed');
+});
+
 const passed = results.filter(Boolean).length;
 console.log(`\n${passed}/${results.length} passed`);
 process.exitCode = passed === results.length ? 0 : 1;

@@ -30,6 +30,9 @@ final class Plugin
     private function moduleClasses(): array
     {
         return apply_filters('lereng_modules', [
+            BasePath::class,
+            I18n::class,
+            Demo::class,
             Catalog\CoffeeData::class,
             Blocks\Blocks::class,
             Shipping\Shipping::class,
@@ -45,6 +48,8 @@ final class Plugin
             Account\Restock::class,
             Account\Wishlist::class,
             Wholesale\Wholesale::class,
+            Account\Newsletter::class,
+            Admin\Dashboard::class,
         ]);
     }
 

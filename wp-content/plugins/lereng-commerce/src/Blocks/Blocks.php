@@ -3,6 +3,7 @@
 namespace Lereng\Blocks;
 
 use Lereng\Catalog\CoffeeData;
+use Lereng\I18n;
 use WC_Product;
 
 /**
@@ -52,7 +53,7 @@ final class Blocks
             return '';
         }
         $island = self::attr($p, 'island');
-        $parts = array_filter([$island === 'Blend' ? __('Blend', 'lereng') : $island, self::attr($p, 'process') === 'Blend' ? '' : self::attr($p, 'process'), self::attr($p, 'roast') ? sprintf(__('%s roast', 'lereng'), self::attr($p, 'roast')) : '']);
+        $parts = array_filter([$island === 'Blend' ? __('Blend', 'lereng') : I18n::text($island), self::attr($p, 'process') === 'Blend' ? '' : I18n::text(self::attr($p, 'process')), self::attr($p, 'roast') ? sprintf(__('%s roast', 'lereng'), I18n::text(self::attr($p, 'roast'))) : '']);
         if (!$parts) {
             $cats = wc_get_product_terms($p->get_id(), 'product_cat', ['orderby' => 'parent', 'order' => 'DESC']);
             $parts = $cats ? [$cats[0]->name] : [];
@@ -73,7 +74,7 @@ final class Blocks
         if (!$notes) {
             return '';
         }
-        $list = array_map('trim', explode(',', $notes));
+        $list = array_map([I18n::class, 'text'], array_map('trim', explode(',', $notes)));
         if (($attrs['variant'] ?? 'line') === 'chips') {
             return '<ul class="notes-chips" aria-label="' . esc_attr__('Tasting notes', 'lereng') . '">' . implode('', array_map(static fn($n) => '<li>' . esc_html($n) . '</li>', $list)) . '</ul>';
         }
@@ -88,11 +89,11 @@ final class Blocks
         }
         $d = CoffeeData::get($p->get_parent_id() ?: $p->get_id());
         $rows = array_filter([
-            __('Producer', 'lereng') => $d['producer'] ?? null,
-            __('Region', 'lereng') => isset($d['region']) ? $d['region'] . (isset($d['province']) ? ', ' . $d['province'] : '') : null,
+            __('Producer', 'lereng') => isset($d['producer']) ? I18n::text($d['producer']) : null,
+            __('Region', 'lereng') => isset($d['region']) ? I18n::text($d['region'] . (isset($d['province']) ? ', ' . $d['province'] : '')) : null,
             __('Altitude', 'lereng') => $d['altitude'] ?? null,
             __('Varietals', 'lereng') => $d['varietals'] ?? null,
-            __('Process', 'lereng') => self::attr($p, 'process') ?: null,
+            __('Process', 'lereng') => I18n::text(self::attr($p, 'process')) ?: null,
             __('Harvest', 'lereng') => $d['harvest'] ?? null,
             __('Components', 'lereng') => $d['components'] ?? null,
             __('Cupping score', 'lereng') => isset($d['score']) ? number_format_i18n((float) $d['score'], 2) . ' SCA' : null,
@@ -106,9 +107,9 @@ final class Blocks
         }
         $html .= '</dl></div>';
         if (!empty($d['recipe'])) {
-            $html .= '<div class="coffee-facts__recipe"><h2>' . esc_html__('How we brew it', 'lereng') . '</h2><p>' . esc_html($d['recipe']) . '</p>';
+            $html .= '<div class="coffee-facts__recipe"><h2>' . esc_html__('How we brew it', 'lereng') . '</h2><p>' . esc_html(I18n::text($d['recipe'])) . '</p>';
             if (!empty($d['story'])) {
-                $html .= '<h3>' . esc_html__('From the farm', 'lereng') . '</h3><p>' . esc_html($d['story']) . '</p>';
+                $html .= '<h3>' . esc_html__('From the farm', 'lereng') . '</h3><p>' . esc_html(I18n::field($p->get_parent_id() ?: $p->get_id(), 'story', $d['story'])) . '</p>';
             }
             $html .= '</div>';
         }
@@ -130,7 +131,7 @@ final class Blocks
                 continue;
             }
             $url = add_query_arg('filter_island', $t->slug, get_permalink(wc_get_page_id('shop')));
-            $html .= sprintf('<li><a href="%s"><i style="background:%s"></i><span>%s</span><small>%s</small></a></li>', esc_url($url), esc_attr(self::ISLAND_COLORS[$t->name] ?? '#999'), esc_html($t->name), esc_html(sprintf(_n('%d coffee', '%d coffees', $t->count, 'lereng'), $t->count)));
+            $html .= sprintf('<li><a href="%s"><i style="background:%s"></i><span>%s</span><small>%s</small></a></li>', esc_url($url), esc_attr(self::ISLAND_COLORS[$t->name] ?? '#999'), esc_html(I18n::text($t->name)), esc_html(sprintf(_n('%d coffee', '%d coffees', $t->count, 'lereng'), $t->count)));
         }
         return $html . '</ul>';
     }

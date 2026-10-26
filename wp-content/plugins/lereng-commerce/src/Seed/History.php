@@ -95,9 +95,22 @@ final class History
         remove_all_actions('woocommerce_payment_complete');
         remove_all_actions('woocommerce_new_order');
         remove_all_actions('woocommerce_update_order');
+        // Status transitions (pending_to_processing…) still reach the mailer; switch every email off.
+        foreach (WC()->mailer()->get_emails() as $email) {
+            add_filter("woocommerce_email_enabled_{$email->id}", '__return_false', 99);
+        }
         wp_suspend_cache_addition(true);
         wp_defer_term_counting(true);
         wp_defer_comment_counting(true);
+    }
+
+    /** A year of orders in one PHP process: drop the runtime object cache now and then. */
+    private function release(): void
+    {
+        global $wpdb;
+        wp_cache_flush_runtime();
+        $wpdb->queries = [];
+        gc_collect_cycles();
     }
 
     private function loadCatalog(): void
@@ -223,6 +236,7 @@ final class History
     {
         $order = new WC_Order();
         $order->set_created_via($opts['via'] ?? 'checkout');
+        $order->update_meta_data('_lereng_seeded', 1);
         $order->set_currency('IDR');
         $order->set_prices_include_tax(true);
         if ($customer['id']) {
@@ -278,6 +292,7 @@ final class History
         }
 
         if (!empty($opts['coupon'])) {
+            $order->save(); // coupon discounts look items up by ID
             $order->apply_coupon($opts['coupon']);
         }
         $order->calculate_totals(true);
@@ -431,6 +446,7 @@ final class History
                 unset($c);
                 if (++$k % 100 === 0) {
                     $this->say("$k orders…");
+                    $this->release();
                     wp_cache_flush();
                 }
             }
@@ -663,7 +679,13 @@ final class History
             $this->say('history already generated (pass "history force" to redo)');
             return;
         }
+        ini_set('memory_limit', '1024M');
         $this->quiet();
+        if ($force) {
+            foreach (wc_get_orders(['limit' => -1, 'return' => 'ids', 'meta_key' => '_lereng_seeded', 'meta_value' => 1]) as $id) {
+                wc_get_order($id)?->delete(true);
+            }
+        }
         $this->loadCatalog();
         $this->customers(320);
         $this->say("{$this->stats['customers']} customers");

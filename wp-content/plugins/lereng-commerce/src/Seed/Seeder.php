@@ -13,7 +13,7 @@ use WC_Product_Variation;
  */
 final class Seeder
 {
-    public const STEPS = ['settings', 'taxonomies', 'products', 'shipping', 'payments', 'extras', 'coupons', 'pages', 'images'];
+    public const STEPS = ['settings', 'taxonomies', 'products', 'shipping', 'payments', 'extras', 'coupons', 'pages', 'images', 'i18n'];
 
     /** Global attributes: [slug => [label, used for variations?, filterable?]] */
     public const ATTRIBUTES = [
@@ -31,7 +31,7 @@ final class Seeder
     /** @var callable */
     private $log;
 
-    public function __construct(private array $catalog, callable $log)
+    public function __construct(private array $catalog, callable $log, private bool $force = false)
     {
         $this->log = $log;
     }
@@ -48,9 +48,63 @@ final class Seeder
             'coupons' => $this->coupons(),
             'pages' => $this->pages(),
             'images' => $this->images(),
-            'history' => (new History($this->catalog, json_decode(file_get_contents(WP_CONTENT_DIR . '/lereng-data/people.json'), true), $this->log))->run(),
+            'i18n' => $this->i18n(),
+            'analytics' => $this->analytics(),
+            'history' => (new History($this->catalog, json_decode(file_get_contents(WP_CONTENT_DIR . '/lereng-data/people.json'), true), $this->log))->run($this->force),
             default => throw new \InvalidArgumentException("Unknown seed step: $step"),
         };
+    }
+
+    /**
+     * Fills WooCommerce Analytics. Normally Action Scheduler imports orders in the background a few
+     * at a time; for a year of seeded history we import them here, in order.
+     */
+    private function analytics(): void
+    {
+        global $wpdb;
+        ini_set('memory_limit', '1024M');
+        $customers = get_users(['role__in' => ['customer', 'wholesale_customer'], 'fields' => 'ID']);
+        foreach ($customers as $id) {
+            \Automattic\WooCommerce\Internal\Admin\Schedulers\CustomersScheduler::import((int) $id);
+        }
+        $ids = wc_get_orders(['limit' => -1, 'return' => 'ids', 'type' => 'shop_order', 'orderby' => 'date', 'order' => 'ASC', 'status' => array_keys(wc_get_order_statuses())]);
+        foreach ($ids as $i => $id) {
+            \Automattic\WooCommerce\Internal\Admin\Schedulers\OrdersScheduler::import((int) $id);
+            if ($i % 200 === 199) {
+                wp_cache_flush_runtime();
+                $wpdb->queries = [];
+                $this->say(($i + 1) . ' orders imported…');
+            }
+        }
+        delete_transient('woocommerce_reports-transient-version');
+        \WC_Cache_Helper::get_transient_version('woocommerce_reports', true);
+        update_option('woocommerce_admin_import_stats', ['imported' => count($ids), 'imported_customers' => count($customers)], false);
+        $this->say(sprintf('Analytics: %d customers, %d orders', count($customers), count($ids)));
+    }
+
+    /** Indonesian content next to the English: pages, product copy, terms (see scripts/content_id.py). */
+    private function i18n(): void
+    {
+        $c = json_decode((string) file_get_contents(WP_CONTENT_DIR . '/lereng-data/i18n/content.id_ID.json'), true);
+        update_option(\Lereng\I18n::OPTION, ['terms' => $c['terms'], 'phrases' => $c['phrases']], true);
+        // WooCommerce's own pages only need a title; their blocks come translated in WooCommerce's language pack.
+        $c['pages'] += ['shop' => ['title' => 'Toko'], 'cart' => ['title' => 'Keranjang'], 'checkout' => ['title' => 'Checkout'], 'my-account' => ['title' => 'Akun saya'], 'demo-inbox' => ['title' => 'Kotak masuk demo']];
+        $n = ['pages' => 0, 'products' => 0];
+        foreach ($c['pages'] as $slug => $t) {
+            $page = get_page_by_path($slug);
+            if ($page) {
+                update_post_meta($page->ID, \Lereng\I18n::META, $t);
+                $n['pages']++;
+            }
+        }
+        foreach ($c['products'] as $slug => $t) {
+            $post = get_page_by_path($slug, OBJECT, 'product');
+            if ($post) {
+                update_post_meta($post->ID, \Lereng\I18n::META, $t);
+                $n['products']++;
+            }
+        }
+        $this->say(sprintf('Indonesian: %d pages, %d products, %d terms', $n['pages'], $n['products'], count($c['terms'])));
     }
 
     private function say(string $msg): void

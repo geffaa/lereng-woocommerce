@@ -41,9 +41,16 @@ add_action('plugins_loaded', static function (): void {
     if (!class_exists('WooCommerce')) {
         return;
     }
-    load_plugin_textdomain('lereng', false, dirname(plugin_basename(__FILE__)) . '/languages');
     Lereng\Install::maybeUpgrade();
     Lereng\Plugin::instance()->boot();
+    // After boot, so the storefront language (Lereng\I18n) is already known.
+    Lereng\I18n::reloadTextdomain();
 });
 
 register_activation_hook(__FILE__, [Lereng\Install::class, 'activate']);
+
+/** The storefront language for this visitor: 'en' or 'id'. */
+function lereng_language(): string
+{
+    return Lereng\I18n::current();
+}

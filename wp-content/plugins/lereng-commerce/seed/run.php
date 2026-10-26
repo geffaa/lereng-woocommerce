@@ -6,9 +6,11 @@
 
 use Lereng\Seed\Seeder;
 
-$steps = array_slice($_SERVER['argv'], 1) ?: Seeder::STEPS;
+$args = preg_split('/\s+/', trim(implode(' ', array_slice($_SERVER['argv'], 1))));
+$force = in_array('force', $args, true); // `seed history force` regenerates the history
+$steps = array_values(array_filter($args, static fn($a) => $a !== '' && $a !== 'force')) ?: Seeder::STEPS;
 $catalog = json_decode(file_get_contents(WP_CONTENT_DIR . '/lereng-data/catalog.json'), true);
-$seeder = new Seeder($catalog, 'lereng_out');
+$seeder = new Seeder($catalog, 'lereng_out', $force);
 foreach ($steps as $step) {
     $t = microtime(true);
     $seeder->run($step);

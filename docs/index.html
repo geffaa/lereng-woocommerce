@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Lereng Coffee Roasters · WooCommerce build</title>
+<meta name="description" content="A complete WooCommerce store for a fictional Indonesian specialty coffee roaster, running live in your browser on WordPress Playground.">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:wght@400;600;800&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{--stone:#F6F4EF;--ink:#141412;--cherry:#B23A26;--deep:#1F3A34;--sand:#ECE5D6;--muted:#6B675F}
+*{box-sizing:border-box}body{margin:0;background:var(--stone);color:var(--ink);font:17px/1.6 'Schibsted Grotesk',system-ui,sans-serif}
+.wrap{max-width:1080px;margin:0 auto;padding:0 20px}
+header{padding:56px 0 40px;border-bottom:1px solid var(--ink)}
+.kicker{font:500 12px/1.4 'IBM Plex Mono',monospace;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+h1{font-size:clamp(40px,7vw,84px);line-height:.95;letter-spacing:-.04em;margin:.3em 0 .35em}
+.lead{font-size:20px;max-width:720px;margin:0 0 28px}
+.btn{display:inline-block;background:var(--cherry);color:#fff;text-decoration:none;font-weight:600;padding:14px 22px;margin:0 10px 10px 0}
+.btn--ghost{background:transparent;color:var(--ink);border:1px solid var(--ink)}
+.note{font:13px/1.5 'IBM Plex Mono',monospace;color:var(--muted);margin-top:10px}
+section{padding:44px 0;border-bottom:1px solid #d9d3c6}
+h2{font-size:28px;letter-spacing:-.02em;margin:0 0 18px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:1px;background:#d9d3c6;border:1px solid #d9d3c6}
+.grid div{background:var(--stone);padding:20px}
+.grid b{display:block;font:500 12px/1.4 'IBM Plex Mono',monospace;letter-spacing:.08em;text-transform:uppercase;color:var(--cherry);margin-bottom:6px}
+.grid p{margin:0;font-size:15px}
+ol{padding-left:20px}li{margin:4px 0}
+code{font-family:'IBM Plex Mono',monospace;background:var(--sand);padding:1px 6px}
+footer{padding:28px 0 60px;color:var(--muted);font-size:14px}
+a{color:var(--deep)}
+</style>
+</head>
+<body>
+<header><div class="wrap">
+  <div class="kicker">WooCommerce build · portfolio project</div>
+  <h1>Lereng Coffee Roasters</h1>
+  <p class="lead">A complete WooCommerce store for a (fictional) specialty coffee roaster in Bali: local payments, delivery by province, subscriptions, wholesale, gift cards and a bilingual storefront, with a year of order history.</p>
+  <a class="btn" href="https://playground.wordpress.net/?blueprint-url=https%3A%2F%2Fgeffaa.github.io%2Flereng-woocommerce%2Fdemo%2Fblueprint.json">Open the live store</a>
+  <a class="btn btn--ghost" href="https://github.com/geffaa/lereng-woocommerce">Source on GitHub</a>
+  <p class="note">Runs real WordPress + WooCommerce in your browser via WordPress Playground. First load ≈ 1 minute (it downloads WordPress, WooCommerce and the store).<br>Admin: admin / password · payments are a sandbox · emails go to the Demo inbox.</p>
+</div></header>
+
+<section><div class="wrap">
+  <h2>Things to try</h2>
+  <ol>
+    <li>Filter the coffee by process or taste, pick a size and grind, add to cart.</li>
+    <li>Check out with <b>QRIS</b> or a <b>virtual account</b>, then press “Simulate a successful payment” on the payment page.</li>
+    <li>Switch the header to <b>ID</b>: the whole store, including checkout and emails, in Bahasa Indonesia.</li>
+    <li>Choose “Subscribe &amp; save” on a coffee; manage it under My account → Subscriptions.</li>
+    <li>Build a Discovery Box, buy a gift card, track an order, apply for wholesale.</li>
+    <li>Sign in to the admin (<code>/wp-admin</code>): Roastery today, Roast list, Subscriptions MRR, Analytics with a year of sales.</li>
+  </ol>
+</div></section>
+
+<section><div class="wrap">
+  <h2>What's built</h2>
+  <div class="grid">
+    <div><b>Catalogue</b><p>66 products, 38 coffees with 550+ size × grind variations; filters, coffee facts, brew recipes, farm stories, pre-order, micro-lots.</p></div>
+    <div><b>Delivery</b><p>JNE, SiCepat and GoSend rates by province and weight, free-delivery thresholds, roastery pickup, cold brew limited to south Bali.</p></div>
+    <div><b>Payments</b><p>Sandbox QRIS and BCA/Mandiri/BNI/BRI virtual accounts modelled on Midtrans: signed webhooks, expiry, refunds.</p></div>
+    <div><b>Subscriptions</b><p>No plugin: renewals before roast day, payment links, skip, pause, change, cancel, MRR.</p></div>
+    <div><b>Fulfilment</b><p>Roast days with a 10:00 cut-off, roast list, bulk roasting, waybills, tracking page, review emails, PPN invoices.</p></div>
+    <div><b>Promotions</b><p>First-order and minimum-spend coupons, gift cards with a ledger, Discovery Box and bundles with component stock.</p></div>
+    <div><b>Wholesale</b><p>Applications, approval, tiered prices, 5 kg minimum, quick order, invoice payment.</p></div>
+    <div><b>Bilingual</b><p>English / Bahasa Indonesia per visitor, content included; orders remember the language for later emails.</p></div>
+  </div>
+</div></section>
+
+<footer><div class="wrap">Lereng is a fictional brand. Origins and processes are real; producers and the roastery are invented. Photos: CC0, Wikimedia Commons.</div></footer>
+</body>
+</html>

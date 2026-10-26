@@ -4,6 +4,7 @@
  *   WooCommerce's own variation script keeps doing the pricing and stock work.
  * - Newsletter form posts to the store's REST endpoint.
  */
+var lerengT = (s) => (window.lerengBase && window.lerengBase.i18n && window.lerengBase.i18n[s]) || s;
 (() => {
   function pills(select) {
     if (select.dataset.pills) return;
@@ -48,9 +49,9 @@
     if (!form) return;
     e.preventDefault();
     const msg = form.querySelector('.newsletter__msg');
-    const res = await fetch('/wp-json/lereng/v1/newsletter', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ email: form.email.value }) }).catch(() => null);
+    const res = await fetch(`${(window.lerengBase && window.lerengBase.rest) || '/wp-json/'}lereng/v1/newsletter`, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ email: form.email.value }) }).catch(() => null);
     const data = res ? await res.json().catch(() => ({})) : {};
-    msg.textContent = data.message || 'Something went wrong. Please try again.';
+    msg.textContent = data.message || lerengT('Something went wrong. Please try again.');
     msg.hidden = false;
     if (res?.ok) form.reset();
   });

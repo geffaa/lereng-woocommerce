@@ -7,6 +7,7 @@
  *                                      (--login signs every visitor in as admin; leave it off to shop as a guest)
  *   node scripts/wp.mjs php <file>     run a PHP file inside the site (output is printed)
  *   node scripts/wp.mjs seed [step]    run the catalog / customer / order seeders
+ *   node scripts/wp.mjs languages      install the Indonesian packs for WordPress and WooCommerce
  *
  * The site lives in .wp/site (SQLite database included), so data survives restarts.
  */
@@ -52,6 +53,25 @@ async function runPhp(file, args = []) {
   if (existsSync(out)) process.stdout.write(readFileSync(out, 'utf8'));
 }
 
+/** Official id_ID translations of WordPress and WooCommerce, from translate.wordpress.org. */
+async function languages() {
+  const wp = /\$wp_version = '([^']+)'/.exec(readFileSync(`${SITE}/wp-includes/version.php`, 'utf8'))[1];
+  const packs = [
+    [`https://api.wordpress.org/translations/core/1.0/?version=${wp}`, `${SITE}/wp-content/languages`],
+    [`https://api.wordpress.org/translations/plugins/1.0/?slug=woocommerce&version=${WC_VERSION}`, `${SITE}/wp-content/languages/plugins`],
+  ];
+  for (const [api, dir] of packs) {
+    const { translations } = await (await fetch(api)).json();
+    const pack = translations.find((t) => t.language === 'id_ID');
+    if (!pack) throw new Error(`no id_ID pack at ${api}`);
+    mkdirSync(dir, { recursive: true });
+    const zip = `${ROOT}/.wp/${pack.package.split('/').slice(-3).join('-')}`;
+    if (!existsSync(zip)) writeFileSync(zip, Buffer.from(await (await fetch(pack.package)).arrayBuffer()));
+    await new Promise((done, fail) => spawn('unzip', ['-oq', zip, '-d', dir], { stdio: 'inherit' }).on('exit', (c) => (c ? fail(new Error('unzip failed')) : done())));
+    console.log(`id_ID ${pack.version} → ${dir.replace(ROOT + '/', '')}`);
+  }
+}
+
 const [cmd, ...rest] = process.argv.slice(2);
 if (cmd === 'setup') {
   mkdirSync(SITE, { recursive: true });
@@ -70,7 +90,10 @@ if (cmd === 'setup') {
     ],
   }));
   await playground('run-blueprint', [`--blueprint=${bp}`, '--blueprint-may-read-adjacent-files']);
+  await languages();
   console.log('Site ready in .wp/site');
+} else if (cmd === 'languages') {
+  await languages();
 } else if (cmd === 'serve') {
   await playground('server', ['--port=9400', ...rest]);
 } else if (cmd === 'php') {

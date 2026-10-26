@@ -3,6 +3,7 @@
  * moves on to the thank-you page once the gateway has confirmed. Sandbox buttons post to the
  * simulate endpoint, which sends a signed notification to the same webhook a gateway uses.
  */
+var lerengT = (s) => (window.lerengBase && window.lerengBase.i18n && window.lerengBase.i18n[s]) || s;
 (() => {
   const root = document.querySelector('[data-pay]');
   if (!root) return;
@@ -40,12 +41,12 @@
     if (data.status === 'paid') {
       clearInterval(timer);
       clearInterval(poll);
-      show('paid', 'Payment received. Taking you to your order…');
+      show('paid', lerengT('Payment received. Taking you to your order…'));
       setTimeout(() => location.assign(data.redirect), 900);
     } else if (data.status === 'expired' || data.status === 'failed') {
       clearInterval(timer);
       clearInterval(poll);
-      show('expired', data.status === 'expired' ? 'This payment window has closed and the order was cancelled. Your items are back in stock.' : 'The payment was declined.');
+      show('expired', data.status === 'expired' ? lerengT('This payment window has closed and the order was cancelled. Your items are back in stock.') : lerengT('The payment was declined.'));
     }
   }
   const poll = setInterval(check, 3000);
@@ -54,8 +55,8 @@
     const copy = e.target.closest('[data-copy]');
     if (copy) {
       await navigator.clipboard?.writeText(copy.dataset.copy).catch(() => {});
-      copy.textContent = 'Copied';
-      setTimeout(() => (copy.textContent = 'Copy'), 1500);
+      copy.textContent = lerengT('Copied');
+      setTimeout(() => (copy.textContent = lerengT('Copy')), 1500);
     }
     const sim = e.target.closest('[data-simulate]');
     if (sim) {
