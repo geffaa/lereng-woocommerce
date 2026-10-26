@@ -48,6 +48,7 @@ final class Seeder
             'coupons' => $this->coupons(),
             'pages' => $this->pages(),
             'images' => $this->images(),
+            'history' => (new History($this->catalog, json_decode(file_get_contents(WP_CONTENT_DIR . '/lereng-data/people.json'), true), $this->log))->run(),
             default => throw new \InvalidArgumentException("Unknown seed step: $step"),
         };
     }
@@ -99,6 +100,7 @@ final class Seeder
             'woocommerce_enable_checkout_login_reminder' => 'yes',
             'woocommerce_enable_signup_and_login_from_checkout' => 'yes',
             'woocommerce_enable_myaccount_registration' => 'yes',
+            'woocommerce_registration_generate_password' => 'no', // customers choose their password when registering
             'woocommerce_coming_soon' => 'no',
             'woocommerce_onboarding_profile' => ['completed' => true, 'skipped' => true],
             'woocommerce_task_list_hidden' => 'yes',
@@ -226,13 +228,28 @@ final class Seeder
         update_option('woocommerce_lereng_qris_settings', ['enabled' => 'yes', 'expiry' => '15']);
         update_option('woocommerce_lereng_va_settings', ['enabled' => 'yes', 'expiry' => '1440']);
         // Bank transfer by invoice stays available for wholesale accounts (see Wholesale module).
-        update_option('woocommerce_bacs_settings', ['enabled' => 'no']);
+        update_option('woocommerce_bacs_settings', ['enabled' => 'yes', 'title' => 'Invoice · bank transfer within 14 days', 'description' => 'For wholesale accounts. We email an invoice; transfer to the account below within 14 days.', 'instructions' => 'Transfer to BCA 123 456 7890 (PT Lereng Kopi Nusantara) within 14 days, with your order number as the reference.']);
+        update_option('woocommerce_bacs_accounts', [['account_name' => 'PT Lereng Kopi Nusantara', 'account_number' => '1234567890', 'bank_name' => 'BCA', 'sort_code' => '', 'iban' => '', 'bic' => 'CENAIDJA']]);
+        // Branded emails.
+        update_option('woocommerce_email_base_color', '#141412');
+        update_option('woocommerce_email_background_color', '#F6F4EF');
+        update_option('woocommerce_email_body_background_color', '#FFFFFF');
+        update_option('woocommerce_email_text_color', '#141412');
+        update_option('woocommerce_email_footer_text', 'Lereng Coffee Roasters · Jl. Raya Kerobokan No. 88, Badung, Bali · A portfolio demo store');
+        update_option('woocommerce_email_from_name', 'Lereng Coffee Roasters');
+        update_option('woocommerce_email_from_address', 'hello@lereng.example');
         update_option('woocommerce_cod_settings', ['enabled' => 'no']);
         update_option('woocommerce_gateway_order', ['lereng_qris' => 0, 'lereng_va' => 1, 'bacs' => 2]);
         update_option('lereng_payments_sandbox', 'yes');
         \Lereng\Payments\Payments::serverKey();
+        // Sold out, to show restock alerts: the flat-burr grinder and the 250 g Gesha.
+        if ($g = $this->findBySlug('electric-grinder-flat')) {
+            $p = wc_get_product($g);
+            $p->set_stock_quantity(0);
+            $p->save();
+        }
         flush_rewrite_rules();
-        $this->say('QRIS and virtual account (sandbox) enabled; payment page at /pay/<order key>/');
+        $this->say('QRIS and virtual account (sandbox), invoice transfer for wholesale, branded emails');
     }
 
     /** The gift card and the bundles: products that need the modules' extra data. */

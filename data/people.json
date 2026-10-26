@@ -1,0 +1,494 @@
+{
+ "first": {
+  "bali": [
+   "Made",
+   "Wayan",
+   "Ketut",
+   "Komang",
+   "Putu",
+   "Nyoman",
+   "Kadek",
+   "Gede",
+   "Ayu",
+   "Dewa",
+   "Gusti",
+   "Luh"
+  ],
+  "java": [
+   "Budi",
+   "Siti",
+   "Agus",
+   "Dewi",
+   "Rina",
+   "Eko",
+   "Sri",
+   "Andi",
+   "Rizky",
+   "Putri",
+   "Dimas",
+   "Nadia",
+   "Fajar",
+   "Intan",
+   "Bayu",
+   "Laras",
+   "Yoga",
+   "Sekar",
+   "Ilham",
+   "Citra"
+  ],
+  "sunda": [
+   "Asep",
+   "Ujang",
+   "Neng",
+   "Cecep",
+   "Euis",
+   "Dadan",
+   "Ilis",
+   "Rani"
+  ],
+  "sumatra": [
+   "Rahmat",
+   "Fitri",
+   "Taufik",
+   "Lestari",
+   "Hendra",
+   "Mutiara",
+   "Rudi",
+   "Yuni"
+  ],
+  "batak": [
+   "Togar",
+   "Rosmauli",
+   "Parlin",
+   "Sahala",
+   "Melati"
+  ],
+  "chinese": [
+   "Kevin",
+   "Jessica",
+   "Steven",
+   "Michelle",
+   "Hendrik",
+   "Cynthia",
+   "Felix",
+   "Vanessa"
+  ],
+  "expat": [
+   "Emma",
+   "Liam",
+   "Sophie",
+   "Lucas",
+   "Mia",
+   "Noah",
+   "Chloe",
+   "Jack",
+   "Ella",
+   "Oliver",
+   "Hannah",
+   "Felix",
+   "Lea",
+   "Tom",
+   "Maya",
+   "Sam"
+  ]
+ },
+ "last": {
+  "bali": [
+   "Wirawan",
+   "Suarjana",
+   "Astawa",
+   "Dewi",
+   "Pratama",
+   "Saputra",
+   "Widiastuti",
+   "Mahendra",
+   "Arsana",
+   "Kusuma"
+  ],
+  "java": [
+   "Santoso",
+   "Wijaya",
+   "Rahayu",
+   "Susanto",
+   "Hidayat",
+   "Setiawan",
+   "Kurniawan",
+   "Pratiwi",
+   "Nugroho",
+   "Wibowo",
+   "Lestari",
+   "Saputra"
+  ],
+  "sunda": [
+   "Sutisna",
+   "Permana",
+   "Gunawan",
+   "Suryana",
+   "Ramdani"
+  ],
+  "sumatra": [
+   "Nasution",
+   "Lubis",
+   "Siregar",
+   "Harahap",
+   "Tanjung",
+   "Rangkuti"
+  ],
+  "batak": [
+   "Simanjuntak",
+   "Sitompul",
+   "Hutagalung",
+   "Pardede",
+   "Sinaga"
+  ],
+  "chinese": [
+   "Tanoto",
+   "Halim",
+   "Gunawan",
+   "Salim",
+   "Tjahjadi",
+   "Lie",
+   "Wijaya"
+  ],
+  "expat": [
+   "Smith",
+   "Müller",
+   "Dubois",
+   "Jensen",
+   "Rossi",
+   "Kowalski",
+   "Brown",
+   "van Dijk",
+   "Andersson",
+   "Novak",
+   "Martin",
+   "Kelly"
+  ]
+ },
+ "cities": [
+  [
+   "Canggu",
+   "BA",
+   9,
+   "80351",
+   {
+    "expat": 6,
+    "bali": 3,
+    "java": 2
+   }
+  ],
+  [
+   "Denpasar",
+   "BA",
+   8,
+   "80114",
+   {
+    "bali": 6,
+    "java": 3,
+    "chinese": 1
+   }
+  ],
+  [
+   "Ubud",
+   "BA",
+   5,
+   "80571",
+   {
+    "expat": 5,
+    "bali": 4
+   }
+  ],
+  [
+   "Seminyak",
+   "BA",
+   4,
+   "80361",
+   {
+    "expat": 6,
+    "java": 2,
+    "bali": 2
+   }
+  ],
+  [
+   "Sanur",
+   "BA",
+   3,
+   "80227",
+   {
+    "expat": 4,
+    "bali": 3
+   }
+  ],
+  [
+   "Jimbaran",
+   "BA",
+   2,
+   "80361",
+   {
+    "bali": 3,
+    "expat": 2,
+    "java": 2
+   }
+  ],
+  [
+   "Kerobokan",
+   "BA",
+   3,
+   "80361",
+   {
+    "bali": 3,
+    "expat": 3,
+    "java": 2
+   }
+  ],
+  [
+   "Jakarta Selatan",
+   "JK",
+   12,
+   "12190",
+   {
+    "java": 5,
+    "chinese": 3,
+    "sumatra": 1,
+    "batak": 1,
+    "expat": 1
+   }
+  ],
+  [
+   "Jakarta Barat",
+   "JK",
+   4,
+   "11470",
+   {
+    "chinese": 5,
+    "java": 3
+   }
+  ],
+  [
+   "Tangerang Selatan",
+   "BT",
+   4,
+   "15310",
+   {
+    "java": 4,
+    "chinese": 2,
+    "sunda": 1
+   }
+  ],
+  [
+   "Bandung",
+   "JB",
+   7,
+   "40115",
+   {
+    "sunda": 6,
+    "java": 3,
+    "chinese": 1
+   }
+  ],
+  [
+   "Bogor",
+   "JB",
+   2,
+   "16129",
+   {
+    "sunda": 5,
+    "java": 2
+   }
+  ],
+  [
+   "Yogyakarta",
+   "YO",
+   5,
+   "55281",
+   {
+    "java": 8,
+    "expat": 1
+   }
+  ],
+  [
+   "Semarang",
+   "JT",
+   3,
+   "50241",
+   {
+    "java": 6,
+    "chinese": 2
+   }
+  ],
+  [
+   "Surabaya",
+   "JI",
+   5,
+   "60271",
+   {
+    "java": 6,
+    "chinese": 3
+   }
+  ],
+  [
+   "Malang",
+   "JI",
+   3,
+   "65145",
+   {
+    "java": 7
+   }
+  ],
+  [
+   "Medan",
+   "SU",
+   3,
+   "20112",
+   {
+    "batak": 4,
+    "chinese": 3,
+    "sumatra": 2
+   }
+  ],
+  [
+   "Padang",
+   "SB",
+   1,
+   "25111",
+   {
+    "sumatra": 6
+   }
+  ],
+  [
+   "Banda Aceh",
+   "AC",
+   1,
+   "23116",
+   {
+    "sumatra": 6
+   }
+  ],
+  [
+   "Makassar",
+   "SN",
+   2,
+   "90111",
+   {
+    "java": 3,
+    "chinese": 1,
+    "sumatra": 1
+   }
+  ],
+  [
+   "Mataram",
+   "NB",
+   1,
+   "83121",
+   {
+    "java": 3,
+    "bali": 2
+   }
+  ],
+  [
+   "Balikpapan",
+   "KI",
+   1,
+   "76111",
+   {
+    "java": 4,
+    "chinese": 1
+   }
+  ],
+  [
+   "Labuan Bajo",
+   "NT",
+   1,
+   "86554",
+   {
+    "expat": 3,
+    "java": 2
+   }
+  ],
+  [
+   "Jayapura",
+   "PA",
+   1,
+   "99111",
+   {
+    "java": 3,
+    "sumatra": 1
+   }
+  ]
+ ],
+ "streets": [
+  "Jl. Raya Kuta",
+  "Jl. Sunset Road",
+  "Jl. Pantai Berawa",
+  "Jl. Batu Mejan",
+  "Jl. Monkey Forest",
+  "Jl. Kemang Raya",
+  "Jl. Senopati",
+  "Jl. Dago",
+  "Jl. Riau",
+  "Jl. Kaliurang",
+  "Jl. Darmo",
+  "Jl. Ijen",
+  "Jl. Imam Bonjol",
+  "Jl. Sudirman",
+  "Jl. Gatot Subroto",
+  "Jl. Diponegoro",
+  "Jl. Hayam Wuruk",
+  "Jl. Merdeka",
+  "Jl. Veteran",
+  "Jl. Ahmad Yani"
+ ],
+ "review_open": {
+  "5": [
+   "Best {origin} I've had.",
+   "This is now my daily coffee.",
+   "Absolutely love it.",
+   "Wow.",
+   "Bought it twice already.",
+   "Beautiful coffee.",
+   "Exactly what the label says."
+  ],
+  "4": [
+   "Really good.",
+   "Very nice, a little {adj} for me.",
+   "Solid and consistent.",
+   "Lovely cup.",
+   "Good beans, well roasted."
+  ],
+  "3": [
+   "Decent, not my favourite.",
+   "Fine, but I prefer something {adj2}.",
+   "OK. Took a few tries to dial in."
+  ],
+  "2": [
+   "Not for me.",
+   "Too {adj} for my taste."
+  ]
+ },
+ "review_body": [
+  "On {method} the {note1} comes through first, then {note2} as it cools.",
+  "Brewed it on my {method}: {note1} and {note2}, really clean.",
+  "Great with milk, {note1} with a {note2} finish.",
+  "Tastes like {note1} and {note2}. Rested it a week after roasting and it opened up.",
+  "{note1} for sure, some {note2}. Ground for {method} it's perfect.",
+  "Fresh roast date, arrived in {days} days. {note1} and {note2}.",
+  "My partner doesn't usually drink black coffee but loved this one. {note1}!",
+  "Using 16 g to 250 g on {method}, {note1} very clear."
+ ],
+ "review_id": [
+  "Enak banget, {note1} terasa jelas.",
+  "Mantap, cocok untuk {method}.",
+  "Kopinya segar, pengiriman cepat ke {city}.",
+  "Suka banget, aroma {note1}.",
+  "Lumayan, agak {adj} buat saya."
+ ],
+ "methods": [
+  "V60",
+  "pour over",
+  "AeroPress",
+  "French press",
+  "moka pot",
+  "espresso machine",
+  "Kalita"
+ ]
+}

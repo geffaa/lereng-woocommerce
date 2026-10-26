@@ -40,6 +40,9 @@ final class Outbox
     /** @param null|bool $short */
     public function capture($short, array $atts)
     {
+        if (defined('LERENG_SEEDING')) {
+            return true; // history seeding: nothing is sent or kept
+        }
         $to = is_array($atts['to']) ? implode(', ', $atts['to']) : (string) $atts['to'];
         $headers = is_array($atts['headers']) ? implode("\n", $atts['headers']) : (string) $atts['headers'];
         $id = wp_insert_post(['post_type' => self::POST_TYPE, 'post_status' => 'private', 'post_title' => wp_strip_all_tags((string) $atts['subject']), 'post_content' => (string) $atts['message']], true);

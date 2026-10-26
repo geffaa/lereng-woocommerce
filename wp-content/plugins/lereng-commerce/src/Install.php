@@ -5,7 +5,7 @@ namespace Lereng;
 /** Activation: database tables and defaults. Safe to run again (dbDelta + add_option). */
 final class Install
 {
-    public const DB_VERSION = '3';
+    public const DB_VERSION = '4';
 
     public static function activate(): void
     {
@@ -91,6 +91,17 @@ final class Install
             created_at datetime NOT NULL,
             PRIMARY KEY  (id),
             KEY subscription_id (subscription_id)
+        ) $c;");
+        dbDelta("CREATE TABLE {$wpdb->prefix}lereng_restock (
+            id bigint(20) unsigned NOT NULL AUTO_INCREMENT,
+            product_id bigint(20) unsigned NOT NULL,
+            variation_id bigint(20) unsigned NOT NULL DEFAULT 0,
+            email varchar(200) NOT NULL,
+            created_at datetime NOT NULL,
+            notified_at datetime NULL,
+            PRIMARY KEY  (id),
+            UNIQUE KEY one (product_id, variation_id, email),
+            KEY pending (product_id, variation_id, notified_at)
         ) $c;");
         update_option('lereng_db_version', self::DB_VERSION);
     }

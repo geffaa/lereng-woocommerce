@@ -101,6 +101,18 @@ async function pay(page, status = 'settlement') {
   }
 }
 
+async function login(page, user = 'admin', pass = 'password') {
+  await page.goto(`${BASE}/wp-login.php`, { waitUntil: 'networkidle0' });
+  await page.type('#user_login', user);
+  await page.type('#user_pass', pass);
+  await Promise.all([page.waitForNavigation({ waitUntil: 'networkidle0' }), page.click('#wp-submit')]);
+}
+
+async function inbox(page, pattern) {
+  await page.goto(`${BASE}/demo-inbox/`, { waitUntil: 'networkidle0' });
+  return page.$$eval('td a', (as, src) => as.filter((a) => new RegExp(src).test(a.textContent)).map((a) => a.href), pattern.source);
+}
+
 const orderIdFromUrl = (url) => Number(url.match(/order-received\/(\d+)/)?.[1]);
 const api = async (page, path, opts) => page.evaluate(async (u, o) => { const r = await fetch(u, o); return { status: r.status, body: await r.json().catch(() => null) }; }, `${BASE}/wp-json${path}`, opts);
 
@@ -278,6 +290,114 @@ await check('subscription: subscribe, pay, skip, change, pause, renew and pay, c
   await page.goto(`${BASE}/demo-inbox/`, { waitUntil: 'networkidle0' });
   const subjects = await page.$$eval('td a', (as) => as.map((a) => a.textContent));
   assert(subjects.some((s) => /subscription is on/.test(s)) && subjects.some((s) => /next Lereng delivery/.test(s)), 'subscription emails');
+});
+
+await check('fulfilment: roast list, ship with tracking, tracking page, invoice', async (page) => {
+  await addCoffee(page, 'mamasa-natural', '500g', 'Pour over');
+  const email = `track${Date.now()}@example.com`;
+  await checkout(page, { method: 'lereng_qris', email, city: 'Bandung', state: 'JB' });
+  await pay(page);
+  const orderId = orderIdFromUrl(page.url());
+  const invoiceUrl = await page.$eval('.invoice-link a', (a) => a.href);
+  await page.goto(invoiceUrl, { waitUntil: 'networkidle0' });
+  const inv = await text(page, '.sheet');
+  assert(/PPN 11%/.test(inv) && /DPP/.test(inv) && /PAID/.test(inv), 'invoice content');
+
+  const admin = await browser.createBrowserContext();
+  const ap = await admin.newPage();
+  await login(ap);
+  await ap.goto(`${BASE}/wp-admin/admin.php?page=lereng-roast-list`, { waitUntil: 'networkidle0' });
+  const date = await ap.evaluate((id) => [...document.querySelectorAll('.wrap .button')].map((b) => b.href).find(Boolean), orderId);
+  assert(/Mamasa Natural/.test(await text(ap, '.wrap table')), 'coffee missing from the roast list');
+  await Promise.all([ap.waitForNavigation({ waitUntil: 'networkidle0' }), ap.click('form button.button-primary')]);
+  await ap.goto(`${BASE}/wp-admin/admin.php?page=wc-orders&action=edit&id=${orderId}`, { waitUntil: 'networkidle0' });
+  assert(/Roasting/.test(await ap.$eval('#order_status', (s) => s.selectedOptions[0].textContent)), 'order not roasting');
+  const placeholder = await ap.$eval('[name=lereng_tracking]', (i) => i.placeholder);
+  await ap.type('[name=lereng_tracking]', placeholder);
+  await Promise.all([ap.waitForNavigation({ waitUntil: 'networkidle0' }), ap.click('button.save_order')]);
+  assert(/Shipped/.test(await ap.$eval('#order_status', (s) => s.selectedOptions[0].textContent)), 'order not shipped');
+  await admin.close();
+
+  await page.goto(`${BASE}/track-order/`, { waitUntil: 'networkidle0' });
+  await page.type('[name=order]', String(orderId));
+  await page.type('[name=email]', email);
+  await Promise.all([page.waitForNavigation({ waitUntil: 'networkidle0' }), page.click('.track-form button')]);
+  const track = await text(page, '.track');
+  assert(track.includes(placeholder) && /Shipment received by courier/.test(track), track.slice(0, 200));
+  assert((await inbox(page, /on its way/)).length > 0, 'shipped email');
+});
+
+await check('restock: a sold-out grinder takes an email, restocking sends the alert', async (page) => {
+  const admin = await browser.createBrowserContext();
+  const ap = await admin.newPage();
+  await login(ap);
+  await ap.goto(`${BASE}/wp-admin/`, { waitUntil: 'domcontentloaded' });
+  // Stock changes through WooCommerce's REST API as staff, the way a stock sync would.
+  const setStock = (id, qty) => ap.evaluate(async (u, q) => {
+    const nonce = await (await fetch('/wp-admin/admin-ajax.php?action=rest-nonce')).text();
+    const r = await fetch(u, { method: 'PUT', headers: { 'Content-Type': 'application/json', 'X-WP-Nonce': nonce }, body: JSON.stringify({ stock_quantity: q }) });
+    return r.status;
+  }, `${BASE}/wp-json/wc/v3/products/${id}`, qty);
+  await page.goto(`${BASE}/product/electric-grinder-flat/`, { waitUntil: 'networkidle0' });
+  const id = await page.$eval('[data-restock]', (f) => f.dataset.product);
+  assert((await setStock(id, 0)) === 200, 'set sold out');
+  await page.reload({ waitUntil: 'networkidle0' });
+  await page.waitForSelector('[data-restock]:not([hidden])');
+  await page.type('[data-restock] [name=email]', 'waiting@example.com');
+  await page.click('[data-restock] button');
+  await page.waitForFunction(() => /once when it.s back/i.test(document.querySelector('.restock__msg').textContent));
+  assert((await setStock(id, 5)) === 200, 'restock via REST');
+  assert((await inbox(ap, /Flat Burr is back/)).length > 0, 'restock email');
+  await setStock(id, 0); // sold out again for the next run
+  await admin.close();
+});
+
+await check('wishlist: saved as a guest, merged into the account on sign-in', async (page) => {
+  await page.goto(`${BASE}/product-category/coffee/`, { waitUntil: 'networkidle0' });
+  const id = await page.$eval('.card [data-wish]', (b) => b.dataset.wish);
+  await page.click('.card [data-wish]');
+  assert(await page.$eval('.card [data-wish]', (b) => b.getAttribute('aria-pressed') === 'true'), 'heart not on');
+  await login(page);
+  await page.goto(`${BASE}/my-account/wishlist/`, { waitUntil: 'networkidle0' });
+  await page.waitForFunction(() => document.querySelector('.wish-list') || /Nothing saved/.test(document.body.textContent));
+  await page.reload({ waitUntil: 'networkidle0' });
+  assert(await page.$(`.wish-list [data-wish="${id}"]`), 'guest wishlist not merged into the account');
+  await page.click(`.wish-list [data-wish="${id}"]`); // clean up
+  await sleep(800);
+});
+
+await check('wholesale: register, apply, approval, quick order at wholesale prices, invoice payment', async (page) => {
+  const email = `cafe${Date.now()}@example.com`;
+  await page.goto(`${BASE}/my-account/`, { waitUntil: 'networkidle0' });
+  await page.type('#reg_email', email);
+  await page.type('#reg_password', 'Kopi-Lereng-2026!');
+  await Promise.all([page.waitForNavigation({ waitUntil: 'networkidle0' }), page.click('[name=register]')]);
+  await page.goto(`${BASE}/wholesale/`, { waitUntil: 'networkidle0' });
+  await page.type('.ws-form [name=business]', 'Kedai Uji Coba');
+  await page.type('.ws-form [name=contact]', 'Rani');
+  await page.type('.ws-form [name=email]', email);
+  await page.type('.ws-form [name=city]', 'Denpasar');
+  await Promise.all([page.waitForNavigation({ waitUntil: 'networkidle0' }), page.click('.ws-form button')]);
+  assert(/Application received/.test(await page.evaluate(() => document.body.textContent)), 'application');
+
+  const admin = await browser.createBrowserContext();
+  const ap = await admin.newPage();
+  await login(ap);
+  await ap.goto(`${BASE}/wp-admin/admin.php?page=lereng-wholesale`, { waitUntil: 'networkidle0' });
+  const row = await ap.$$eval('.wrap tbody tr', (rows, e) => rows.findIndex((r) => r.textContent.includes(e)), email);
+  const forms = await ap.$$(`.wrap tbody tr:nth-child(${row + 1}) form`);
+  await Promise.all([ap.waitForNavigation({ waitUntil: 'networkidle0' }), forms[0].$eval('button', (b) => b.click())]);
+  await admin.close();
+
+  await page.goto(`${BASE}/my-account/quick-order/`, { waitUntil: 'networkidle0' });
+  const first = await page.$eval('.quick-order tbody tr', (tr) => ({ name: tr.querySelector('td').textContent, list: tr.children[1].textContent, ws: tr.children[2].textContent }));
+  await page.$eval('.quick-order tbody tr input[type=number]', (i) => (i.value = '6'));
+  await Promise.all([page.waitForNavigation({ waitUntil: 'networkidle0' }), page.click('.quick-order button')]);
+  const cart = await api(page, '/wc/store/v1/cart');
+  const line = cart.body.items[0];
+  assert(line.quantity === 6 && Number(line.prices.price) === rupiah(first.ws), `cart ${line.quantity} × ${line.prices.price} vs ${first.ws}`);
+  await page.goto(`${BASE}/checkout/`, { waitUntil: 'networkidle0' });
+  await page.waitForSelector('label[for="radio-control-wc-payment-method-options-bacs"]', { timeout: 60000 });
 });
 
 await browser.close();

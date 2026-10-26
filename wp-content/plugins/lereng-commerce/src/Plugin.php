@@ -40,6 +40,11 @@ final class Plugin
             Promotions\Coupons::class,
             Checkout\CheckoutFields::class,
             Subscriptions\Subscriptions::class,
+            Fulfilment\Fulfilment::class,
+            Fulfilment\Invoice::class,
+            Account\Restock::class,
+            Account\Wishlist::class,
+            Wholesale\Wholesale::class,
         ]);
     }
 

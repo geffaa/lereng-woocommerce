@@ -262,3 +262,38 @@ button.is-danger { border-color: var(--accent) !important; color: var(--accent);
 .sub-timeline li { display: grid; grid-template-columns: 7.5rem 11rem 1fr; gap: 0.75rem; padding: 0.6rem 0; border-bottom: 1px solid var(--line); font-size: 0.9375rem; }
 .sub-timeline time { font-family: var(--mono); font-size: 0.75rem; color: var(--muted); padding-top: 0.15rem; }
 .roast-note { padding: 0.9rem 1.1rem; background: var(--sand); border-left: 3px solid var(--accent); }
+
+/* ---- Wishlist, restock, tracking, wholesale ------------------------------------------- */
+.card { position: relative; }
+.wish { position: absolute; top: 0.6rem; right: 0.6rem; z-index: 2; width: 38px; height: 38px; display: grid; place-items: center; border: 0; border-radius: 50%; background: color-mix(in srgb, var(--wp--preset--color--surface) 92%, transparent); color: var(--ink); cursor: pointer; }
+.wish svg { width: 20px; height: 20px; }
+.wish.is-on svg path { fill: var(--accent); stroke: var(--accent); }
+.pdp__top .wish { position: static; border: 1px solid var(--line); }
+.pdp__top { align-items: center; }
+.restock { margin-top: 1rem; padding: 1rem; border: 1px dashed var(--muted); display: grid; gap: 0.5rem; }
+.restock p { margin: 0; }
+.restock div { display: flex; gap: 0.5rem; }
+.restock input { flex: 1; padding: 0.75rem 0.9rem; border: 1px solid var(--line); font: inherit; }
+.restock button, .track-form button, .ws-form button { padding: 0.75rem 1.1rem; border: 0; background: var(--ink); color: var(--wp--preset--color--base); font-weight: 600; cursor: pointer; font: 600 0.9375rem var(--wp--preset--font-family--sans); }
+.restock__msg:empty { display: none; }
+.track { margin: 1.5rem 0; }
+.track__steps { list-style: none; margin: 0 0 1.25rem; padding: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(8rem, 1fr)); border-top: 2px solid var(--line); }
+.track__steps li { padding: 0.8rem 0.5rem 0 0; position: relative; color: var(--muted); display: grid; gap: 0.15rem; }
+.track__steps li::before { content: ''; position: absolute; top: -7px; left: 0; width: 12px; height: 12px; border-radius: 50%; background: var(--line); }
+.track__steps li.is-done { color: var(--ink); }
+.track__steps li.is-done::before { background: var(--accent); }
+.track__steps time { font-family: var(--mono); font-size: 0.6875rem; letter-spacing: 0.04em; }
+.track__log { list-style: none; margin: 0; padding: 0; border-top: 1px solid var(--ink); }
+.track__log li { display: grid; grid-template-columns: 9rem 1fr auto; gap: 1rem; padding: 0.6rem 0; border-bottom: 1px solid var(--line); font-size: 0.9375rem; }
+.track__log time, .track__log small { font-family: var(--mono); font-size: 0.75rem; color: var(--muted); }
+.track-form, .ws-form { display: grid; gap: 0.25rem; max-width: 34rem; }
+.track-form label, .ws-form label { display: grid; gap: 0.35rem; font-size: 0.875rem; }
+.track-form input, .ws-form input, .ws-form select { padding: 0.75rem 0.9rem; border: 1px solid var(--line); font: inherit; background: var(--wp--preset--color--surface); }
+.wish-list { list-style: none; padding: 0; margin: 0; display: grid; gap: 0.5rem; }
+.wish-list li { display: grid; grid-template-columns: 1fr auto auto; gap: 1rem; align-items: center; padding: 0.5rem 0; border-bottom: 1px solid var(--line); }
+.wish-list li a { display: flex; gap: 0.75rem; align-items: center; text-decoration: none; font-weight: 600; }
+.wish-list img { width: 56px; height: auto; }
+.wish-list .wish { position: static; width: auto; height: auto; border-radius: 0; padding: 0.4rem 0.6rem; border: 1px solid var(--line); font-size: 0.8125rem; }
+.ws-note { color: var(--deep, #1F3A34); font-weight: 600; }
+.quick-order input, .quick-order select { padding: 0.4rem; border: 1px solid var(--line); font: inherit; }
+.invoice-link a { font-weight: 600; }
