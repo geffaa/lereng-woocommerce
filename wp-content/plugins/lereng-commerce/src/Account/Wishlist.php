@@ -17,7 +17,7 @@ final class Wishlist
     {
         add_action('init', function (): void {
             register_block_type('lereng/wishlist', ['api_version' => 3, 'uses_context' => ['postId'], 'render_callback' => [$this, 'button']]);
-            add_rewrite_endpoint('wishlist', EP_ROOT | EP_PAGES);
+            add_rewrite_endpoint('wishlist', EP_PAGES);
         });
         add_filter('woocommerce_get_query_vars', static fn(array $v): array => $v + ['wishlist' => 'wishlist']);
         add_filter('woocommerce_account_menu_items', static function (array $items): array {

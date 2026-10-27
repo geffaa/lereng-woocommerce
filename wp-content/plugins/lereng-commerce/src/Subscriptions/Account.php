@@ -20,8 +20,8 @@ final class Account
     public function register(): void
     {
         add_action('init', static function (): void {
-            add_rewrite_endpoint('subscriptions', EP_ROOT | EP_PAGES);
-            add_rewrite_endpoint('view-subscription', EP_ROOT | EP_PAGES);
+            add_rewrite_endpoint('subscriptions', EP_PAGES);
+            add_rewrite_endpoint('view-subscription', EP_PAGES);
         });
         add_filter('woocommerce_get_query_vars', static fn(array $v): array => $v + ['subscriptions' => 'subscriptions', 'view-subscription' => 'view-subscription']);
         add_filter('woocommerce_account_menu_items', [$this, 'menu']);

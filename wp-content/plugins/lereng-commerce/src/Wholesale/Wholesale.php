@@ -21,6 +21,7 @@ final class Wholesale
     {
         add_action('init', [$this, 'setup']);
         add_shortcode('lereng_wholesale_form', [$this, 'form']);
+        add_shortcode('lereng_wholesale_tiers', [$this, 'tiers']);
         add_action('admin_menu', fn() => add_submenu_page('woocommerce', __('Wholesale', 'lereng'), __('Wholesale', 'lereng'), 'manage_woocommerce', 'lereng-wholesale', [$this, 'admin']));
         add_action('admin_post_lereng_wholesale', [$this, 'decide']);
         add_action('template_redirect', [$this, 'submit']);
@@ -42,7 +43,7 @@ final class Wholesale
             add_role(self::ROLE, __('Wholesale customer', 'lereng'), ['read' => true]);
         }
         register_post_type('lereng_wholesale', ['public' => false, 'show_ui' => false, 'label' => 'Wholesale applications', 'supports' => ['title']]);
-        add_rewrite_endpoint('quick-order', EP_ROOT | EP_PAGES);
+        add_rewrite_endpoint('quick-order', EP_PAGES);
     }
 
     public static function isWholesale(?int $userId = null): bool
@@ -281,5 +282,36 @@ final class Wholesale
         $body = '<p>' . esc_html(sprintf(__('Welcome, %s. Your wholesale account is ready: 1 kg bags at wholesale prices, invoice payment, and a quick order page.', 'lereng'), get_the_title($appId))) . '</p><p><a href="' . esc_url(wc_get_account_endpoint_url('quick-order')) . '">' . esc_html__('Sign in and order', 'lereng') . '</a> · <a href="' . esc_url(wp_lostpassword_url()) . '">' . esc_html__('Set a password', 'lereng') . '</a></p>';
         WC()->mailer()->send($email, __('Your Lereng wholesale account', 'lereng'), WC()->mailer()->wrap_message(__('Wholesale account approved', 'lereng'), $body));
         return $user->ID;
+    }
+
+    /** Price table for the wholesale page, from the live 1 kg prices and the tiers above. */
+    public function tiers(): string
+    {
+        $rows = [];
+        foreach (['lereng-house-espresso', 'kopi-susu-blend', 'gayo-washed', 'bali-kintamani-natural'] as $slug) {
+            $post = get_page_by_path($slug, OBJECT, 'product');
+            $product = $post ? wc_get_product($post->ID) : null;
+            if (!$product || !$product->is_type('variable')) {
+                continue;
+            }
+            foreach ($product->get_children() as $vid) {
+                $v = wc_get_product($vid);
+                if ($v && $v->get_attribute('pa_size') === '1kg') {
+                    $rows[] = [$product->get_name(), (float) $v->get_regular_price()];
+                    break;
+                }
+            }
+        }
+        [$big, $small] = [self::TIERS[0], self::TIERS[1]];
+        $head = sprintf('<tr><th>%s</th><th>%s</th><th>%s</th><th>%s</th></tr>', esc_html__('1 kg bag', 'lereng'), esc_html__('Retail', 'lereng'),
+            esc_html(sprintf(__('%1$d–%2$d kg a month (−%3$d%%)', 'lereng'), self::MIN_KG, $big[0] - 1, (int) $small[1])),
+            esc_html(sprintf(__('%1$d kg+ (−%2$d%%)', 'lereng'), $big[0], (int) $big[1])));
+        $body = '';
+        foreach ($rows as [$name, $price]) {
+            $body .= sprintf('<tr><td>%s</td><td><s>%s</s></td><td><b>%s</b></td><td><b>%s</b></td></tr>', esc_html($name), wp_kses_post(wc_price($price)),
+                wp_kses_post(wc_price($price * (1 - $small[1] / 100))), wp_kses_post(wc_price($price * (1 - $big[1] / 100))));
+        }
+        return '<div class="tiers"><table><thead>' . $head . '</thead><tbody>' . $body . '</tbody></table><p>'
+            . esc_html(sprintf(__('Prices per 1 kg bag, whole bean or ground, including 11%% PPN. Minimum order %d kg; every single origin in the shop is available at the same discount.', 'lereng'), self::MIN_KG)) . '</p></div>';
     }
 }

@@ -343,3 +343,89 @@ button.is-danger { border-color: var(--accent) !important; color: var(--accent);
   .site-header__right .wc-block-mini-cart__button, .site-header__right .wc-block-customer-account a { padding: 0.35rem !important; }
   .lang-switch a { padding: 0.25rem 0.35rem; }
 }
+
+/* ---- Landing pages (subscriptions, wholesale) --------------------------- */
+.page--wide { padding-bottom: var(--wp--preset--spacing--60); }
+.page--wide .wp-block-post-content > .alignwide { margin-top: 0 !important; }
+.lp-anchor { scroll-margin-top: calc(var(--header-h, 80px) + 1rem); height: 0; }
+.lp-hero { display: grid; grid-template-columns: minmax(0, 1.25fr) minmax(0, 1fr); gap: var(--wp--preset--spacing--50); align-items: end; padding-block: var(--wp--preset--spacing--50) var(--wp--preset--spacing--50); border-bottom: 1px solid var(--ink); }
+.lp-hero h1 { font-size: clamp(2.75rem, 1.2rem + 4.6vw, 5.5rem); line-height: 0.95; letter-spacing: -0.045em; margin: 0.75rem 0 1.25rem; max-width: 14ch; }
+.lp-lead { font-size: 1.1875rem; line-height: 1.55; color: var(--muted); max-width: 36rem; margin: 0 0 2rem; }
+.lp-actions { display: flex; flex-wrap: wrap; gap: 0.75rem; }
+.lp-btn { display: inline-block; padding: 0.95rem 1.5rem; background: var(--ink); color: var(--wp--preset--color--base); font-weight: 600; text-decoration: none; border: 1px solid var(--ink); }
+.lp-btn--ghost { background: transparent; color: var(--ink); }
+.lp-btn:hover { background: var(--accent); border-color: var(--accent); color: #fff; }
+.lp-facts { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: 1fr 1fr; border-top: 1px solid var(--line); border-left: 1px solid var(--line); }
+.lp-facts li { padding: 1.25rem 1.25rem 1.4rem; border-right: 1px solid var(--line); border-bottom: 1px solid var(--line); display: grid; gap: 0.35rem; align-content: start; }
+.lp-facts b { font-size: clamp(1.75rem, 1rem + 2vw, 2.5rem); letter-spacing: -0.03em; line-height: 1; }
+.lp-facts span { font-size: 0.875rem; color: var(--muted); }
+.lp-section, .lp-head { padding-top: var(--wp--preset--spacing--50); }
+.lp-section h2, .lp-head h2, .lp-faq h2, .lp-apply__intro h2 { font-size: clamp(1.75rem, 1rem + 2vw, 2.75rem); letter-spacing: -0.03em; line-height: 1.05; margin: 0.5rem 0 var(--wp--preset--spacing--40); max-width: 22ch; }
+.lp-head h2 { margin-bottom: var(--wp--preset--spacing--30); }
+.lp-steps, .lp-cards { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: var(--wp--preset--spacing--30); }
+.lp-steps li { border-top: 2px solid var(--ink); padding-top: 1.25rem; }
+.lp-steps b { font-family: var(--mono); font-size: 0.8125rem; color: var(--accent); letter-spacing: 0.06em; }
+.lp-steps h3, .lp-cards h3 { font-size: 1.25rem; margin: 0.6rem 0 0.5rem; letter-spacing: -0.01em; }
+.lp-steps p, .lp-cards p { margin: 0; color: var(--muted); font-size: 0.9375rem; line-height: 1.6; }
+.lp-cards li { background: var(--wp--preset--color--sand, #ECE5D6); padding: 1.75rem 1.5rem 2rem; }
+.lp-cards h3 { margin-top: 0; }
+.lp-faq { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 2fr); gap: var(--wp--preset--spacing--50); padding-top: var(--wp--preset--spacing--60); }
+.lp-faq__list { border-top: 1px solid var(--ink); }
+.lp-faq details { border-bottom: 1px solid var(--line); }
+.lp-faq summary { cursor: pointer; list-style: none; padding: 1.25rem 2.5rem 1.25rem 0; font-size: 1.125rem; font-weight: 600; position: relative; }
+.lp-faq summary::-webkit-details-marker { display: none; }
+.lp-faq summary::after { content: '+'; position: absolute; right: 0.25rem; top: 1rem; font: 400 1.5rem/1 var(--mono); }
+.lp-faq details[open] summary::after { content: '−'; }
+.lp-faq details p { margin: 0 0 1.5rem; color: var(--muted); max-width: 46rem; line-height: 1.65; }
+/* Subscription picker */
+.lp-picker .sub-picker { grid-template-columns: repeat(4, minmax(0, 1fr)); gap: var(--wp--preset--spacing--40) var(--wp--preset--spacing--30); margin: 0; }
+.sub-picker__hero { display: grid !important; grid-template-columns: 1fr auto; align-items: end; gap: 0.5rem 2rem !important; padding: 2rem 2.25rem !important; }
+.sub-picker__hero > * { grid-column: 1; }
+.sub-picker__hero .arrow-link { grid-column: 2; grid-row: 1 / span 3; align-self: center; border: 1px solid currentColor; padding: 0.85rem 1.25rem; font-weight: 600; }
+.sub-picker__item b { font-size: 1.0625rem; margin-top: 0.5rem; }
+.sub-picker__item small { color: var(--muted); font-size: 0.8125rem; }
+.sub-picker__item span { color: var(--ink) !important; font-weight: 600; font-size: 0.9375rem !important; }
+.sub-picker__item s { color: var(--muted); font-weight: 400; margin-left: 0.35rem; }
+/* Wholesale tiers */
+.tiers table { width: 100%; border-collapse: collapse; font-size: 1rem; }
+.tiers th { text-align: left; font: 500 0.6875rem/1.4 var(--mono); letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); padding: 0 1rem 0.9rem 0; border-bottom: 1px solid var(--ink); }
+.tiers td { padding: 1.1rem 1rem 1.1rem 0; border-bottom: 1px solid var(--line); }
+.tiers td:first-child { font-weight: 600; }
+.tiers s { color: var(--muted); }
+.tiers p { color: var(--muted); font-size: 0.875rem; margin: 1rem 0 0; }
+/* Wholesale apply: intro beside the form */
+.lp-apply, .lp-apply-form { padding-top: var(--wp--preset--spacing--60); }
+@media (min-width: 900px) {
+  .page--wide .wp-block-post-content { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.3fr); column-gap: var(--wp--preset--spacing--50); }
+  .page--wide .wp-block-post-content > * { grid-column: 1 / -1; }
+  .page--wide .wp-block-post-content > .lp-apply { grid-column: 1; }
+  .page--wide .wp-block-post-content > .lp-apply-form { grid-column: 2; }
+}
+.lp-contact { list-style: none; padding: 0; margin: 1.5rem 0 0; display: grid; gap: 0.6rem; font-size: 0.9375rem; }
+.lp-apply-form .ws-form { max-width: none; grid-template-columns: 1fr 1fr; gap: 1rem 1.25rem; background: var(--wp--preset--color--surface, #fff); padding: 2rem; border: 1px solid var(--line); }
+.lp-apply-form .ws-form > *:last-child, .lp-apply-form .ws-form .notice { grid-column: 1 / -1; }
+.lp-apply-form .ws-form button { justify-self: start; padding: 0.95rem 1.75rem; }
+@media (max-width: 900px) {
+  .lp-hero, .lp-faq { grid-template-columns: 1fr; }
+  .lp-steps, .lp-cards, .lp-picker .sub-picker { grid-template-columns: 1fr 1fr; }
+  .lp-apply-form .ws-form { grid-template-columns: 1fr; padding: 1.25rem; }
+  .sub-picker__hero { grid-template-columns: 1fr; }
+  .sub-picker__hero .arrow-link { grid-column: 1; grid-row: auto; justify-self: start; }
+}
+@media (max-width: 520px) {
+  .lp-steps, .lp-cards, .tiers table { grid-template-columns: 1fr; font-size: 0.875rem; }
+  .lp-steps, .lp-cards { grid-template-columns: 1fr; }
+}
+/* Price filter: handles and inputs stay inside the sidebar. */
+.shop-filters .wc-block-product-filter-price-slider__content { grid-template-areas: "price-slider price-slider" "left-input right-input" !important; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) !important; gap: 0.5rem 0.75rem !important; }
+.shop-filters .wc-block-product-filter-price-slider__range { margin: 15px 9px !important; width: calc(100% - 18px) !important; }
+.shop-filters input.wc-block-product-filter-price-slider__left, .shop-filters input.wc-block-product-filter-price-slider__right { width: 100% !important; min-width: 0; box-sizing: border-box; font-size: 0.8125rem; padding: 0.55rem 0.6rem; }
+.shop-filters input.wc-block-product-filter-price-slider__right { text-align: right; }
+/* Landing sections use the full wide column, left-aligned. */
+.page--wide .wp-block-post-content > .alignwide > *, .page--wide .wp-block-post-content > .alignwide > * > * { max-width: none !important; margin-left: 0 !important; margin-right: 0 !important; }
+.lp-head, .lp-head h2 { text-align: left; }
+.lp-faq h2 { margin-top: 0; }
+.ws-form input, .ws-form select { width: 100%; box-sizing: border-box; }
+.lp-apply-form .ws-form label { gap: 0.45rem; }
+.lp-apply-form .ws-form p { margin: 0; }
+@media (min-width: 900px) { .page--wide .wp-block-post-content > * { margin-left: 0 !important; margin-right: 0 !important; width: 100%; max-width: none !important; } }

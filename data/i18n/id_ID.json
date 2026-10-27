@@ -414,5 +414,10 @@
  "%1$d · %2$s a month": "%1$d · %2$s per bulan",
  "Waiting for a restock": "Menunggu restock",
  "%d customer": "%d pelanggan",
- "%d customers": "%d pelanggan"
+ "%d customers": "%d pelanggan",
+ "1 kg bag": "Kantong 1 kg",
+ "Retail": "Eceran",
+ "%1$d–%2$d kg a month (−%3$d%%)": "%1$d–%2$d kg per bulan (−%3$d%%)",
+ "%1$d kg+ (−%2$d%%)": "%1$d kg+ (−%2$d%%)",
+ "Prices per 1 kg bag, whole bean or ground, including 11%% PPN. Minimum order %d kg; every single origin in the shop is available at the same discount.": "Harga per kantong 1 kg, biji utuh atau giling, sudah termasuk PPN 11%%. Minimal pesanan %d kg; semua single origin di toko berlaku diskon yang sama."
 }

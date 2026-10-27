@@ -213,12 +213,14 @@
   "eq-ceramic-dripper"
  ],
  "flat-bottom-dripper": [
+  "tile-flat-bottom-dripper",
   "eq-flat-dripper"
  ],
  "glass-pour-over-carafe": [
   "eq-carafe"
  ],
  "immersion-brewer": [
+  "tile-immersion-brewer",
   "eq-immersion"
  ],
  "french-press-600": [
@@ -228,6 +230,7 @@
   "eq-moka"
  ],
  "hand-grinder-c3": [
+  "tile-hand-grinder-c3",
   "eq-hand-grinder"
  ],
  "electric-grinder-flat": [
@@ -243,9 +246,11 @@
   "eq-scale"
  ],
  "paper-filters-02": [
+  "tile-paper-filters-02",
   "eq-ceramic-dripper"
  ],
  "paper-filters-flat": [
+  "tile-paper-filters-flat",
   "eq-flat-dripper"
  ],
  "glass-server-600": [

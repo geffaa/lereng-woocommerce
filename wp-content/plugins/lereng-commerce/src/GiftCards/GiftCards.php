@@ -307,7 +307,7 @@ final class GiftCards
 
     public function endpoint(): void
     {
-        add_rewrite_endpoint('gift-cards', EP_ROOT | EP_PAGES);
+        add_rewrite_endpoint('gift-cards', EP_PAGES);
     }
 
     public function menu(array $items): array

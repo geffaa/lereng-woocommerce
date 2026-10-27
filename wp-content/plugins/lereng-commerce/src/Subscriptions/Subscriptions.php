@@ -292,7 +292,12 @@ final class Subscriptions
 
     public function picker(): string
     {
-        $ids = wc_get_products(['status' => 'publish', 'limit' => 8, 'return' => 'ids', 'featured' => true, 'category' => ['coffee']]);
+        // The coffees people subscribe to most: best sellers that can be subscribed to.
+        $ids = array_values(array_filter(
+            wc_get_products(['status' => 'publish', 'limit' => 16, 'return' => 'ids', 'category' => ['single-origin', 'blends'], 'orderby' => 'popularity', 'order' => 'DESC']),
+            static fn($id) => get_post_meta($id, '_lereng_subscribable', true) !== 'no'
+        ));
+        $ids = array_slice($ids, 0, 8);
         $choice = get_page_by_path('roasters-choice-subscription', OBJECT, 'product');
         $html = '<div class="sub-picker">';
         if ($choice) {
@@ -302,7 +307,8 @@ final class Subscriptions
         foreach ($ids as $id) {
             $p = wc_get_product($id);
             $shelf = (int) wc_get_price_including_tax($p, ['price' => $p->is_type('variable') ? $p->get_variation_regular_price('min') : $p->get_regular_price()]);
-            $html .= sprintf('<a class="sub-picker__item" href="%s">%s<b>%s</b><span>%s</span></a>', esc_url(add_query_arg('purchase', 'subscribe', $p->get_permalink())), $p->get_image('woocommerce_thumbnail'), esc_html($p->get_name()), wp_kses_post(sprintf(__('%s a delivery', 'lereng'), wc_price(Schedule::price($shelf)))));
+            $notes = implode(' · ', array_map([\Lereng\I18n::class, 'text'], array_slice(array_map('trim', explode(',', (string) get_post_meta($id, '_lereng_notes', true))), 0, 3)));
+            $html .= sprintf('<a class="sub-picker__item" href="%s">%s<b>%s</b><small>%s</small><span>%s <s>%s</s></span></a>', esc_url(add_query_arg('purchase', 'subscribe', $p->get_permalink())), $p->get_image('woocommerce_thumbnail'), esc_html($p->get_name()), esc_html($notes), wp_kses_post(sprintf(__('%s a delivery', 'lereng'), wc_price(Schedule::price($shelf)))), wp_kses_post(wc_price($shelf)));
         }
         return $html . '</div>';
     }

@@ -21,6 +21,24 @@ def table(head, rows):
 def btn(label, url):
     return f'<!-- wp:buttons --><div class="wp-block-buttons"><!-- wp:button --><div class="wp-block-button"><a class="wp-block-button__link wp-element-button" href="{url}">{label}</a></div><!-- /wp:button --></div><!-- /wp:buttons -->'
 
+def wide(html_, cls=''):
+    """A wide section of hand-written markup (landing pages)."""
+    c = f' {{"align":"wide","className":"{cls}"}}' if cls else ' {"align":"wide"}'
+    k = f' {cls}' if cls else ''
+    return f'<!-- wp:group{c} -->\n<div class="wp-block-group alignwide{k}"><!-- wp:html -->\n{html_}\n<!-- /wp:html --></div>\n<!-- /wp:group -->'
+def wide_sc(code, cls):
+    return f'<!-- wp:group {{"align":"wide","className":"{cls}"}} -->\n<div class="wp-block-group alignwide {cls}">' + sc(code) + '</div>\n<!-- /wp:group -->'
+def hero(kicker, title, lead, actions, facts):
+    a = ''.join(f'<a class="lp-btn{" lp-btn--ghost" if i else ""}" href="{u}">{l}</a>' for i, (l, u) in enumerate(actions))
+    f = ''.join(f'<li><b>{b}</b><span>{t}</span></li>' for b, t in facts)
+    return wide(f'<section class="lp-hero"><div class="lp-hero__text"><p class="kicker">{kicker}</p><h1>{title}</h1><p class="lp-lead">{lead}</p><div class="lp-actions">{a}</div></div><ul class="lp-facts">{f}</ul></section>')
+def lp_steps(kicker, title, items, cls=''):
+    li = ''.join(f'<li><b>{i+1:02d}</b><h3>{h_}</h3><p>{t}</p></li>' for i, (h_, t) in enumerate(items))
+    return wide(f'<section class="lp-section {cls}"><p class="kicker">{kicker}</p><h2>{title}</h2><ol class="lp-steps">{li}</ol></section>')
+def faq(title, items):
+    d = ''.join(f'<details><summary>{q}</summary><p>{a}</p></details>' for q, a in items)
+    return wide(f'<section class="lp-faq"><h2>{title}</h2><div class="lp-faq__list">{d}</div></section>')
+
 GUIDES = [
  ("Pour over (V60 or similar)", "15 g · 250 g water · 93 °C · 2:45", ["Grind medium-fine, like table salt.", "Rinse the paper filter with hot water and discard the water.", "Bloom: pour 40 g of water, wait 40 seconds.", "Pour slowly in circles to 150 g by 1:15, then to 250 g by 1:45.", "Let it drain; aim to finish around 2:45. Coarser if slower, finer if faster."]),
  ("Flat-bottom dripper", "16 g · 260 g water · 92 °C · 3:00", ["Grind medium.", "Bloom with 50 g for 30 seconds.", "Pour in four equal pulses of 50–55 g, every 30 seconds.", "Swirl gently at the end for a flat bed."]),
@@ -37,18 +55,25 @@ guides += [h('Water'), p('Coffee is 98% water. Bali tap water is hard; filtered 
 
 pages = {
  "subscriptions": {"title": "Subscriptions", "template": "page-wide", "content": "\n".join([
-    p('Fresh beans before the last ones run out. 10% off every bag, free to change.', 'lead'),
-    h('How it works'),
-    ul(['Choose a coffee on its product page and pick <b>Subscribe &amp; save</b>, or start the <a href="/product/roasters-choice-subscription/">Roaster’s Choice</a> for a different origin each time.',
-        'We roast on the next Monday or Thursday and ship the same day. After that it arrives every 1, 2 or 4 weeks.',
-        'Each renewal is a normal order: you get the same email, tracking and receipt.',
-        'From <a href="/my-account/subscriptions/">My account</a> you can skip the next delivery, pause for up to three months, change coffee, size, grind or frequency, or cancel.']),
-    sc('[lereng_subscription_picker]'),
-    h('Questions'),
-    details('How do I pay for renewals?', p('Each renewal creates an order and we email a payment link (QRIS or virtual account) two days before roast day. Pay it and it ships as usual; if it isn’t paid by roast day we skip that delivery and keep your subscription.')),
-    details('Can I change the coffee?', p('Yes, any time before the renewal date. Single origins and blends in the same size keep the 10% discount.')),
-    details('What if I’m away?', p('Pause the subscription and choose the date it should restart. We send a reminder a week before.')),
-    details('Is there a minimum?', p('No. Cancel after the first delivery if it isn’t for you.')),
+    hero('Subscriptions', 'Fresh beans before the last ones run out.',
+         'Pick a coffee, or let our roasters choose. It arrives every one, two or four weeks, roasted that week, with 10% off every bag.',
+         [('Choose a coffee', '#choose'), ('Roaster’s Choice', '/product/roasters-choice-subscription/')],
+         [('10%', 'off every bag, every delivery'), ('1 · 2 · 4', 'weeks between deliveries, your pick'), ('Mon &amp; Thu', 'roast days, shipped the same afternoon'), ('0', 'minimum deliveries, cancel anytime')]),
+    lp_steps('How it works', 'Set it up once, change it whenever you like.', [
+        ('Choose', 'Pick a coffee, size and grind and choose <b>Subscribe &amp; save</b>, or start the Roaster’s Choice for a different origin each time.'),
+        ('We roast', 'Your first bag is roasted on the next Monday or Thursday and ships the same afternoon.'),
+        ('Pay each delivery', 'Two days before each roast day we email a QRIS or virtual-account link. Each renewal is a normal order with tracking and a receipt.'),
+        ('Stay in control', 'From <a href="/my-account/subscriptions/">My account</a>: skip a delivery, pause for up to three months, change coffee, size, grind or frequency, or cancel.'),
+    ]),
+    '<!-- wp:html -->\n<div id="choose" class="lp-anchor"></div>\n<!-- /wp:html -->',
+    wide('<div class="lp-head"><p class="kicker">Choose your coffee</p><h2>Most subscribed this month</h2></div>'),
+    wide_sc('[lereng_subscription_picker]', 'lp-picker'),
+    faq('Questions', [
+        ('How do I pay for renewals?', 'Each renewal creates an order and we email a payment link (QRIS or virtual account) two days before roast day. Pay it and it ships as usual; if it isn’t paid by roast day we skip that delivery and keep your subscription.'),
+        ('Can I change the coffee?', 'Yes, any time before the renewal date. Single origins and blends in the same size keep the 10% discount.'),
+        ('What if I’m away?', 'Pause the subscription and choose the date it should restart. We send a reminder a week before.'),
+        ('Is there a minimum?', 'No. Cancel after the first delivery if it isn’t for you.'),
+    ]),
  ])},
  "brew-guides": {"title": "Brew guides", "content": "\n".join(guides)},
  "shipping": {"title": "Shipping and returns", "content": "\n".join([
@@ -61,9 +86,27 @@ pages = {
  "track-order": {"title": "Track an order", "content": "\n".join([p('Enter your order number and the email you used at checkout.'), sc('[lereng_track_order]')])},
  "gift-card-balance": {"title": "Gift card balance", "content": "\n".join([p('Check how much is left on a Lereng gift card. Codes look like LRG-XXXX-XXXX.'), sc('[lereng_gift_card_balance]'), btn('Send a gift card', '/product/lereng-gift-card/')])},
  "wholesale": {"title": "Wholesale for cafés and offices", "template": "page-wide", "content": "\n".join([
-    p('Fresh-roasted coffee for cafés, restaurants, villas and offices in Bali and beyond.', 'lead'),
-    ul(['Tiered prices from 5 kg a month, with invoice terms for approved accounts', 'A fixed roast day and delivery slot for your order', 'Barista training at our tasting bar, and help dialling in your grinder', 'Your own espresso blend from 20 kg a month']),
-    h('Apply for an account'), sc('[lereng_wholesale_form]'),
+    hero('Wholesale', 'Coffee for cafés, restaurants and offices.',
+         'Fresh-roasted coffee for cafés, restaurants, villas and offices in Bali and beyond, roasted on a fixed day for your order.',
+         [('Apply for an account', '#apply'), ('See prices', '#prices')],
+         [('25%', 'off 1 kg bags from 5 kg a month'), ('30%', 'off once an order reaches 10 kg'), ('14 days', 'invoice terms for approved accounts'), ('1 day', 'to hear back after you apply')]),
+    wide('<section class="lp-section"><p class="kicker">What you get</p><h2>A roaster that works on your schedule.</h2><ul class="lp-cards">'
+         '<li><h3>Tiered prices</h3><p>Tiered prices from 5 kg a month, with invoice terms for approved accounts</p></li>'
+         '<li><h3>Fixed roast day</h3><p>A fixed roast day and delivery slot for your order</p></li>'
+         '<li><h3>Barista training</h3><p>Barista training at our tasting bar, and help dialling in your grinder</p></li>'
+         '<li><h3>Your own blend</h3><p>Your own espresso blend from 20 kg a month</p></li></ul></section>'),
+    '<!-- wp:html -->\n<div id="prices" class="lp-anchor"></div>\n<!-- /wp:html -->',
+    wide('<div class="lp-head"><p class="kicker">Prices</p><h2>What a kilo costs</h2></div>'),
+    wide_sc('[lereng_wholesale_tiers]', 'lp-tiers'),
+    lp_steps('How it works', 'From application to first delivery in a week.', [
+        ('Apply', 'Tell us about your business and how much coffee you use.'),
+        ('Taste', 'We reply within one working day and send samples, or invite you to a cupping in Kerobokan.'),
+        ('Order', 'Once approved, your account shows wholesale prices and a quick-order page for 1 kg bags.'),
+        ('Pay by invoice', 'Bank transfer within 14 days; one invoice per delivery, with a tax invoice for your NPWP.'),
+    ]),
+    '<!-- wp:html -->\n<div id="apply" class="lp-anchor"></div>\n<!-- /wp:html -->',
+    wide('<div class="lp-apply__intro"><p class="kicker">Apply</p><h2>Apply for an account</h2><p>It takes two minutes. We look at every application by hand and reply on WhatsApp or email within one working day.</p><ul class="lp-contact"><li>WhatsApp <b>+62 812 0000 0088</b></li><li>Email <b>wholesale@lereng.example</b></li><li>Cupping: Thursday 14:00 at the roastery</li></ul></div>', 'lp-apply'),
+    wide_sc('[lereng_wholesale_form]', 'lp-apply-form'),
  ])},
  "about": {"title": "About Lereng", "content": "\n".join([
     p('Lereng means slope. Almost all of Indonesia’s best coffee grows on the slopes of volcanoes, between 1,200 and 1,900 metres, on farms of one or two hectares.', 'lead'),

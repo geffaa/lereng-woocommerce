@@ -140,11 +140,19 @@ const byProcess = (p) => (/natural|anaerobic|carbonic|ferment/i.test(p.process) 
 const brewing = (p) => (/espresso|susu|house/i.test(p.slug) || p.roast === 'medium-dark' ? 'photo-latte-2' : p.roast === 'dark' ? 'photo-roaster' : 'photo-pour');
 const EQUIP = {
   'ceramic-dripper-02': ['eq-ceramic-dripper'], 'flat-bottom-dripper': ['eq-flat-dripper'], 'glass-pour-over-carafe': ['eq-carafe'], 'immersion-brewer': ['eq-immersion'],
-  'french-press-600': null, 'moka-pot-3': ['eq-moka'], 'hand-grinder-c3': ['eq-hand-grinder'], 'electric-grinder-flat': ['eq-electric-grinder'],
+  'french-press-600': [], 'moka-pot-3': ['eq-moka'], 'hand-grinder-c3': ['eq-hand-grinder'], 'electric-grinder-flat': ['eq-electric-grinder'],
   'gooseneck-kettle': ['eq-gooseneck'], 'electric-kettle-temp': ['eq-electric-kettle'], 'brew-scale': ['eq-scale'], 'paper-filters-02': ['eq-ceramic-dripper'],
   'paper-filters-flat': ['eq-flat-dripper'], 'glass-server-600': ['eq-server'], 'enamel-mug': ['merch-mug'], 'canvas-tote': ['merch-tote'],
 };
 
+const EQUIP_TILES = {
+  'french-press-600': { bg: '#ECE5D6', ink: '#141412', title: 'French\npress', sub: '600 ml · double-wall steel' },
+  'flat-bottom-dripper': { bg: '#E4DCCB', ink: '#141412', title: 'Flat-bottom\ndripper', sub: '185 · three holes, flat bed' },
+  'immersion-brewer': { bg: '#2B2A27', title: 'Immersion\nbrewer', sub: 'Pressure brewer · two minutes a cup' },
+  'hand-grinder-c3': { bg: '#3B3F45', title: 'Hand\ngrinder', sub: 'Conical steel burrs · 36 clicks' },
+  'paper-filters-02': { bg: '#F1ECE2', ink: '#141412', title: 'Paper\nfilters 02', sub: 'Unbleached · 100 pcs · cone' },
+  'paper-filters-flat': { bg: '#F1ECE2', ink: '#141412', title: 'Paper\nfilters 185', sub: 'Wave · 100 pcs · flat bottom' },
+};
 const jobs = []; // [name, svg] or [name, {photo}]
 const images = {};
 let n = 0;
@@ -162,7 +170,9 @@ const T = (slug, spec) => {
 for (const p of catalog.products) {
   if (p.category === 'drip-bags') images[p.slug] = [T(p.slug, { bg: ISLAND[p.source.startsWith('gayo') ? 'Sumatra' : p.source.startsWith('bali') ? 'Bali' : 'Blend'], kicker: 'DRIP BAGS · 10 × 12 G', title: 'Drip\nbags', sub: p.name.replace('Drip Bags · ', '').replace(' (10)', ''), foot: 'HANG · POUR 180 ML · WAIT · DRINK' }), 'photo-pour'];
   if (p.category === 'cold-brew') images[p.slug] = [T(p.slug, { bg: '#1F3A34', kicker: p.slug.endsWith('1l') ? '1 LITRE' : '500 ML', title: 'Cold\nbrew', sub: 'Concentrate · Java Cikuray · 18 hours', foot: 'KEEP CHILLED · MIX 1:2' }), 'photo-iced'];
-  if (EQUIP[p.slug] !== undefined) images[p.slug] = EQUIP[p.slug] || [T(p.slug, { bg: '#ECE5D6', ink: '#141412', kicker: 'EQUIPMENT', title: 'French\npress', sub: '600 ml · double-wall steel' })];
+  if (EQUIP[p.slug] !== undefined) images[p.slug] = EQUIP[p.slug];
+  // No photo that shows the product itself: a designed tile first, the photo second.
+  if (EQUIP_TILES[p.slug]) images[p.slug] = [T(p.slug, { kicker: 'EQUIPMENT', ...EQUIP_TILES[p.slug] }), ...(EQUIP[p.slug] || [])];
 }
 images['lereng-tee'] = [T('lereng-tee', { bg: '#ECE5D6', ink: '#141412', kicker: 'MERCH · S–XL', title: 'Lereng\ntee', sub: 'Heavyweight cotton · contour print' })];
 images['bucket-hat'] = [T('bucket-hat', { bg: '#2F4B3C', kicker: 'MERCH', title: 'Bucket\nhat', sub: 'Washed cotton · one size' })];
