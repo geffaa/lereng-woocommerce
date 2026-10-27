@@ -50,6 +50,7 @@ final class Seeder
             'images' => $this->images(),
             'i18n' => $this->i18n(),
             'analytics' => $this->analytics(),
+            'reviews' => (new History($this->catalog, json_decode(file_get_contents(WP_CONTENT_DIR . '/lereng-data/people.json'), true), $this->log))->reviewsOnly(),
             'history' => (new History($this->catalog, json_decode(file_get_contents(WP_CONTENT_DIR . '/lereng-data/people.json'), true), $this->log))->run($this->force),
             default => throw new \InvalidArgumentException("Unknown seed step: $step"),
         };

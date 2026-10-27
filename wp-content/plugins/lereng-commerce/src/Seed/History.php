@@ -617,7 +617,7 @@ final class History
 
     private function reviews(): void
     {
-        $orders = wc_get_orders(['limit' => -1, 'status' => ['completed'], 'return' => 'objects', 'created_via' => 'checkout']);
+        $orders = array_filter(wc_get_orders(['limit' => -1, 'status' => ['completed'], 'return' => 'objects']), static fn($o) => $o->get_created_via() === 'checkout');
         $done = [];
         foreach ($orders as $order) {
             if ($this->rand() > 0.33) {
@@ -638,7 +638,8 @@ final class History
                 $text = $this->rand() < 0.18
                     ? strtr($this->pick($this->people['review_id']), $vars)
                     : strtr($this->pick($this->people['review_open'][max(2, $rating)] ?? $this->people['review_open'][4]) . ' ' . $this->pick($this->people['review_body']), $vars);
-                $at = ($order->get_date_completed() ?: $order->get_date_created())->getTimestamp() + $this->int(2, 12) * 86400;
+                // Delivered about a week after ordering; the review follows a few days later.
+                $at = $order->get_date_created()->getTimestamp() + $this->int(7, 20) * 86400;
                 if ($at > $this->now->getTimestamp()) {
                     continue;
                 }
@@ -672,6 +673,17 @@ final class History
     }
 
     /* ---------------- run ---------------- */
+
+    /** Reviews only, for an existing history (`seed reviews`). */
+    public function reviewsOnly(): void
+    {
+        ini_set('memory_limit', '1024M');
+        $this->quiet();
+        $this->loadCatalog();
+        wp_defer_comment_counting(false);
+        $this->reviews();
+        $this->say("{$this->stats['reviews']} reviews");
+    }
 
     public function run(bool $force = false): void
     {

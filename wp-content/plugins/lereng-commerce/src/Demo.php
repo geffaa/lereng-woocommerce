@@ -17,6 +17,8 @@ final class Demo
         if (!defined('LERENG_DEMO') || !LERENG_DEMO) {
             return;
         }
+        // Playground shows PHP notices on the page; visitors of the demo shouldn't see them.
+        ini_set('display_errors', '0');
         add_action('shutdown', [$this, 'runQueue'], 100);
         add_action('wp_footer', [$this, 'badge']);
     }

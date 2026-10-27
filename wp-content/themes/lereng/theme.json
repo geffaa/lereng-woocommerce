@@ -20,6 +20,7 @@
     },
     "layout": { "contentSize": "720px", "wideSize": "1320px" },
     "spacing": {
+      "defaultSpacingSizes": false,
       "units": ["px", "rem", "%", "vw"],
       "spacingSizes": [
         { "slug": "10", "name": "XS", "size": "0.5rem" },

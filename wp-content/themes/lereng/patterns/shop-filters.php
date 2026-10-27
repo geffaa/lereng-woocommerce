@@ -13,7 +13,7 @@ $filters = [['roast', __('Roast', 'lereng')], ['process', __('Process', 'lereng'
 <div class="wp-block-woocommerce-product-filters shop-filters">
 <!-- wp:woocommerce/product-filter-active -->
 <div class="wp-block-woocommerce-product-filter-active"><!-- wp:woocommerce/product-filter-removable-chips -->
-<div class="wp-block-woocommerce-product-filter-removable-chips"></div>
+<div class="wp-block-woocommerce-product-filter-removable-chips wc-block-product-filter-removable-chips"></div>
 <!-- /wp:woocommerce/product-filter-removable-chips -->
 <!-- wp:woocommerce/product-filter-clear-button -->
 <div class="wp-block-woocommerce-product-filter-clear-button"><!-- wp:buttons --><div class="wp-block-buttons"><!-- wp:button {"className":"is-style-link wc-block-product-filter-clear-button"} --><div class="wp-block-button is-style-link wc-block-product-filter-clear-button"><a class="wp-block-button__link wp-element-button"><?php esc_html_e('Clear filters', 'lereng'); ?></a></div><!-- /wp:button --></div><!-- /wp:buttons --></div>
