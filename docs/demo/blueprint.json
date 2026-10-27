@@ -1,0 +1,44 @@
+{
+  "$schema": "https://playground.wordpress.net/blueprint-schema.json",
+  "meta": {
+    "title": "Lereng Coffee Roasters",
+    "description": "A WooCommerce store for an Indonesian specialty coffee roaster, running in your browser.",
+    "author": "geffaa"
+  },
+  "landingPage": "/",
+  "preferredVersions": {
+    "php": "8.3",
+    "wp": "7.0"
+  },
+  "features": {
+    "networking": true
+  },
+  "login": false,
+  "steps": [
+    {
+      "step": "unzip",
+      "zipFile": {
+        "resource": "url",
+        "url": "https://geffaa.github.io/lereng-woocommerce/demo/site.zip"
+      },
+      "extractToPath": "/wordpress"
+    },
+    {
+      "step": "installPlugin",
+      "pluginData": {
+        "resource": "url",
+        "url": "https://downloads.wordpress.org/plugin/woocommerce.11.2.1.zip"
+      },
+      "options": {
+        "activate": true
+      }
+    },
+    {
+      "step": "defineWpConfigConsts",
+      "consts": {
+        "LERENG_DEMO": true,
+        "WP_DEBUG": false
+      }
+    }
+  ]
+}

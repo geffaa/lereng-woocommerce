@@ -43,7 +43,9 @@ const blueprint = {
   features: { networking: true },
   login: false,
   steps: [
-    { step: 'importWordPressFiles', wordPressFilesZip: { resource: 'url', url: `${base}/site.zip` } },
+    // The store's wp-content (database included) over the fresh install. Playground sets the site
+    // URL through constants, so the database's own URL doesn't matter.
+    { step: 'unzip', zipFile: { resource: 'url', url: `${base}/site.zip` }, extractToPath: '/wordpress' },
     { step: 'installPlugin', pluginData: { resource: 'url', url: `https://downloads.wordpress.org/plugin/woocommerce.${WC_VERSION}.zip` }, options: { activate: true } },
     { step: 'defineWpConfigConsts', consts: { LERENG_DEMO: true, WP_DEBUG: false } },
   ],
