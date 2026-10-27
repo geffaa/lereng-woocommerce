@@ -402,9 +402,7 @@
  "This payment window has closed and the order was cancelled. Your items are back in stock.": "Batas waktu pembayaran sudah habis dan pesanan dibatalkan. Barang Anda sudah dikembalikan ke stok.",
  "Copied": "Tersalin",
  "%1$s left of %2$s": "sisa %1$s dari %2$s",
- "Live demo · WordPress running in your browser": "Demo langsung · WordPress berjalan di browser Anda",
  "Demo inbox": "Kotak masuk demo",
- "Admin (admin / password)": "Admin (admin / password)",
  "Roastery today": "Roastery hari ini",
  "To roast on %s": "Disangrai pada %s",
  "Roasted, waiting to ship": "Sudah disangrai, menunggu dikirim",
@@ -419,5 +417,8 @@
  "Retail": "Eceran",
  "%1$d–%2$d kg a month (−%3$d%%)": "%1$d–%2$d kg per bulan (−%3$d%%)",
  "%1$d kg+ (−%2$d%%)": "%1$d kg+ (−%2$d%%)",
- "Prices per 1 kg bag, whole bean or ground, including 11%% PPN. Minimum order %d kg; every single origin in the shop is available at the same discount.": "Harga per kantong 1 kg, biji utuh atau giling, sudah termasuk PPN 11%%. Minimal pesanan %d kg; semua single origin di toko berlaku diskon yang sama."
+ "Prices per 1 kg bag, whole bean or ground, including 11%% PPN. Minimum order %d kg; every single origin in the shop is available at the same discount.": "Harga per kantong 1 kg, biji utuh atau giling, sudah termasuk PPN 11%%. Minimal pesanan %d kg; semua single origin di toko berlaku diskon yang sama.",
+ "Demo store · payments are simulated": "Toko demo · pembayaran disimulasikan",
+ "Staff login (%s)": "Login staf (%s)",
+ "The demo account password stays the same for everyone.": "Password akun demo sama untuk semua orang dan tidak bisa diubah."
 }

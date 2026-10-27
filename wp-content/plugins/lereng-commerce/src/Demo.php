@@ -21,6 +21,7 @@ final class Demo
         ini_set('display_errors', '0');
         add_action('shutdown', [$this, 'runQueue'], 100);
         add_action('wp_footer', [$this, 'badge']);
+        self::limitDemoUser();
     }
 
     public function runQueue(): void
@@ -34,13 +35,41 @@ final class Demo
 
     public function badge(): void
     {
+        // On Playground anyone may sign in as admin (the site lives in their browser); on a public
+        // host the blueprint-free install defines LERENG_DEMO_LOGIN for a limited staff account.
+        $login = defined('LERENG_DEMO_LOGIN') ? LERENG_DEMO_LOGIN : 'admin / password';
         printf(
             '<div class="demo-badge">%s · <a href="%s">%s</a> · <a href="%s">%s</a></div>',
-            esc_html__('Live demo · WordPress running in your browser', 'lereng'),
+            esc_html__('Demo store · payments are simulated', 'lereng'),
             esc_url(home_url('/demo-inbox/')),
             esc_html__('Demo inbox', 'lereng'),
-            esc_url(admin_url('admin.php?page=wc-admin')),
-            esc_html__('Admin (admin / password)', 'lereng')
+            esc_url(admin_url('index.php')),
+            esc_html(sprintf(__('Staff login (%s)', 'lereng'), $login))
         );
+    }
+
+    /**
+     * The public staff account (user "demo", Shop Manager) can look at everything but not delete
+     * data, manage users or change its own password, so one visitor can't spoil the demo for the next.
+     */
+    public static function limitDemoUser(): void
+    {
+        add_filter('map_meta_cap', static function (array $caps, string $cap, int $userId): array {
+            $user = get_userdata($userId);
+            if (!$user || $user->user_login !== 'demo') {
+                return $caps;
+            }
+            if (str_starts_with($cap, 'delete_') || in_array($cap, ['edit_users', 'create_users', 'promote_users', 'remove_users', 'list_users', 'edit_user', 'manage_options', 'install_plugins', 'activate_plugins', 'edit_theme_options'], true)) {
+                return ['do_not_allow'];
+            }
+            return $caps;
+        }, 10, 3);
+        add_filter('show_password_fields', static fn($show, $user = null) => $user && $user->user_login === 'demo' ? false : $show, 10, 2);
+        add_filter('allow_password_reset', static fn($allow, $userId) => get_userdata($userId)?->user_login === 'demo' ? false : $allow, 10, 2);
+        add_action('user_profile_update_errors', static function ($errors, $update, $user): void {
+            if (!empty($user->ID) && get_userdata($user->ID)?->user_login === 'demo' && !empty($_POST['pass1'])) {
+                $errors->add('demo', __('The demo account password stays the same for everyone.', 'lereng'));
+            }
+        }, 10, 3);
     }
 }
